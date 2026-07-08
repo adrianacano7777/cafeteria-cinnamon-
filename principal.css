@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,8 +6,8 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #d1c2b0; 
-  color: #3e2723; 
+  background-color: #d1c2b0;
+  color: #3e2723;
   line-height: 1.6;
 }
 
@@ -23,10 +22,10 @@ body {
 }
 
 header {
-  background-color: #796652; 
+  background-color: #796652;
   border-bottom: 2px solid #5d4d3e;
   padding: 15px 30px;
-  display: block; 
+  display: block;
 }
 
 header::after {
@@ -40,8 +39,18 @@ header::after {
 }
 
 .logo img {
-  height: 50px;
+  height: 56px;
+  width: 200px;
+  object-fit: cover;
   display: block;
+}
+
+.admin-titulo {
+  display: block;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 8px;
 }
 
 .main-nav {
@@ -68,7 +77,12 @@ header::after {
 }
 
 .nav-list a:hover {
-  color: #ebdcb9; 
+  color: #ebdcb9;
+}
+
+.nav-list a.nav-activo {
+  color: #ffd54f;
+  text-decoration: underline;
 }
 
 .hero {
@@ -87,13 +101,13 @@ header::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3; 
+  opacity: 0.3;
   z-index: 1;
 }
 
 .hero-contenido {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -129,7 +143,7 @@ header::after {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate;
-  border-spacing: 15px 0; 
+  border-spacing: 15px 0;
   margin-top: 20px;
 }
 
@@ -217,27 +231,17 @@ header::after {
 .ingrediente-item p {
   font-size: 0.9rem;
   line-height: 1.4;
+  text-align: justify;
 }
 
-
-.contenedor-bloques {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5px;
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  border-spacing: 15px 0;
-}
-
-.reseñas, .cliente-mes {
-  display: table-cell;
+/* ---------- Reseñas: ahora sí centradas, igual que .ingredientes y .nosotros ---------- */
+.reseñas {
   background-color: #796652;
-  padding: 30px;
-  vertical-align: top;
-  border: 1px solid #5d4d3e;
+  margin: 20px auto;
+  max-width: 1170px;
+  padding: 40px 30px;
+  color: #ffffff;
 }
-
 
 .reseña-lista {
   list-style: none;
@@ -268,7 +272,7 @@ header::after {
 
 .reseña-rating {
   font-size: 0.85rem;
-  color: #ffd54f; 
+  color: #ffd54f;
 }
 
 .nosotros {
@@ -282,8 +286,8 @@ header::after {
 
 .sobre-foto {
   display: table-cell;
-  width: 35%;
-  max-height: 250px;
+  width: 320px;
+  height: 250px;
   object-fit: cover;
   vertical-align: middle;
 }
@@ -294,6 +298,7 @@ header::after {
   padding-left: 30px;
   color: #ffffff;
   vertical-align: middle;
+  text-align: justify;
 }
 
 .nosotros .seccion-titulo {
@@ -303,7 +308,7 @@ header::after {
 
 
 footer {
-  background-color: #5d4d3e; 
+  background-color: #5d4d3e;
   color: #ebdcb9;
   text-align: center;
   padding: 30px 20px;
