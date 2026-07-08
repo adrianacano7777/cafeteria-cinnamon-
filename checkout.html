@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cafetería Cinnamon - Confirmar pedido</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <section class="checkout">
+    <h2 class="seccion-titulo">Confirmar mi pedido</h2>
+
+    <div class="checkout-bloque">
+      <h3>Dirección de entrega</h3>
+      <p class="direccion-guardada">Calle Reforma 123, Puente de Ixtla, Morelos</p>
+      <a href="perfil.html" class="btn-secundario">Editar mi dirección</a>
+      <details>
+        <summary>Agregar una dirección nueva</summary>
+        <form class="form-direccion" action="checkout.html" method="post">
+          <label for="nueva-calle">Calle y número</label>
+          <input type="text" id="nueva-calle" name="calle_numero">
+          <label for="nueva-referencias">Referencias</label>
+          <input type="text" id="nueva-referencias" name="referencias">
+          <label for="nueva-telefono">Teléfono de contacto</label>
+          <input type="tel" id="nueva-telefono" name="telefono_contacto">
+        </form>
+      </details>
+    </div>
+
+    <div class="checkout-bloque">
+      <h3>Resumen de tu pedido</h3>
+      <p>Latte de vainilla de Madagascar x1 — $55.00</p>
+      <p>Roles de canela de Ceylán x2 — $96.00</p>
+    </div>
+
+    <div class="checkout-bloque">
+      <h3>Forma de entrega</h3>
+      <label class="opcion-entrega">
+        <input type="radio" name="tipo_entrega" value="domicilio" checked>
+        A domicilio
+      </label>
+      <label class="opcion-entrega">
+        <input type="radio" name="tipo_entrega" value="tienda">
+        Recoger en tienda
+      </label>
+    </div>
+
+    <div class="checkout-bloque">
+      <h3>Método de pago</h3>
+
+      <label class="opcion-pago">
+        <input type="radio" name="metodo_pago" value="tarjeta" checked>
+        Pagar con tarjeta de crédito o débito
+      </label>
+      <label class="opcion-pago">
+        <input type="radio" name="metodo_pago" value="transferencia">
+        Pagar con transferencia bancaria
+      </label>
+      <label class="opcion-pago">
+        <input type="radio" name="metodo_pago" value="efectivo">
+        Pagar en efectivo al recibir mi pedido
+      </label>
+
+      <div class="panel-pago" id="panel-tarjeta">
+        <form class="form-tarjeta">
+          <label for="tarjeta-nombre">Nombre del titular <span class="campo-obligatorio">*</span></label>
+          <input type="text" id="tarjeta-nombre" name="nombre_titular" placeholder="Como aparece en tu tarjeta"
+            required>
+
+          <label for="tarjeta-numero">Número de tarjeta <span class="campo-obligatorio">*</span></label>
+          <input type="text" id="tarjeta-numero" name="numero_tarjeta" placeholder="1234 5678 9012 3456" maxlength="19"
+            required>
+
+          <label for="tarjeta-vencimiento">Fecha de vencimiento <span class="campo-obligatorio">*</span></label>
+          <input type="text" id="tarjeta-vencimiento" name="vencimiento" placeholder="MM/AA" maxlength="5" required>
+
+          <label for="tarjeta-cvv">Código de seguridad (CVV) <span class="campo-obligatorio">*</span></label>
+          <input type="text" id="tarjeta-cvv" name="cvv" placeholder="3 dígitos al reverso" maxlength="3" required>
+          <p class="texto-ayuda">Tus datos se usan solo para procesar este pago, de forma segura.</p>
+        </form>
+      </div>
+
+      <div class="panel-pago" id="panel-transferencia" style="display:none;">
+        <div class="datos-transferencia">
+          <p><strong>Banco:</strong> BBVA</p>
+          <p><strong>Beneficiario:</strong> Cafetería Cinnamon S.A. de C.V.</p>
+          <p><strong>CLABE interbancaria:</strong> 012 345 6789 01234567</p>
+          <p>Realiza tu transferencia por el monto total y después escribe aquí tu referencia:</p>
+        </div>
+        <form class="form-transferencia">
+          <label for="transferencia-referencia">Número de referencia o folio de tu transferencia <span
+              class="campo-obligatorio">*</span></label>
+          <input type="text" id="transferencia-referencia" name="referencia_transferencia"
+            placeholder="Ejemplo: 00123456789">
+        </form>
+      </div>
+
+      <div class="panel-pago" id="panel-efectivo" style="display:none;">
+        <p>Pagarás en efectivo cuando recibas tu pedido o cuando lo recojas en la tienda.</p>
+        <p><strong>Ten listo el monto exacto de tu pedido para agilizar tu entrega.</strong></p>
+      </div>
+    </div>
+
+    <div class="checkout-bloque checkout-total">
+      <p>Subtotal: $151.00</p>
+      <p>Costo de entrega: $25.00</p>
+      <p class="total-final">Total a pagar: $176.00 MXN</p>
+    </div>
+
+    <form action="confirmacion.html" method="post">
+      <button type="submit" class="btn-primario">Confirmar y pagar mi pedido</button>
+    </form>
+  </section>
+
+</body>
+
+</html>
