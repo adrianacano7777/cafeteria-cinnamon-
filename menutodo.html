@@ -1,19 +1,69 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Cafeteria Cinnamon</title>
-        <meta charset="UTF-8">
-    </head>
-    <body> 
-        <div>
-            <ul>
-                <li>Inicio</li>
-                <li>Menu</li>
-                <li>Ingredientes estrella</li>
-                <li>Reseñas</li>
-                <li>Sobre nosotros</li>
-            </ul>
-        </div>    
-    </body>
-    
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Cinnamon - Todo el Menú</title>
+    <style>
+        /* Reutilizamos los mismos estilos responsivos para mantener la armonía */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fcf8f2; color: #333; }
+        header { background-color: #8B4513; color: white; text-align: center; padding: 20px; font-size: 24px; }
+        nav ul { list-style: none; background-color: #D2691E; padding: 10px; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav li { margin: 5px 15px; color: white; cursor: pointer; }
+        .container { padding: 20px; max-width: 800px; margin: 0 auto; }
+        .seccion-titulo { border-bottom: 2px solid #8B4513; color: #8B4513; padding-bottom: 5px; margin-top: 30px; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 15px; }
+        .producto { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        footer { background-color: #333; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>Cafetería Cinnamon</header>
+
+    <nav>
+        <ul>
+            <li>Inicio</li>
+            <li>Menú</li>
+            <li>Ingredientes estrella</li>
+            <li>Reseñas</li>
+            <li>Sobre nosotros</li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Menú Completo 📜</h2>
+        
+        <h3 class="seccion-titulo">Para Comer 🥐</h3>
+        <div class="menu-grid">
+            <div class="producto">
+                <h4>Rollos de Canela</h4>
+                <p>Nuestra especialidad horneada cada mañana con glaseado real.</p>
+            </div>
+            <div class="producto">
+                <h4>Croissant de Mantequilla</h4>
+                <p>Crujiente y calientito.</p>
+            </div>
+        </div>
+
+        <h3 class="seccion-titulo">Para Beber ☕</h3>
+        <div class="menu-grid">
+            <div class="producto">
+                <h4>Cinnamon Latte</h4>
+                <p>Espresso con leche al vapor y un toque mágico de canela.</p>
+            </div>
+            <div class="producto">
+                <h4>Té Chai</h4>
+                <p>Una mezcla de especias ideal para acompañar tus postres.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h4>Contáctanos</h4>
+        <p>cinnamoncafe@gmail.com</p>
+        <p>&copy; 2026 Cafetería Cinnamon. Creada en 2026</p>
+    </footer>
+
+</body>
 </html>
