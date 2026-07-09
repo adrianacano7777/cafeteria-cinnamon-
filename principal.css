@@ -1,0 +1,327 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #d1c2b0;
+  color: #3e2723;
+  line-height: 1.6;
+}
+
+
+.seccion-titulo {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+header {
+  background-color: #796652;
+  border-bottom: 2px solid #5d4d3e;
+  padding: 15px 30px;
+  display: block;
+}
+
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  height: 56px;
+  width: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-titulo {
+  display: block;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 8px;
+}
+
+.main-nav {
+  float: right;
+  margin-top: 12px;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-list li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover {
+  color: #ebdcb9;
+}
+
+.nav-list a.nav-activo {
+  color: #ffd54f;
+  text-decoration: underline;
+}
+
+.hero {
+  position: relative;
+  background-color: #796652;
+  text-align: center;
+  color: #ffffff;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-desde {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero-frase {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero-horario {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ebdcb9;
+}
+
+.menu {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-categoria {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 15px 0;
+  margin-top: 20px;
+}
+
+.categoria-carta {
+  display: table-cell;
+  background-color: #796652;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  height: 200px;
+  position: relative;
+  border: 1px solid #5d4d3e;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.categoria-carta:hover {
+  background-color: #665443;
+  transform: translateY(-3px);
+}
+
+.categoria-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+
+.categoria-label {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.ingredientes {
+  background-color: #796652;
+  margin: 20px auto;
+  max-width: 1170px;
+  padding: 40px 30px;
+  color: #ffffff;
+}
+
+.seccion-subtitulo {
+  text-align: center;
+  color: #ebdcb9;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.ingredientes-lista {
+  list-style: none;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 20px 0;
+}
+
+.ingrediente-item {
+  display: table-cell;
+  background-color: #665443;
+  padding: 20px;
+  border: 1px solid #5d4d3e;
+  vertical-align: top;
+}
+
+.ingrediente-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.ingrediente-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #ebdcb9;
+}
+
+.ingrediente-item p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+/* ---------- Reseñas: ahora sí centradas, igual que .ingredientes y .nosotros ---------- */
+.reseñas {
+  background-color: #796652;
+  margin: 20px auto;
+  max-width: 1170px;
+  padding: 40px 30px;
+  color: #ffffff;
+}
+
+.reseña-lista {
+  list-style: none;
+}
+
+.reseña-carta {
+  background-color: #665443;
+  padding: 15px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.reseña-carta:last-child {
+  margin-bottom: 0;
+}
+
+.reseña-texto {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.reseña-autor {
+  font-weight: bold;
+  color: #ebdcb9;
+  font-size: 0.9rem;
+}
+
+.reseña-rating {
+  font-size: 0.85rem;
+  color: #ffd54f;
+}
+
+.nosotros {
+  background-color: #796652;
+  max-width: 1170px;
+  margin: 30px auto;
+  padding: 40px 30px;
+  display: table;
+  width: 100%;
+}
+
+.sobre-foto {
+  display: table-cell;
+  width: 320px;
+  height: 250px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.sobre-texto {
+  display: table-cell;
+  width: 65%;
+  padding-left: 30px;
+  color: #ffffff;
+  vertical-align: middle;
+  text-align: justify;
+}
+
+.nosotros .seccion-titulo {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+
+footer {
+  background-color: #5d4d3e;
+  color: #ebdcb9;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+footer h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
