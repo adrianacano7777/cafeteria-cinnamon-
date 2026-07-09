@@ -1,0 +1,151 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #d1c2b0;
+  color: #3e2723;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #796652;
+  border-bottom: 2px solid #5d4d3e;
+  padding: 15px 30px;
+  display: block;
+}
+
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  height: 56px;
+  width: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.main-nav {
+  float: right;
+  margin-top: 12px;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-list li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.perfil-seccion {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 60vh;
+}
+
+.seccion-titulo {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  color: #3e2723;
+}
+
+
+.perfil-tarjeta {
+  background-color: #796652;
+  border: 1px solid #5d4d3e;
+  padding: 30px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.perfil-avatar {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.perfil-tarjeta h3 {
+  font-size: 1.4rem;
+  color: #ebdcb9;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.perfil-datos {
+  text-align: left;
+  background-color: #5d4d3e;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #3e2723;
+}
+
+.dato-bloque {
+  margin-bottom: 15px;
+}
+
+.dato-bloque:last-child {
+  margin-bottom: 0; 
+}
+
+.dato-bloque strong {
+  font-size: 0.85rem;
+  color: #ebdcb9;
+  text-transform: uppercase;
+  display: block;
+}
+
+.dato-bloque p {
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+/* Botón de acción */
+.btn-perfil {
+  background-color: #ffd54f;
+  color: #3e2723;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.btn-perfil:hover {
+  background-color: #ffca28;
+}
+
+footer {
+  background-color: #5d4d3e;
+  color: #ebdcb9;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}

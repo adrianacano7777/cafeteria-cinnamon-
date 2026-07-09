@@ -1,88 +1,82 @@
 <!DOCTYPE html>
-<html>
-<<<<<<< HEAD
-
+<html lang="es">
 <head>
-    <title>Cafeteria Cinnamon</title>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Comida - Cafetería Cinnamon</title>
+  <!-- Conexión directa a su propio archivo CSS suelto en la raíz -->
+  <link rel="stylesheet" href="menu_comida.css">
 </head>
-
 <body>
-    <div>
-        <ul>
-            <li>Inicio</li>
-            <li>Menu</li>
-            <li>Ingredientes estrella</li>
-            <li>Reseñas</li>
-            <li>Sobre nosotros</li>
-        </ul>
-        <section class="seccion-menu">
-=======
-    <head>
-        <title>Cafeteria Cinnamon</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="principal.css">
-    </head>
-    <body> 
-        <div>
-            <ul>
-                <li>Inicio</li>
-                <li>Menu</li>
-                <li>Ingredientes estrella</li>
-                <li>Reseñas</li>
-                <li>Sobre nosotros</li>
-            </ul>
-            <section class="seccion-menu">
->>>>>>> bf150e977af658ecfa86e9900533a03c23c8b8a9
-            <h2>Repostería y Panadería</h2>
-            <div class="item-menu">
-                <div class="item-info">
-                    <p class="item-nombre">Croissant de Mantequilla</p>
-                    <p class="item-descripcion">Crujiente por fuera y suave por dentro. Horneado al momento.</p>
-                </div>
-                <div class="item-precio">$25</div>
-            </div>
-            <div class="item-menu">
-                <div class="item-info">
-                    <p class="item-nombre">Muffin de Arándanos</p>
-                    <p class="item-descripcion">Panecillo colmado de arándanos frescos.</p>
-                </div>
-                <div class="item-precio">$40</div>
-            </div>
 
-            <div class="item-menu">
-                <div class="item-info">
-                    <p class="item-nombre">Tarta de Queso con Frutos Rojos</p>
-                    <p class="item-descripcion">Porción de tarta cremosa sobre base de galleta crujiente.</p>
-                </div>
-                <div class="item-precio">$60</div>
-            </div>
-        </section>
-        <section class="seccion-menu">
-            <h2>Opciones Saladas</h2>
+  <div id="header-placeholder"></div>
 
-            <div class="item-menu">
-                <div class="item-info">
-                    <p class="item-nombre">Tostada de Aguacate</p>
-                    <p class="item-descripcion">Pantostado, aguacate machacado, semillas y un toque de aceite de oliva.
-                    </p>
-                </div>
-                <div class="item-precio">$34.50</div>
-            </div>
+ 
+  <section class="menu">
+    <h2 class="seccion-titulo">Repostería y Panadería</h2>
+    <p class="seccion-subtitulo">Horneados frescos todas las mañanas</p>
 
-            <div class="item-menu">
-                <div class="item-info">
-                    <p class="item-nombre">Sándwich de Pavo y Queso</p>
-                    <p class="item-descripcion">Pechuga de pavo, queso derretido y pan baguette artesanal.</p>
-                </div>
-                <div class="item-precio">$90</div>
-            </div>
-        </section>
+
+    <div class="menu-categoria" style="margin-bottom: 40px;">
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/croissant.webp" alt="Croissant de Mantequilla">
+        <div class="categoria-label">
+          <h3>Croissant</h3>
+          <p class="bebida-desc">Crujiente por fuera y suave por dentro. Horneado al momento.</p>
+          <span class="bebida-precio">$25.00</span>
+        </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/muffin.webp" alt="Muffin de Arándanos">
+        <div class="categoria-label">
+          <h3>Muffin Arándanos</h3>
+          <p class="bebida-desc">Panecillo tradicional colmado de arándanos frescos.</p>
+          <span class="bebida-precio">$40.00</span>
+        </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/tarta-queso.webp" alt="Tarta de Queso con Frutos Rojos">
+        <div class="categoria-label">
+          <h3>Tarta de Queso</h3>
+          <p class="bebida-desc">Porción cremosa sobre base de galleta crujiente y frutos rojos.</p>
+          <span class="bebida-precio">$60.00</span>
+        </div>
+      </article>
     </div>
-</body>
-<footer>
-    <p>Abierto todos los días de 8:00 a 10:00</p>
-    <p>&copy; 2026 Cafeteria Cinnamon. Todos los derechos reservados.</p>
-</footer>
 
+    <h2 class="seccion-titulo">Opciones Saladas</h2>
+    <p class="seccion-subtitulo">Para disfrutar a cualquier hora del día</p>
+
+    <!-- FILA 2: SALADOS -->
+    <div class="menu-categoria">
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/tostada-aguacate.webp" alt="Tostada de Aguacate">
+        <div class="categoria-label">
+          <h3>Tostada Aguacate</h3>
+          <p class="bebida-desc">Pan tostado, aguacate machacado, semillas y aceite de oliva.</p>
+          <span class="bebida-precio">$34.50</span>
+        </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/sandwich-pavo.webp" alt="Sándwich de Pavo y Queso">
+        <div class="categoria-label">
+          <h3>Sándwich Pavo</h3>
+          <p class="bebida-desc">Pechuga de pavo, queso derretido y pan baguette artesanal.</p>
+          <span class="bebida-precio">$90.00</span>
+        </div>
+      </article>
+
+      
+      <div style="display: table-cell; visibility: hidden;"></div>
+    </div>
+  </section>
+
+  
+  <div id="footer-placeholder"></div>
+  <script src="header-footer.js"></script>
+
+</body>
 </html>

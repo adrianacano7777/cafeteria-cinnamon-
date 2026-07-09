@@ -1,106 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafetería Cinnamon - Menú Bebidas</title>
-    <style>
-        /* Estilos básicos y responsivos */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fcf8f2; /* Color cremita como canela */
-            color: #333;
-        }
-        header {
-            background-color: #8B4513;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 24px;
-        }
-        nav ul {
-            list-style: none;
-            background-color: #D2691E;
-            padding: 10px;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Si la pantalla es chica, los botones se acomodan abajo solos */
-        }
-        nav li {
-            margin: 5px 15px;
-            color: white;
-            cursor: pointer;
-        }
-        .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Se adapta a cualquier pantalla */
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .producto {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Bebidas - Cafetería Cinnamon</title>
+  
+  <link rel="stylesheet" href="menu_bebidas.css">
 </head>
 <body>
 
-    <header>Cafetería Cinnamon</header>
+ 
+  <div id="header-placeholder"></div>
 
-    <nav>
-        <ul>
-            <li>Inicio</li>
-            <li>Menú</li>
-            <li>Ingredientes estrella</li>
-            <li>Reseñas</li>
-            <li>Sobre nosotros</li>
-        </ul>
-    </nav>
+  <section class="menu">
+    <h2 class="seccion-titulo">Nuestras Bebidas</h2>
+    <p class="seccion-subtitulo">Preparadas al momento con los mejores ingredientes</p>
 
-    <div class="container">
-        <h2>Nuestro Menú de Bebidas ☕✨</h2>
-        <p>Disfruta de nuestras especialidades frías y calientes.</p>
-        
-        <!-- Aquí puedes agregar o cambiar las bebidas que quieras -->
-        <div class="menu-grid">
-            <div class="producto">
-                <h3>Cinnamon Latte</h3>
-                <p>Espresso con leche al vapor y un toque mágico de canela.</p>
-            </div>
-            <div class="producto">
-                <h3>Capuccino Tradicional</h3>
-                <p>El clásico con mucha espuma y cocoa en polvo.</p>
-            </div>
-            <div class="producto">
-                <h3>Frappé de Canela</h3>
-                <p>Ideal para el calor del verano, dulce y refrescante.</p>
-            </div>
+  
+    <div class="menu-categoria" style="margin-bottom: 30px;">
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/americano.webp" alt="Café americano">
+        <div class="categoria-label">
+          <h3>Café americano</h3>
+          <p class="bebida-desc">Café de grano etíope preparado en filtro tradicional</p>
+          <span class="bebida-precio">$35</span>
         </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/latte-vainilla.webp" alt="Latte de vainilla de Madagascar">
+        <div class="categoria-label">
+          <h3>Latte de vainilla</h3>
+          <p class="bebida-desc">Espresso con leche vaporizada y vainilla auténtica</p>
+          <span class="bebida-precio">$55</span>
+        </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/capuchino.webp" alt="Capuchino clásico">
+        <div class="categoria-label">
+          <h3>Capuchino clásico</h3>
+          <p class="bebida-desc">Espresso con espuma cremosa y un toque de canela de Ceylán</p>
+          <span class="bebida-precio">$50</span>
+        </div>
+      </article>
     </div>
 
-    <footer>
-        <h4>Contáctanos</h4>
-        <p>cinnamoncafe@gmail.com</p>
-        <p>&copy; 2026 Cafetería Cinnamon. Creada en 2026</p>
-    </footer>
+   
+    <div class="menu-categoria" style="margin-bottom: 30px;">
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/mocha.webp" alt="Mocha de chocolate belga">
+        <div class="categoria-label">
+          <h3>Mocha belga</h3>
+          <p class="bebida-desc">Espresso, chocolate belga fundido y leche vaporizada</p>
+          <span class="bebida-precio">$60</span>
+        </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/chai-latte.webp" alt="Chai latte">
+        <div class="categoria-label">
+          <h3>Chai latte</h3>
+          <p class="bebida-desc">Té chai especiado con leche vaporizada</p>
+          <span class="bebida-precio">$58</span>
+        </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/cold-brew.webp" alt="Cold brew">
+        <div class="categoria-label">
+          <h3>Cold brew</h3>
+          <p class="bebida-desc">Café de extracción en frío, suave y servido con hielo</p>
+          <span class="bebida-precio">$52</span>
+        </div>
+      </article>
+    </div>
+
+    
+    <div class="menu-categoria" style="margin-bottom: 30px;">
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/matcha.webp" alt="Matcha latte">
+        <div class="categoria-label">
+          <h3>Matcha latte</h3>
+          <p class="bebida-desc">Té matcha ceremonial batido con leche</p>
+          <span class="bebida-precio">$62</span>
+        </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/frappe-caramelo.webp" alt="Frappé de caramelo">
+        <div class="categoria-label">
+          <h3>Frappé caramelo</h3>
+          <p class="bebida-desc">Café frío licuado con caramelo y crema batida</p>
+          <span class="bebida-precio">$65</span>
+        </div>
+      </article>
+
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/te-durazno.webp" alt="Té helado de durazno">
+        <div class="categoria-label">
+          <h3>Té de durazno</h3>
+          <p class="bebida-desc">Té negro infusionado con durazno natural</p>
+          <span class="bebida-precio">$45</span>
+        </div>
+      </article>
+    </div>
+
+  
+    <div class="menu-categoria">
+      <article class="categoria-carta">
+        <img class="categoria-foto" src="img/chocolate-caliente.webp" alt="Chocolate caliente belga">
+        <div class="categoria-label">
+          <h3>Chocolate belga</h3>
+          <p class="bebida-desc">Chocolate belga fundido con leche entera y malvaviscos</p>
+          <span class="bebida-precio">$58</span>
+        </div>
+      </article>
+      <div style="display: table-cell; visibility: hidden;"></div>
+      <div style="display: table-cell; visibility: hidden;"></div>
+    </div>
+  </section>
+
+  
+  <div id="footer-placeholder"></div>
+  <script src="header-footer.js"></script>
 
 </body>
 </html>
