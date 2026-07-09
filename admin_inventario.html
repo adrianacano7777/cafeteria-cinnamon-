@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cinnamon Admin - Inventario</title>
+    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <div id="header-placeholder" data-tipo="admin"></div>
+
+    <section class="admin-main">
+        <h2 class="seccion-titulo">Inventario de productos</h2>
+
+        <details>
+            <summary>+ Agregar nuevo producto</summary>
+            <form action="admin_inventario.html" method="post">
+                <label for="nuevo-nombre">Nombre</label>
+                <input type="text" id="nuevo-nombre" name="nombre_producto">
+
+                <label for="nuevo-desc">Descripción</label>
+                <input type="text" id="nuevo-desc" name="descripcion">
+
+                <label for="nuevo-precio">Precio</label>
+                <input type="number" step="0.01" id="nuevo-precio" name="precio">
+
+                <label for="nuevo-categoria">Categoría</label>
+                <select id="nuevo-categoria" name="id_categoria">
+                    <option value="1">Comida</option>
+                    <option value="2">Bebidas</option>
+                    <option value="3">Postres</option>
+                </select>
+
+                <label for="nuevo-imagen">Imagen</label>
+                <input type="file" id="nuevo-imagen" name="imagen">
+
+                <button type="submit" class="btn-primario">Guardar producto</button>
+            </form>
+        </details>
+
+        <table class="admin-tabla">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Disponibilidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Latte de vainilla de Madagascar</td>
+                    <td>Bebidas</td>
+                    <td>$55.00</td>
+                    <td>Disponible</td>
+                    <td><a href="#" class="btn-editar">Editar</a><a href="#" class="btn-eliminar">Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>Croissant de almendra</td>
+                    <td>Postres</td>
+                    <td>$50.00</td>
+                    <td class="stock-bajo">Bajo stock</td>
+                    <td><a href="#" class="btn-editar">Editar</a><a href="#" class="btn-eliminar">Eliminar</a></td>
+                </tr>
+                <tr>
+                    <td>Sandwich club de pollo</td>
+                    <td>Comida</td>
+                    <td>$85.00</td>
+                    <td>Disponible</td>
+                    <td><a href="#" class="btn-editar">Editar</a><a href="#" class="btn-eliminar">Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="admin-main">
+        <h2 class="seccion-titulo">Insumos y suministros</h2>
+        <p style="margin-bottom: 20px;">Ingredientes y materiales usados en la preparación (café, leche, vasos, etc.).
+            Actualiza la cantidad manualmente cuando llegue o se use algo.</p>
+
+        <details>
+            <summary>+ Agregar nuevo insumo</summary>
+            <form action="admin_inventario.html" method="post">
+                <label for="nuevo-insumo-nombre">Nombre del insumo</label>
+                <input type="text" id="nuevo-insumo-nombre" name="nombre_insumo">
+
+                <label for="nuevo-insumo-cantidad">Cantidad disponible</label>
+                <input type="number" step="0.01" id="nuevo-insumo-cantidad" name="cantidad_disponible">
+
+                <label for="nuevo-insumo-unidad">Unidad de medida</label>
+                <select id="nuevo-insumo-unidad" name="unidad_medida">
+                    <option value="kg">Kilogramos</option>
+                    <option value="litros">Litros</option>
+                    <option value="piezas">Piezas</option>
+                </select>
+
+                <label for="nuevo-insumo-minimo">Cantidad mínima (para avisar bajo stock)</label>
+                <input type="number" step="0.01" id="nuevo-insumo-minimo" name="cantidad_minima">
+
+                <button type="submit" class="btn-primario">Guardar insumo</button>
+            </form>
+        </details>
+
+        <table class="admin-tabla">
+            <thead>
+                <tr>
+                    <th>Insumo</th>
+                    <th>Cantidad disponible</th>
+                    <th>Cantidad mínima</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="fila-suficiente">
+                    <td>Café en grano (Etiopía)</td>
+                    <td>8.5 kg</td>
+                    <td>5 kg</td>
+                    <td class="stock-suficiente">Suficiente</td>
+                    <td><a href="#" class="btn-editar">Actualizar</a></td>
+                </tr>
+                <tr class="fila-bajo">
+                    <td>Leche entera</td>
+                    <td>3 litros</td>
+                    <td>10 litros</td>
+                    <td class="stock-bajo">Bajo stock</td>
+                    <td><a href="#" class="btn-editar">Actualizar</a></td>
+                </tr>
+                <tr class="fila-medio">
+                    <td>Canela de Ceylán</td>
+                    <td>1.2 kg</td>
+                    <td>1 kg</td>
+                    <td class="stock-medio">Nivel medio</td>
+                    <td><a href="#" class="btn-editar">Actualizar</a></td>
+                </tr>
+                <tr class="fila-bajo">
+                    <td>Vasos desechables (grandes)</td>
+                    <td>60 piezas</td>
+                    <td>100 piezas</td>
+                    <td class="stock-bajo">Bajo stock</td>
+                    <td><a href="#" class="btn-editar">Actualizar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="header-footer.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

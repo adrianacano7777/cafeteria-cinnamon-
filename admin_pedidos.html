@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cinnamon Admin - Pedidos</title>
+  <link rel="stylesheet" href="principal.css">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="icon" href="img/icono-pestana.png" type="image/png">
+</head>
+<body>
+
+  <div id="header-placeholder" data-tipo="admin"></div>
+
+  <section class="admin-main">
+    <h2 class="seccion-titulo">Pedidos</h2>
+
+    <table class="admin-tabla">
+      <thead>
+        <tr>
+          <th>No. de orden</th>
+          <th>Cliente</th>
+          <th>Fecha</th>
+          <th>Total</th>
+          <th>Entrega</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#00157</td>
+          <td>Adriana Tapia</td>
+          <td>07/07/2026</td>
+          <td>$176.00</td>
+          <td>A domicilio</td>
+          <td>
+            <select name="estado">
+              <option value="recibido">Recibido</option>
+              <option value="preparando" selected>Preparando</option>
+              <option value="listo">Listo</option>
+              <option value="entregado">Entregado</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>#00156</td>
+          <td>Manuel Tapia</td>
+          <td>07/07/2026</td>
+          <td>$63.00</td>
+          <td>Recoger en tienda</td>
+          <td>
+            <select name="estado">
+              <option value="recibido" selected>Recibido</option>
+              <option value="preparando">Preparando</option>
+              <option value="listo">Listo</option>
+              <option value="entregado">Entregado</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>#00142</td>
+          <td>Grecia Tapia</td>
+          <td>28/06/2026</td>
+          <td>$92.00</td>
+          <td>Recoger en tienda</td>
+          <td class="estado-entregado">Entregado</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="admin-main">
+    <h2 class="seccion-titulo">Resumen de ventas</h2>
+
+    <div class="reporte-bloque">
+      <h3>Ventas por semana</h3>
+      <ul class="reporte-lista">
+        <li>Semana 1: $12,400.00</li>
+        <li>Semana 2: $10,850.00</li>
+        <li>Semana 3: $13,920.00</li>
+        <li>Semana 4: $14,600.00</li>
+      </ul>
+    </div>
+
+    <div class="reporte-bloque">
+      <h3>Productos más vendidos</h3>
+      <ul class="reporte-lista">
+        <li>Latte de vainilla de Madagascar — 142 unidades</li>
+        <li>Roles de canela de Ceylán — 118 unidades</li>
+        <li>Café americano — 105 unidades</li>
+      </ul>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="header-footer.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

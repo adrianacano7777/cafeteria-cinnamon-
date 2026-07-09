@@ -11,7 +11,6 @@ body {
   line-height: 1.6;
 }
 
-
 .seccion-titulo {
   text-align: center;
   font-size: 1.8rem;
@@ -234,7 +233,7 @@ header::after {
   text-align: justify;
 }
 
-/* ---------- Reseñas: ahora sí centradas, igual que .ingredientes y .nosotros ---------- */
+
 .reseñas {
   background-color: #796652;
   margin: 20px auto;
