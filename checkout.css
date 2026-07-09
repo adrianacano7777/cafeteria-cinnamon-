@@ -1,95 +1,58 @@
-* {
-  box-sizing: border-box;
+body {
+  font-family: #6F4E37;
+  background-color: #FAF6F0;
+  color: #3E2723;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #d1c2b0;
-  color: #3e2723;
-  line-height: 1.6;
-}
-
-.seccion-titulo {
-  text-align: center;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-header {
-  background-color: #796652;
-  border-bottom: 2px solid #5d4d3e;
-  padding: 15px 30px;
-  display: block;
-}
-
-header::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.logo {
-  float: left;
-}
-
-.logo img {
-  height: 56px;
-  width: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-.admin-titulo {
-  display: block;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding-top: 8px;
-}
-
-.main-nav {
-  float: right;
-  margin-top: 12px;
-}
-
-.nav-list {
-  list-style: none;
-}
-
-.nav-list li {
+.btn-primario, .btn-secundario {
   display: inline-block;
-  margin-left: 20px;
-}
-
-.nav-list a {
-  color: #ffffff;
-  text-decoration: none;
+  padding: 12px 24px;
+  font-size: 1rem;
   font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  transition: color 0.3s;
-}
-
-footer {
-  background-color: #5d4d3e;
-  color: #ebdcb9;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+  border: none;
 }
 
-footer h4 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+.btn-primario {
+  background-color: #462B1F;
+  color: #ffff;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(111, 78, 55, 0.2);
 }
 
-footer p {
+.btn-primario:hover {
+  background-color: #3E2723;
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: #6F4E37;
+  border: 2px solid #6F4E37;
+  padding: 8px 16px;
   font-size: 0.9rem;
-  margin-bottom: 5px;
+}
+
+.btn-secundario:hover {
+  background-color: #6F4E37;
+  color: #0a0909;
+}
+
+
+input[type="text"],
+input[type="tel"],
+input[type="radio"] {
+  accent-color: #6F4E37; 
+}
+
+
+.campo-obligatorio {
+  color: var(--color-alerta);
 }
