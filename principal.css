@@ -4,15 +4,19 @@
   padding: 0;
 }
 
+<<<<<<< HEAD
 html, body {
   height: 100%;
 }
 
+=======
+>>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #d1c2b0;
   color: #3e2723;
   line-height: 1.6;
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -21,6 +25,10 @@ body {
 #footer-placeholder {
   margin-top: auto;
 }
+=======
+}
+
+>>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 
 .seccion-titulo {
   text-align: center;
@@ -244,7 +252,11 @@ header::after {
   text-align: justify;
 }
 
+<<<<<<< HEAD
 
+=======
+/* ---------- Reseñas: ahora sí centradas, igual que .ingredientes y .nosotros ---------- */
+>>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 .reseñas {
   background-color: #796652;
   margin: 20px auto;
@@ -334,6 +346,7 @@ footer h4 {
 footer p {
   font-size: 0.9rem;
   margin-bottom: 5px;
+<<<<<<< HEAD
 }
 
 @media (max-width: 900px) {
@@ -436,4 +449,6 @@ footer p {
     width: 100%;
     padding-left: 0;
   }
+=======
+>>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 }
