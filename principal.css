@@ -4,11 +4,22 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #d1c2b0;
   color: #3e2723;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#footer-placeholder {
+  margin-top: auto;
 }
 
 .seccion-titulo {
@@ -323,4 +334,106 @@ footer h4 {
 footer p {
   font-size: 0.9rem;
   margin-bottom: 5px;
+}
+
+@media (max-width: 900px) {
+  .hero-frase {
+    font-size: 2rem;
+  }
+
+  .menu-categoria,
+  .ingredientes-lista {
+    border-spacing: 10px 0;
+  }
+
+  .ingrediente-item img {
+    height: 120px;
+  }
+
+  .nosotros {
+    padding: 30px 20px;
+  }
+
+  .sobre-foto {
+    width: 220px;
+  }
+
+  .sobre-texto {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+
+  header {
+    text-align: center;
+  }
+
+  .logo {
+    float: none;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    margin: 0 auto;
+    width: 150px;
+    height: 42px;
+  }
+
+  .main-nav {
+    float: none;
+    margin-top: 0;
+  }
+
+  .nav-list li {
+    display: block;
+    margin: 8px 0;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero-frase {
+    font-size: 1.5rem;
+  }
+
+  .menu-categoria {
+    display: block;
+  }
+
+  .categoria-carta {
+    display: block;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 15px;
+  }
+
+  .ingredientes-lista {
+    display: block;
+  }
+
+  .ingrediente-item {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .nosotros {
+    display: block;
+  }
+
+  .sobre-foto {
+    display: block;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+  }
+
+  .sobre-texto {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+  }
 }
