@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #d1c2b0;
