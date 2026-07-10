@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .carrito {
   max-width: 1000px;
   margin: 40px auto;
@@ -42,92 +41,16 @@
 
 .carrito-item:hover {
   background-color: #ffff; 
-=======
-
-:root {
-  --color-fondo: #fbf9f6;       
-  --color-principal: #4a2c11;   
-  --color-acento: #bd7a44;      
-  --color-acento-hover: #9e6132;
-  --color-texto: #332211;       
-  --color-tabla-encabezado: #efe7dd; 
-  --color-lineas: #e1d5c5;    
-  --color-quitar: #a94442;      
-  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: var(--fuente-principal);
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
-  line-height: 1.6;
-  padding: 2rem 1rem;
-}
-
-.carrito {
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(74, 44, 17, 0.05);
-}
-
-.seccion-titulo {
-  font-family: 'Georgia', serif;
-  color: var(--color-principal);
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  border-bottom: 2px solid var(--color-acento);
-  padding-bottom: 0.5rem;
-}
-
-.carrito-tabla {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.carrito-tabla th {
-  background-color: var(--color-tabla-encabezado);
-  color: var(--color-principal);
-  font-weight: 600;
-  padding: 1rem;
-  border-bottom: 2px solid var(--color-lineas);
-}
-
-.carrito-tabla td {
-  padding: 1.2rem 1rem;
-  border-bottom: 1px solid var(--color-lineas);
-  vertical-align: middle;
-}
-
-.carrito-item:hover {
-  background-color: #faf7f2;
->>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 }
 
 .cantidad-form {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   gap: 8px;
-=======
-  gap: 0.5rem;
->>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 }
 
 .cantidad-form input[type="number"] {
   width: 60px;
-<<<<<<< HEAD
   padding: 6px;
   border: 1px solid #ffff;
   border-radius: 6px;
@@ -190,145 +113,11 @@ button, .btn-primario, .btn-secundario {
 
 .btn-secundario:hover {
   background-color: #f0e6df;
-=======
-  padding: 0.4rem;
-  border: 1px solid var(--color-lineas);
-  border-radius: 6px;
-  text-align: center;
-  color: var(--color-texto);
-  font-size: 0.95rem;
-}
-
-.cantidad-form input[type="number"]:focus {
-  outline: none;
-  border-color: var(--color-acento);
-}
-
-button, .btn-primario, .btn-secundario {
-  cursor: pointer;
-  font-family: var(--fuente-principal);
-  font-size: 0.9rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.btn-actualizar {
-  background-color: transparent;
-  color: var(--color-acento);
-  border: 1px solid var(--color-acento);
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-}
-
-.btn-actualizar:hover {
-  background-color: var(--color-acento);
-  color: #ffffff;
-}
-
-.btn-quitar {
-  background-color: transparent;
-  color: var(--color-quitar);
-  border: none;
-  text-decoration: underline;
-  padding: 0.2rem;
-}
-
-.btn-quitar:hover {
-  color: #d9534f;
-  font-weight: bold;
-}
-
-.carrito-resumen {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 2px solid var(--color-lineas);
->>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 }
 
 .carrito-total {
   font-size: 1.4rem;
   font-weight: bold;
-<<<<<<< HEAD
   color: #f0e6df;
   margin: 0 0 10px 0;
-=======
-  color: var(--color-principal);
-  margin-bottom: 0.5rem;
-}
-
-.btn-primario, .btn-secundario {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  width: 100%;
-  max-width: 300px;
-}
-
-.btn-primario {
-  background-color: var(--color-principal);
-  color: #ffffff;
-  border: 1px solid var(--color-principal);
-}
-
-.btn-primario:hover {
-  background-color: #331e0b;
-  transform: translateY(-1px);
-}
-
-.btn-secundario {
-  background-color: transparent;
-  color: var(--color-acento);
-  border: 1px solid var(--color-acento);
-}
-
-.btn-secundario:hover {
-  background-color: var(--color-acento);
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 1rem 0.5rem;
-  }
-
-  .carrito {
-    padding: 1rem;
-  }
-
-
-  .carrito-item {
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--color-lineas);
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: #fdfcfb;
-  }
-
-  .carrito-tabla td {
-    border: none;
-    padding: 0.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .cantidad-form {
-    justify-content: flex-end;
-  }
-
-  .carrito-resumen {
-    align-items: center;
-  }
-
-  .btn-primario, .btn-secundario {
-    max-width: 100%;
-  }
->>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 }

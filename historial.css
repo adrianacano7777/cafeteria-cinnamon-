@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-/* ==========================================================================
-   ESTILOS BASE Y BARRA DE NAVEGACIÓN (INTEGRACIÓN)
-   ========================================================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -61,9 +58,7 @@ header::after {
   font-size: 0.95rem;
 }
 
-/* ==========================================================================
-   DISEÑO EXCLUSIVO DE LA TABLA DE MIS PEDIDOS
-   ========================================================================== */
+
 .historial {
   padding: 40px 20px;
   max-width: 1000px;
@@ -80,7 +75,7 @@ header::after {
   color: #3e2723;
 }
 
-/* Contenedor responsivo para proteger la tabla */
+
 .tabla-contenedor {
   width: 100%;
   background-color: #796652;
@@ -119,10 +114,10 @@ header::after {
 
 .pedido-total {
   font-weight: bold;
-  color: #ffd54f; /* Resalta tus costos en amarillo */
+  color: #ffd54f; 
 }
 
-/* Estilos para tus clases de estado */
+
 .estado {
   display: inline-block;
   padding: 5px 12px;
@@ -149,156 +144,4 @@ footer {
   text-align: center;
   padding: 30px 20px;
   margin-top: 40px;
-=======
-/* ==========================================================================
-   ESTILOS BASE Y BARRA DE NAVEGACIÓN (INTEGRACIÓN)
-   ========================================================================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #d1c2b0;
-  color: #3e2723;
-  line-height: 1.6;
-}
-
-header {
-  background-color: #796652;
-  border-bottom: 2px solid #5d4d3e;
-  padding: 15px 30px;
-  display: block;
-}
-
-header::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.logo {
-  float: left;
-}
-
-.logo img {
-  height: 56px;
-  width: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-.main-nav {
-  float: right;
-  margin-top: 12px;
-}
-
-.nav-list {
-  list-style: none;
-}
-
-.nav-list li {
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.nav-list a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-}
-
-/* ==========================================================================
-   DISEÑO EXCLUSIVO DE LA TABLA DE MIS PEDIDOS
-   ========================================================================== */
-.historial {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  min-height: 60vh;
-}
-
-.seccion-titulo {
-  text-align: center;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 30px;
-  color: #3e2723;
-}
-
-/* Contenedor responsivo para proteger la tabla */
-.tabla-contenedor {
-  width: 100%;
-  background-color: #796652;
-  border: 1px solid #5d4d3e;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.historial-tabla {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  color: #ffffff;
-}
-
-.historial-tabla th {
-  background-color: #5d4d3e;
-  color: #ebdcb9;
-  padding: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  border-bottom: 2px solid #3e2723;
-}
-
-.historial-tabla td {
-  padding: 15px;
-  border-bottom: 1px solid #5d4d3e;
-  font-size: 0.95rem;
-  vertical-align: middle;
-}
-
-.historial-tabla tbody tr:hover {
-  background-color: #665443;
-}
-
-.pedido-total {
-  font-weight: bold;
-  color: #ffd54f; /* Resalta tus costos en amarillo */
-}
-
-/* Estilos para tus clases de estado */
-.estado {
-  display: inline-block;
-  padding: 5px 12px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.estado-preparando {
-  background-color: #ffd54f;
-  color: #3e2723;
-}
-
-.estado-entregado {
-  background-color: #4caf50;
-  color: #ffffff;
-}
-
-footer {
-  background-color: #5d4d3e;
-  color: #ebdcb9;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
->>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
 }
