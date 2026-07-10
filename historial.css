@@ -1,6 +1,4 @@
-/* ==========================================================================
-   ESTILOS BASE Y BARRA DE NAVEGACIÓN (INTEGRACIÓN)
-   ========================================================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -60,9 +58,7 @@ header::after {
   font-size: 0.95rem;
 }
 
-/* ==========================================================================
-   DISEÑO EXCLUSIVO DE LA TABLA DE MIS PEDIDOS
-   ========================================================================== */
+
 .historial {
   padding: 40px 20px;
   max-width: 1000px;
@@ -79,7 +75,7 @@ header::after {
   color: #3e2723;
 }
 
-/* Contenedor responsivo para proteger la tabla */
+
 .tabla-contenedor {
   width: 100%;
   background-color: #796652;
@@ -118,10 +114,10 @@ header::after {
 
 .pedido-total {
   font-weight: bold;
-  color: #ffd54f; /* Resalta tus costos en amarillo */
+  color: #ffd54f; 
 }
 
-/* Estilos para tus clases de estado */
+
 .estado {
   display: inline-block;
   padding: 5px 12px;
