@@ -30,17 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <nav class="main-nav">
         <ul class="nav-list">
-<<<<<<< HEAD
-          <li><a href="admin_usuarios.html" data-pagina="admin_usuarios.html">Usuarios</a></li>
-          <li><a href="admin_inventario.html" data-pagina="admin_inventario.html">Inventario</a></li>
-          <li><a href="admin_pedidos.html" data-pagina="admin_pedidos.html">Pedidos</a></li>
-=======
           <li><a href="admin_dashboard.html" data-pagina="admin_dashboard.html">Inicio</a></li>
           <li><a href="admin_inventario.html" data-pagina="admin_inventario.html">Inventario</a></li>
           <li><a href="admin_pedidos.html" data-pagina="admin_pedidos.html">Pedidos</a></li>
           <li><a href="admin_usuarios.html" data-pagina="admin_usuarios.html">Usuarios</a></li>
           <li><a href="admin_reportes.html" data-pagina="admin_reportes.html">Reportes</a></li>
->>>>>>> 548e8c031286292d110aa2f07ae2b3155d21b580
           <li><a href="principal.html" data-pagina="salir">Salir</a></li>
         </ul>
       </nav>
