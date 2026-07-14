@@ -6,6 +6,7 @@
   <title>Cafetería Cinnamon</title>
   <link rel="stylesheet" href="principal.css">
    <link rel="icon" href="img/icono-pestana.png" type="image/png">
+   <script src="horario.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,11 @@
     <div class="hero-contenido">
       <p class="hero-desde">Desde 2026</p>
       <h1 class="hero-frase">Tu pausa favorita del día empieza con un buen café.</h1>
-      <p class="hero-horario">Horario: Lunes a Domingo, 8:00 am - 10:00 pm</p>
+      <p>Abierto de 8 am a 10 pm de Lunes a Viernes</p>
+      <div class="contenedor-horario">
+    <span id="indicador-estado" class="circulo"></span>
+    <p id="texto-horario">Cargando estado de la cafetería...</p>
+</div>
     </div>
   </section>
 
