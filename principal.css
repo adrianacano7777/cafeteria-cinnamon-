@@ -9,14 +9,8 @@ body {
   background-color: #d1c2b0;
   color: #3e2723;
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
-#footer-placeholder {
-  margin-top: auto;
-}
 
 .seccion-titulo {
   text-align: center;
