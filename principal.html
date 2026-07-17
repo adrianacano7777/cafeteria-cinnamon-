@@ -6,13 +6,13 @@
   <title>Cafetería Cinnamon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="principal.css">
-   <link rel="icon" href="img/icono-pestana.png" type="image/png">
+  <link rel="icon" href="img/icono-pestana.png" type="image/png">
 </head>
 
 <body>
   <div id="header-placeholder"></div>
   <section class="hero">
-    <img class="hero-bg" src="img\foto-fondo.jpg" alt="Foto de fondo de la cafetería">
+    <img class="hero-bg" src="img/foto-fondo.jpg" alt="Foto de fondo de la cafetería">
     <div class="hero-contenido">
       <p class="hero-desde">Desde 2026</p>
       <h1 class="hero-frase">Tu pausa favorita del día empieza con un buen café.</h1>
@@ -42,32 +42,45 @@
   <section class="ingredientes">
     <h2 class="seccion-titulo">Nuestros ingredientes estrella</h2>
     <p class="seccion-subtitulo">Ingredientes importados y de calidad que nos distinguen de otras cafeterías.</p>
-    <ul class="ingredientes-lista">
-      <li class="ingrediente-item">
-        <img src="img/ingrediente1.jpg" alt="Canela de Ceylán">
-        <h3>Canela de Ceylán</h3>
-        <p>A diferencia de la canela común, esta es conocida como la "canela auténtica". Es sumamente aromática, con un
-          sabor más dulce, suave y complejo.</p>
-      </li>
-      <li class="ingrediente-item">
-        <img src="img/ingrediente2.webp" alt="Extracto puro de Vainilla de Madagascar">
-        <h3>Extracto puro de Vainilla de Madagascar</h3>
-        <p>Considerada la mejor vainilla del mundo por su proceso de curado artesanal. Aporta un perfil de sabor
-          profundo, dulce y con notas cremosas que eleva por completo el sabor de los lattes, galletas y brownies.
-      <li class="ingrediente-item">
-        <img src="img/ingrediente3.jpg" alt="Chocolate belga">
-        <h3>Chocolate belga</h3>
-        <p>Reconocido mundialmente por su finura y su alto porcentaje de manteca de cacao pura. Utilizarlo en tus
-          coberturas, mochas o troceado en la repostería asegura una textura que se derrite perfectamente y un sabor de
-          especialidad.</p>
-      </li>
-      <li class="ingrediente-item">
-        <img src="img/ingrediente4.webp" alt="Café de Especialidad de Etiopía">
-        <h3>Café de Especialidad de Etiopía</h3>
-        <p>Es un café sumamente elegante, famoso por sus notas florales y cítricas, con un cuerpo ligero que recuerda al
-          té.</p>
-      </li>
-    </ul>
+
+    <div class="buscador">
+      <input type="text" id="buscador-ingrediente" placeholder="Busca un ingrediente (ej. canela, vainilla, café)...">
+      <button type="button" id="btn-buscar-ingrediente">Buscar</button>
+    </div>
+    <p class="buscador-mensaje" id="mensaje-busqueda"></p>
+
+    <div class="carousel-ingredientes">
+      <button type="button" class="carousel-btn" id="carousel-prev" aria-label="Ingrediente anterior">&#10094;</button>
+
+      <div class="carousel-viewport">
+        <ul class="ingredientes-lista" id="lista-ingredientes">
+          <li class="ingrediente-item">
+            <img src="img/ingrediente1.jpg" alt="Canela de Ceylán">
+            <h3>Canela de Ceylán</h3>
+            <p>A diferencia de la canela común, esta es conocida como la "canela auténtica". Es sumamente aromática, con un sabor más dulce, suave y complejo.</p>
+          </li>
+          <li class="ingrediente-item">
+            <img src="img/ingrediente2.webp" alt="Extracto puro de Vainilla de Madagascar">
+            <h3>Extracto puro de Vainilla de Madagascar</h3>
+            <p>Considerada la mejor vainilla del mundo por su proceso de curado artesanal. Aporta un perfil de sabor profundo, dulce y con notas cremosas que eleva por completo el sabor de los lattes, galletas y brownies.</p>
+          </li>
+          <li class="ingrediente-item">
+            <img src="img/ingrediente3.jpg" alt="Chocolate belga">
+            <h3>Chocolate belga</h3>
+            <p>Reconocido mundialmente por su finura y su alto porcentaje de manteca de cacao pura. Utilizarlo en tus coberturas, mochas o troceado en la repostería asegura una textura que se derrite perfectamente y un sabor de especialidad.</p>
+          </li>
+          <li class="ingrediente-item">
+            <img src="img/ingrediente4.webp" alt="Café de Especialidad de Etiopía">
+            <h3>Café de Especialidad de Etiopía</h3>
+            <p>Es un café sumamente elegante, famoso por sus notas florales y cítricas, con un cuerpo ligero que recuerda al té.</p>
+          </li>
+        </ul>
+      </div>
+
+      <button type="button" class="carousel-btn" id="carousel-next" aria-label="Siguiente ingrediente">&#10095;</button>
+    </div>
+
+    <div class="carousel-dots" id="carousel-dots"></div>
   </section>
 
   <section class="reseñas">
@@ -108,6 +121,7 @@
   </section>
   <div id="footer-placeholder"></div>
   <script src="header-footer.js"></script>
+  <script src="principal.js"></script>
 </body>
 
 </html>
