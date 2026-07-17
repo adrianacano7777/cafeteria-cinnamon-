@@ -5,14 +5,14 @@
   padding: 40px 30px;
   color: #ffffff;
 }
-
+ 
 .admin-tabla {
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
   color: #3e2723;
 }
-
+ 
 .admin-tabla th {
   background-color: #5d4d3e;
   color: #ebdcb9;
@@ -21,67 +21,51 @@
   text-transform: uppercase;
   font-size: 0.85rem;
 }
-
+ 
 .admin-tabla td {
   padding: 12px;
   border-bottom: 1px solid #d1c2b0;
   font-size: 0.95rem;
 }
-
+ 
 .admin-tabla tr:hover td {
   background-color: #f2e9dc;
 }
-
+ 
 .admin-tabla select {
   padding: 6px;
   border: 1px solid #5d4d3e;
 }
-
-.estado-preparando {
-  color: #796652;
-  font-weight: bold;
-}
-
-.estado-entregado {
-  color: #5d4d3e;
-  font-weight: bold;
-}
-
-.stock-bajo {
-  color: #c0392b;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.stock-medio {
-  color: #b8860b;
-  font-weight: bold;
-}
-
-.stock-suficiente {
-  color: #2e7d32;
-  font-weight: bold;
-}
-
+ 
+.estado-select-recibido { background-color: #fff3cd; }
+.estado-select-preparando { background-color: #ffe0b2; }
+.estado-select-listo { background-color: #cce5ff; }
+.estado-select-entregado { background-color: #d4edda; }
+.estado-preparando { color: #796652; font-weight: bold; }
+.estado-entregado { color: #5d4d3e; font-weight: bold; }
+.stock-bajo { color: #c0392b; font-weight: bold; text-decoration: underline; }
+.stock-medio { color: #b8860b; font-weight: bold; }
+.stock-suficiente { color: #2e7d32; font-weight: bold; }
+ 
 .admin-tabla tr.fila-bajo:hover td {
   background-color: #f8d7da;
 }
-
+ 
 .admin-tabla tr.fila-medio:hover td {
   background-color: #fff3cd;
 }
-
+ 
 .admin-tabla tr.fila-suficiente:hover td {
   background-color: #d4edda;
 }
-
+ 
 .admin-main details {
   background-color: #665443;
   border: 1px solid #5d4d3e;
   padding: 15px 20px;
   margin-bottom: 25px;
 }
-
+ 
 .admin-main summary {
   font-weight: bold;
   cursor: pointer;
@@ -89,7 +73,7 @@
   text-transform: uppercase;
   font-size: 0.95rem;
 }
-
+ 
 .admin-main form label {
   display: block;
   font-weight: bold;
@@ -97,7 +81,7 @@
   margin-bottom: 6px;
   color: #ebdcb9;
 }
-
+ 
 .admin-main form input,
 .admin-main form select {
   width: 100%;
@@ -107,7 +91,7 @@
   color: #3e2723;
   font-size: 1rem;
 }
-
+ 
 .btn-primario {
   display: inline-block;
   background-color: #5d4d3e;
@@ -121,14 +105,13 @@
   cursor: pointer;
   margin-top: 10px;
 }
-
+ 
 .btn-primario:hover {
   background-color: #3e2723;
   color: #ffffff;
 }
-
-.btn-editar,
-.btn-eliminar {
+ 
+.btn-editar, .btn-eliminar {
   display: inline-block;
   padding: 6px 12px;
   font-size: 0.8rem;
@@ -138,17 +121,9 @@
   border: none;
   cursor: pointer;
 }
-
-.btn-editar {
-  background-color: #ebdcb9;
-  color: #3e2723;
-}
-
-.btn-eliminar {
-  background-color: #5d4d3e;
-  color: #ffffff;
-  margin-left: 6px;
-}
+ 
+.btn-editar { background-color: #ebdcb9; color: #3e2723; }
+.btn-eliminar { background-color: #5d4d3e; color: #ffffff; margin-left: 6px; }
 
 .reporte-bloque {
   background-color: #665443;
@@ -156,46 +131,45 @@
   padding: 20px;
   margin-bottom: 20px;
 }
-
+ 
 .reporte-bloque h3 {
   color: #ebdcb9;
   margin-bottom: 10px;
 }
-
+ 
 .reporte-lista {
   padding-left: 20px;
 }
-
+ 
 @media (max-width: 900px) {
   .admin-main {
-   padding: 25px 15px;
+    padding: 25px 15px;
   }
-
+ 
   .admin-tabla th,
   .admin-tabla td {
     padding: 8px;
     font-size: 0.85rem;
   }
 }
-
+ 
 @media (max-width: 600px) {
   .admin-main {
     margin: 10px auto;
     padding: 20px 12px;
   }
-
-
+ 
   .admin-tabla {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
   }
-
+ 
   .btn-editar, .btn-eliminar {
     display: block;
     margin: 4px 0;
   }
-
+ 
   .admin-main details {
     padding: 12px;
   }
