@@ -15,7 +15,11 @@
   <section class="admin-main">
     <h2 class="seccion-titulo">Usuarios registrados</h2>
 
-    <table class="admin-tabla">
+    <div class="buscador">
+      <input type="text" data-buscar-tabla="tabla-usuarios" placeholder="Buscar usuario por nombre o correo...">
+    </div>
+
+    <table class="admin-tabla" id="tabla-usuarios">
       <thead>
         <tr>
           <th>Nombre</th>

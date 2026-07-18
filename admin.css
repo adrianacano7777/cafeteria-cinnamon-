@@ -174,3 +174,36 @@
     padding: 12px;
   }
 }
+
+#btn-arriba {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd56b;
+  color: #3e2723;
+  border: 3px solid #3e2723;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;                
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;             
+}
+
+#btn-arriba:hover {
+  background-color: #ffca3a;
+  transform: scale(1.05);
+}
+
+#btn-arriba.visible {
+  opacity: 1;
+  visibility: visible;
+}

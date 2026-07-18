@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Cafetería Cinnamon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="principal.css">
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
 </head>
@@ -15,11 +16,7 @@
     <div class="hero-contenido">
       <p class="hero-desde">Desde 2026</p>
       <h1 class="hero-frase">Tu pausa favorita del día empieza con un buen café.</h1>
-      <p>Abierto de 8 am a 10 pm de Lunes a Viernes</p>
-      <div class="contenedor-horario">
-    <span id="indicador-estado" class="circulo"></span>
-    <p id="texto-horario">Cargando estado de la cafetería...</p>
-</div>
+      <p class="hero-horario">Horario: Lunes a Domingo, 8:00 am - 10:00 pm</p>
     </div>
   </section>
 
@@ -45,12 +42,6 @@
   <section class="ingredientes">
     <h2 class="seccion-titulo">Nuestros ingredientes estrella</h2>
     <p class="seccion-subtitulo">Ingredientes importados y de calidad que nos distinguen de otras cafeterías.</p>
-
-    <div class="buscador">
-      <input type="text" id="buscador-ingrediente" placeholder="Busca un ingrediente (ej. canela, vainilla, café)...">
-      <button type="button" id="btn-buscar-ingrediente">Buscar</button>
-    </div>
-    <p class="buscador-mensaje" id="mensaje-busqueda"></p>
 
     <div class="carousel-ingredientes">
       <button type="button" class="carousel-btn" id="carousel-prev" aria-label="Ingrediente anterior">&#10094;</button>
@@ -88,27 +79,34 @@
 
   <section class="reseñas">
     <h2 class="seccion-titulo">Reseñas</h2>
-    <ul class="reseña-lista">
-      <li class="reseña-carta">
-        <p class="reseña-texto">¡Los mejores roles de canela y brownies que he probado! Se nota muchísimo la calidad del
-          chocolate belga en su repostería. El lugar es súper acogedor, ideal para venir a estudiar o platicar con
-          amigos.</p>
-        <p class="reseña-autor">Angelica Rosas</p>
-        <p class="reseña-rating">Calificación: 5/5</p>
-      </li>
-      <li class="reseña-carta">
-        <p class="reseña-texto">Soy súper exigente con el café y el latte de aquí con granos de Etiopía es una joya, el
-          balance de notas a caramelo es perfecto.</p>
-        <p class="reseña-autor">Manuel Tapia</p>
-        <p class="reseña-rating">Calificación: 5/5</p>
-      </li>
-      <li class="reseña-carta">
-        <p class="reseña-texto">Cinnamon se convirtió en mi parada obligatoria de todas las tardes. El aroma a café y
-          vainilla de Madagascar desde que entras te atrapa.</p>
-        <p class="reseña-autor">Denisse Nava</p>
-        <p class="reseña-rating">Calificación: 5/5</p>
-      </li>
-    </ul>
+
+    <div class="carousel-resenas">
+      <div class="carousel-viewport">
+        <ul class="reseña-lista" id="lista-resenas">
+          <li class="reseña-carta">
+            <p class="reseña-texto">¡Los mejores roles de canela y brownies que he probado! Se nota muchísimo la calidad del
+              chocolate belga en su repostería. El lugar es súper acogedor, ideal para venir a estudiar o platicar con
+              amigos.</p>
+            <p class="reseña-autor">Angelica Rosas</p>
+            <p class="reseña-rating">Calificación: 5/5</p>
+          </li>
+          <li class="reseña-carta">
+            <p class="reseña-texto">Soy súper exigente con el café y el latte de aquí con granos de Etiopía es una joya, el
+              balance de notas a caramelo es perfecto.</p>
+            <p class="reseña-autor">Manuel Tapia</p>
+            <p class="reseña-rating">Calificación: 5/5</p>
+          </li>
+          <li class="reseña-carta">
+            <p class="reseña-texto">Cinnamon se convirtió en mi parada obligatoria de todas las tardes. El aroma a café y
+              vainilla de Madagascar desde que entras te atrapa.</p>
+            <p class="reseña-autor">Denisse Nava</p>
+            <p class="reseña-rating">Calificación: 5/5</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="carousel-dots" id="carousel-dots-resenas"></div>
   </section>
 
   <section class="nosotros" id="sobre-nosotros">

@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
- 
+
   document.querySelectorAll("[data-buscar-tabla]").forEach(function (input) {
     var idTabla = input.getAttribute("data-buscar-tabla");
     var tabla = document.getElementById(idTabla);
     if (!tabla) return;
- 
+
     var filas = tabla.querySelectorAll("tbody tr");
- 
+
     input.addEventListener("input", function () {
       var termino = input.value.trim().toLowerCase();
       filas.forEach(function (fila) {
@@ -23,44 +23,44 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
- 
+
   document.querySelectorAll(".admin-tabla").forEach(function (tabla) {
     var encabezados = tabla.querySelectorAll("thead th");
- 
+
     encabezados.forEach(function (encabezado, indiceColumna) {
       encabezado.style.cursor = "pointer";
       encabezado.title = "Clic para ordenar";
- 
+
       encabezado.addEventListener("click", function () {
         var tbody = tabla.querySelector("tbody");
         var filas = Array.prototype.slice.call(tbody.querySelectorAll("tr"));
         var ordenActual = tabla.getAttribute("data-orden");
         var claveNueva = "asc-" + indiceColumna;
         var ascendente = ordenActual !== claveNueva;
- 
+
         filas.sort(function (filaA, filaB) {
           var textoA = filaA.children[indiceColumna].textContent.trim().toLowerCase();
           var textoB = filaB.children[indiceColumna].textContent.trim().toLowerCase();
- 
+
           var numeroA = parseFloat(textoA.replace(/[^0-9.\-]/g, ""));
           var numeroB = parseFloat(textoB.replace(/[^0-9.\-]/g, ""));
           var sonNumeros = !isNaN(numeroA) && !isNaN(numeroB) && textoA !== "" && textoB !== "";
- 
+
           if (sonNumeros) {
             return ascendente ? numeroA - numeroB : numeroB - numeroA;
           }
           return ascendente ? textoA.localeCompare(textoB) : textoB.localeCompare(textoA);
         });
- 
+
         filas.forEach(function (fila) {
           tbody.appendChild(fila);
         });
- 
+
         tabla.setAttribute("data-orden", ascendente ? claveNueva : "desc-" + indiceColumna);
       });
     });
   });
- 
+
   document.querySelectorAll(".admin-tabla select[name='estado']").forEach(function (select) {
     function actualizarColorEstado() {
       select.classList.remove(
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       select.classList.add("estado-select-" + select.value);
     }
- 
+
     select.addEventListener("change", actualizarColorEstado);
     actualizarColorEstado();
   });
@@ -81,13 +81,40 @@ document.addEventListener("DOMContentLoaded", function () {
   botonArriba.setAttribute("aria-label", "Volver arriba");
   botonArriba.innerHTML = "&#8593;";
   document.body.appendChild(botonArriba);
- 
+
   window.addEventListener("scroll", function () {
     botonArriba.classList.toggle("visible", window.scrollY > 400);
   });
- 
+
   botonArriba.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  document.querySelectorAll("#tabla-insumos .btn-editar").forEach(function (boton) {
+    boton.addEventListener("click", function (evento) {
+      evento.preventDefault();
+      var fila = boton.closest("tr");
+      var nombreInsumo = fila.cells[0].textContent;
+      var cantidadActual = parseFloat(fila.cells[1].textContent);
+
+      var nuevaCantidad = prompt("Actualizar cantidad para " + nombreInsumo + ":", cantidadActual);
+
+      if (nuevaCantidad !== null && !isNaN(parseFloat(nuevaCantidad))) {
+        var unidad = fila.cells[1].textContent.replace(/[0-9./\s]/g, "");
+        fila.cells[1].textContent = parseFloat(nuevaCantidad) + " " + unidad;
+        alert("¡Cantidad actualizada localmente!");
+      }
+    });
+  });
+
+  document.querySelectorAll(".admin-main form").forEach(function (formulario) {
+    formulario.addEventListener("submit", function (evento) {
+      var inputPrecio = formulario.querySelector("input[type='number']");
+      if (inputPrecio && parseFloat(inputPrecio.value) <= 0) {
+        alert("Por favor, introduce un valor mayor a cero.");
+        evento.preventDefault();
+      }
+    });
+  });
+
 });
- 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="admin.css">
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
 </head>
+
 <body>
 
   <div id="header-placeholder" data-tipo="admin"></div>
@@ -15,7 +17,12 @@
   <section class="admin-main">
     <h2 class="seccion-titulo">Pedidos</h2>
 
-    <table class="admin-tabla">
+    <div class="buscador">
+      <input type="text" data-buscar-tabla="tabla-pedidos"
+        placeholder="Buscar pedido por cliente, no. de orden o estado...">
+    </div>
+
+    <table class="admin-tabla" id="tabla-pedidos">
       <thead>
         <tr>
           <th>No. de orden</th>
@@ -63,7 +70,14 @@
           <td>28/06/2026</td>
           <td>$92.00</td>
           <td>Recoger en tienda</td>
-          <td class="estado-entregado">Entregado</td>
+          <td>
+            <select name="estado">
+              <option value="recibido">Recibido</option>
+              <option value="preparando">Preparando</option>
+              <option value="listo">Listo</option>
+              <option value="entregado" selected>Entregado</option>
+            </select>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -96,4 +110,5 @@
   <script src="header-footer.js"></script>
   <script src="admin.js"></script>
 </body>
+
 </html>

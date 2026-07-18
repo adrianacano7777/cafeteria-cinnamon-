@@ -43,7 +43,11 @@
             </form>
         </details>
 
-        <table class="admin-tabla">
+        <div class="buscador">
+            <input type="text" data-buscar-tabla="tabla-productos" placeholder="Buscar producto por nombre o categoría...">
+        </div>
+
+        <table class="admin-tabla" id="tabla-productos">
             <thead>
                 <tr>
                     <th>Producto</th>
@@ -107,7 +111,11 @@
             </form>
         </details>
 
-        <table class="admin-tabla">
+        <div class="buscador">
+            <input type="text" data-buscar-tabla="tabla-insumos" placeholder="Buscar insumo por nombre...">
+        </div>
+
+        <table class="admin-tabla" id="tabla-insumos">
             <thead>
                 <tr>
                     <th>Insumo</th>
