@@ -73,6 +73,33 @@
   <div id="footer-placeholder"></div>
   <script src="header-footer.js"></script>
 
+  <script>
+    const formularioLogin = document.querySelector("#iniciar-sesion form");
+    const botonEnviar = formularioLogin.querySelector("button[type='submit']");
+
+    botonEnviar.addEventListener("click", function(evento) {
+        formularioLogin.setAttribute("novalidate", "true");
+    });
+
+    formularioLogin.addEventListener("submit", function(evento) {
+        const elementos = formularioLogin.elements;
+        let formularioValido = true;
+
+        for (let i = 0; i < elementos.length; i++) {
+            if (elementos[i].hasAttribute("required") && elementos[i].value.trim() === "") {
+                formularioValido = false;
+                break;
+            }
+        }
+
+        if (!formularioValido) {
+            evento.preventDefault();
+            alert("¡Error! Por favor escribe tu correo electrónico.");
+            formularioLogin.removeAttribute("novalidate");
+        }
+    });
+  </script>
+
 </body>
 
-</html>
+</html> 

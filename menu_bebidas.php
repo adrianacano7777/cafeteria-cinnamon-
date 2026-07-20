@@ -7,12 +7,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú Bebidas - Cafetería Cinnamon</title>
   <link rel="stylesheet" href="menu_bebidas.css">
-  <link rel="stylesheet" href="menu_postres.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
   <div id="header-placeholder"></div>
+
+  <!-- Carrusel de Bootstrap Promocional -->
+  <div id="carruselPromosBebidas" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carruselPromosBebidas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carruselPromosBebidas" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/americano.webp" class="d-block w-100" alt="Promoción Americano" style="max-height: 400px; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+          <h5>Café de Especialidad</h5>
+          <p>Grano etíope seleccionado y preparado con filtro tradicional.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/mocha.webp" class="d-block w-100" alt="Promoción Mocha" style="max-height: 400px; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+          <h5>Dulce Encuentro</h5>
+          <p>Prueba nuestro Mocha con auténtico chocolate belga fundido.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carruselPromosBebidas" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carruselPromosBebidas" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
 
   <section class="menu">
     <h2 class="seccion-titulo">Nuestras Bebidas</h2>
@@ -128,6 +160,7 @@
 
   <div id="footer-placeholder"></div>
   <script src="header-footer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
