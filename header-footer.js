@@ -4,20 +4,20 @@ document.addEventListener("DOMContentLoaded", function () {
   var headerCliente = `
     <header>
       <div class="logo">
-        <a href="principal.html">
+        <a href="index.php">
           <img src="img/logo.png" alt="Logo Cafetería">
         </a>
       </div>
       <nav class="main-nav">
         <ul class="nav-list">
-          <li><a href="principal.html" data-pagina="principal.html">Inicio</a></li>
-          <li><a href="menu_comida.html" data-pagina="menu_comida.html">Comida</a></li>
-          <li><a href="menu_postres.html" data-pagina="menu_postres.html">Postres</a></li>
-          <li><a href="menu_bebidas.html" data-pagina="menu_bebidas.html">Bebidas</a></li>
-          <li><a href="carrito.html" data-pagina="carrito.html">Carrito</a></li>
-          <li><a href="historial.html" data-pagina="historial.html">Historial</a></li>
-          <li><a href="perfil.html" data-pagina="perfil.html">Mi perfil</a></li>
-          <li><a href="login.html" data-pagina="login.html">Iniciar sesión</a></li>
+          <li><a href="index.php" data-pagina="index.php">Inicio</a></li>
+          <li><a href="menu_comida.php" data-pagina="menu_comida.php">Comida</a></li>
+          <li><a href="menu_postres.php" data-pagina="menu_postres.php">Postres</a></li>
+          <li><a href="menu_bebidas.php" data-pagina="menu_bebidas.php">Bebidas</a></li>
+          <li><a href="carrito.php" data-pagina="carrito.php">Carrito</a></li>
+          <li><a href="historial.php" data-pagina="historial.php">Historial</a></li>
+          <li><a href="perfil.php" data-pagina="perfil.php">Mi perfil</a></li>
+          <li><a href="login.php" data-pagina="login.php">Iniciar sesión</a></li>
         </ul>
       </nav>
     </header>
@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <nav class="main-nav">
         <ul class="nav-list">
-          <li><a href="admin_inventario.html" data-pagina="admin_inventario.html">Inventario</a></li>
-          <li><a href="admin_pedidos.html" data-pagina="admin_pedidos.html">Pedidos</a></li>
-          <li><a href="admin_usuarios.html" data-pagina="admin_usuarios.html">Usuarios</a></li>
-          <li><a href="principal.html" data-pagina="salir">Salir</a></li>
+          <li><a href="admin_inventario.php" data-pagina="admin_inventario.php">Inventario</a></li>
+          <li><a href="admin_pedidos.php" data-pagina="admin_pedidos.php">Pedidos</a></li>
+          <li><a href="admin_usuarios.php" data-pagina="admin_usuarios.php">Usuarios</a></li>
+          <li><a href="index.php" data-pagina="salir">Salir</a></li>
         </ul>
       </nav>
     </header>

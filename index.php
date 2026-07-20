@@ -25,15 +25,15 @@
     <h2 class="seccion-titulo">Conoce nuestro menú</h2>
     <div class="menu-categoria">
 
-      <a href="menu_comida.html" class="categoria-carta">
+      <a href="menu_comida.php" class="categoria-carta">
         <img class="categoria-foto" src="img/comida.webp" alt="Comida">
         <span class="categoria-label">Comida</span></a>
 
-      <a href="menu_postres.html" class="categoria-carta">
+      <a href="menu_postres.php" class="categoria-carta">
         <img class="categoria-foto" src="img/postres.jpg" alt="Postres">
         <span class="categoria-label">Postres</span></a>
 
-      <a href="menu_bebidas.html" class="categoria-carta">
+      <a href="menu_bebidas.php" class="categoria-carta">
         <img class="categoria-foto" src="img/bebidas.webp" alt="Bebidas">
         <span class="categoria-label">Bebidas</span></a>
 

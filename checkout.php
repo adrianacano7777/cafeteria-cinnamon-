@@ -17,7 +17,7 @@
     <div class="checkout-bloque">
       <h3>Dirección de entrega</h3>
       <p class="direccion-guardada">Calle Reforma 123, Puente de Ixtla, Morelos</p>
-      <a href="perfil.html" class="btn-secundario">Editar mi dirección</a>
+      <a href="perfil.php" class="btn-secundario">Editar mi dirección</a>
       <details>
         <summary>Agregar una dirección nueva</summary>
         <form class="form-direccion" action="checkout.html" method="post">
@@ -67,7 +67,7 @@
       <p class="total-final">Total a pagar: $176.00 MXN</p>
     </div>
 
-    <form action="confirmacion.html" method="get">
+    <form action="confirmacion.php" method="get">
       <button type="submit" class="btn-primario">Confirmar y pagar mi pedido</button>
     </form>
 

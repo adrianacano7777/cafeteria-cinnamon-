@@ -24,8 +24,8 @@
       <p1 class="total-final">Total pagado: $176.00 MXN</p1>
     </div>
 
-    <a href="historial.html" class="btn-primario">Ver mis pedidos</a>
-    <a href="menu_comida.html" class="btn-secundario">Volver al menú</a>
+    <a href="historial.php" class="btn-primario">Ver mis pedidos</a>
+    <a href="menu_comida.php" class="btn-secundario">Volver al menú</a>
   </section>
   <div id="footer-placeholder"></div>
   <script src="header-footer.js"></script>
