@@ -50,9 +50,9 @@ function mostrarInstrucciones() {
             contenido = `
                 <div class="checkout-bloque dinamico-pago">
                     <h3>Pago en Efectivo</h3>
-                    <p style="margin-bottom: 15px;">Se generará un código de barras. Tienes 48 horas para pagar en caja.</p>
+                    <p style="margin-bottom: 15px;">Se generará un código para confirmar tu pedido</p>
                     <div class="form-grupo-pago">
-                        <label for="correo-ticket">Enviar código de barras al correo:</label>
+                        <label for="correo-ticket">Enviar código al correo:</label>
                         <input type="email" id="correo-ticket" placeholder="tu-correo@ejemplo.com" required>
                     </div>
                 </div>
