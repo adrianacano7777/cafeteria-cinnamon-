@@ -13,7 +13,6 @@
 
   <div id="header-placeholder"></div>
 
-  <!-- Carrusel de Bootstrap Promocional -->
   <div id="carruselPromosComida" class="carousel slide mb-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carruselPromosComida" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
