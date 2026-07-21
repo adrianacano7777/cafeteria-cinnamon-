@@ -5,16 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
     <header>
       <div class="logo">
         <a href="index.php">
-          <img src="img/logo.png" alt="Logo Cafetería">
+          <img src="../img/logo.png" alt="Logo Cafetería">
         </a>
       </div>
       <nav class="main-nav">
         <ul class="nav-list">
-          <li><a href="index.php" data-pagina="index.php">Inicio</a></li>
-          <li><a href="menu_comida.php" data-pagina="menu_comida.php">Comida</a></li>
-          <li><a href="menu_postres.php" data-pagina="menu_postres.php">Postres</a></li>
-          <li><a href="menu_bebidas.php" data-pagina="menu_bebidas.php">Bebidas</a></li>
-          <li><a href="carrito.php" data-pagina="carrito.php">Carrito</a></li>
+          <li><a href="../php/index.php" data-pagina="index.php">Inicio</a></li>
+          <li><a href="../php/menu_comida.php" data-pagina="menu_comida.php">Comida</a></li>
+          <li><a href="../php/menu_postres.php" data-pagina="menu_postres.php">Postres</a></li>
+          <li><a href="../php/menu_bebidas.php" data-pagina="menu_bebidas.php">Bebidas</a></li>
+          <li><a href="../php/carrito.php" data-pagina="carrito.php">Carrito</a></li>
           <li><a href="historial.php" data-pagina="historial.php">Historial</a></li>
           <li><a href="perfil.php" data-pagina="perfil.php">Mi perfil</a></li>
           <li><a href="login.php" data-pagina="login.php">Iniciar sesión</a></li>

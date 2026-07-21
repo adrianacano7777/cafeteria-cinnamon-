@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinnamon Admin - Inventario</title>
-    <link rel="stylesheet" href="css/principal.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="icon" href="img/icono-pestana.png" type="image/png">
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="icon" href="../img/icono-pestana.png" type="image/png">
 </head>
 
 <body>
 
     <div id="header-placeholder" data-tipo="admin"></div>
-
     <section class="admin-main">
         <h2 class="seccion-titulo">Inventario de productos</h2>
 
         <details>
             <summary>+ Agregar nuevo producto</summary>
-            <form action="admin_inventario.html" method="post">
+            <form action="admin_inventario.php" method="post">
                 <label for="nuevo-nombre">Nombre</label>
                 <input type="text" id="nuevo-nombre" name="nombre_producto">
 

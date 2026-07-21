@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Cafetería Cinnamon - Carrito</title>
-  <link rel="stylesheet" href="css/principal.css">
-  <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="stylesheet" href="../css/principal.css">
+  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
+  <link rel="stylesheet" href="../css/carrito.css">
 </head>
 
 <body>
@@ -57,18 +57,13 @@
 
     <div class="carrito-resumen">
       <p class="carrito-total">Total: $151.00 MXN</p>
-<<<<<<< HEAD:php/carrito.php
-      <a href="php/menu_comida.php" class="btn-secundario">Seguir viendo el menú</a>
-      <a href="php/checkout.php" class="btn-primario">Continuar con mi pedido</a>
-=======
       <a href="menu_comida.php" class="btn-secundario">Seguir viendo el menú</a>
       <a href="checkout.php" class="btn-primario">Continuar con mi pedido</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:carrito.php
     </div>
   </section>
 
   <div id="footer-placeholder"></div>
-  <script src="JS/header-footer.js"></script>
+  <script src="../JS/header-footer.js"></script>
 </body>
 
 </html>

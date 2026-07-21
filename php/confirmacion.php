@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Cafetería Cinnamon - Pedido confirmado</title>
-  <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="css/principal.css">
-  <link rel="stylesheet" href="css/confirmacion.css">
+  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
+  <link rel="stylesheet" href="../css/principal.css">
+  <link rel="stylesheet" href="../css/confirmacion.css">
 </head>
 
 <body>
@@ -24,16 +24,11 @@
       <p1 class="total-final">Total pagado: $176.00 MXN</p1>
     </div>
 
-<<<<<<< HEAD:php/confirmacion.php
-    <a href="php/historial.php" class="btn-primario">Ver mis pedidos</a>
-    <a href="php/menu_comida.php" class="btn-secundario">Volver al menú</a>
-=======
     <a href="historial.php" class="btn-primario">Ver mis pedidos</a>
     <a href="menu_comida.php" class="btn-secundario">Volver al menú</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:confirmacion.php
   </section>
   <div id="footer-placeholder"></div>
-  <script src="JS/header-footer.js"></script>
+  <script src="../JS/header-footer.js"></script>
 </body>
 
 </html>

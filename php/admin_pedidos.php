@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cinnamon Admin - Pedidos</title>
-  <link rel="stylesheet" href="css/principal.css">
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="icon" href="img/icono-pestana.png" type="image/png">
+  <link rel="stylesheet" href="../css/principal.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
 </head>
 
 <body>
@@ -107,8 +107,8 @@
   </section>
 
   <div id="footer-placeholder"></div>
-  <script src="JS/header-footer.js"></script>
-  <script src="JS/admin.js"></script>
+  <script src="../JS/header-footer.js"></script>
+  <script src="../JS/admin.js"></script>
 </body>
 
 </html>
