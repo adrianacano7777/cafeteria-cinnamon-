@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <title>Confirmar pedido</title>
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="principal.css">
-  <link rel="stylesheet" href="checkout.css">
+  <link rel="stylesheet" href="css/principal.css">
+  <link rel="stylesheet" href="css/checkout.css">
 </head>
 
 <body>
@@ -17,10 +17,10 @@
     <div class="checkout-bloque">
       <h3>Dirección de entrega</h3>
       <p class="direccion-guardada">Calle Reforma 123, Puente de Ixtla, Morelos</p>
-      <a href="perfil.html" class="btn-secundario">Editar mi dirección</a>
+      <a href="php/perfil.php" class="btn-secundario">Editar mi dirección</a>
       <details>
         <summary>Agregar una dirección nueva</summary>
-        <form class="form-direccion" action="checkout.html" method="post">
+        <form class="form-direccion" action="checkout.php" method="post">
           <label for="nueva-calle">Calle y número</label>
           <input type="text" id="nueva-calle" name="calle_numero">
           <label for="nueva-referencias">Referencias</label>
@@ -67,14 +67,14 @@
       <p class="total-final">Total a pagar: $176.00 MXN</p>
     </div>
 
-    <form action="confirmacion.html" method="get">
+    <form action="confirmacion.php" method="get">
       <button type="submit" class="btn-primario">Confirmar y pagar mi pedido</button>
     </form>
 
   </section>
   <div id="footer-placeholder"></div>
-  <script src="header-footer.js"></script>
-  <script src="checkout.js"></script>
+  <script src="JS/header-footer.js"></script>
+  <script src="JS/checkout.js"></script>
 </body>
 
 </html>

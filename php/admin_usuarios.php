@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Cinnamon Admin - Usuarios</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="principal.css">
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="css/principal.css">
+  <link rel="stylesheet" href="css/admin.css">
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
 </head>
 <body>
@@ -52,7 +52,7 @@
   </section>
 
   <div id="footer-placeholder"></div>
-  <script src="header-footer.js"></script>
-  <script src="admin.js"></script>
+  <script src="JS/header-footer.js"></script>
+  <script src="JS/Sadmin.js"></script>
 </body>
 </html>

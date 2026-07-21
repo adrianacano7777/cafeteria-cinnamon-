@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú Comida - Cafetería Cinnamon</title>
-  <link rel="stylesheet" href="menu_postres.css">
+  <link rel="stylesheet" href="css/menu_postres.css">
+  <link rel="icon" href="img/icono-pestana.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-
   <div id="header-placeholder"></div>
-
-  <!-- Carrusel de Bootstrap Promocional -->
   <div id="carruselPromosComida" class="carousel slide mb-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carruselPromosComida" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -56,7 +53,7 @@
           <h3>Sándwich Club</h3>
           <p class="bebida-desc">Pan artesanal con pollo, tocino, lechuga y aguacate.</p>
           <span class="bebida-precio">$85.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -66,7 +63,7 @@
           <h3>Bagel Salmón</h3>
           <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
           <span class="bebida-precio">$95.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -76,7 +73,7 @@
           <h3>Croissant J&Q</h3>
           <p class="bebida-desc">Croissant horneado relleno de jamón y queso gouda.</p>
           <span class="bebida-precio">$65.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
     </div>
@@ -88,7 +85,7 @@
           <h3>Ensalada César</h3>
           <p class="bebida-desc">Lechuga romana, pollo a la parrilla y aderezo césar.</p>
           <span class="bebida-precio">$90.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -98,7 +95,7 @@
           <h3>Quesadilla</h3>
           <p class="bebida-desc">Tortilla de harina con flor de calabaza y queso oaxaca.</p>
           <span class="bebida-precio">$70.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -108,7 +105,7 @@
           <h3>Panini Caprese</h3>
           <p class="bebida-desc">Pan ciabatta con tomate, mozzarella y pesto.</p>
           <span class="bebida-precio">$80.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
     </div>
@@ -120,7 +117,7 @@
           <h3>Omelette</h3>
           <p class="bebida-desc">Omelette esponjoso con espinaca fresca y champiñones.</p>
           <span class="bebida-precio">$75.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -130,7 +127,7 @@
           <h3>Wrap de Atún</h3>
           <p class="bebida-desc">Tortilla integral con atún, apio y mayonesa ligera.</p>
           <span class="bebida-precio">$78.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -140,7 +137,7 @@
           <h3>Torta de Tamal</h3>
           <p class="bebida-desc">Tamal oaxaqueño servido en bolillo con crema.</p>
           <span class="bebida-precio">$60.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
     </div>
@@ -152,7 +149,7 @@
           <h3>Molletes</h3>
           <p class="bebida-desc">Bolillo horneado con frijoles, queso gratinado y pico de gallo.</p>
           <span class="bebida-precio">$65.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -162,7 +159,7 @@
   </section>
 
   <div id="footer-placeholder"></div>
-  <script src="header-footer.js"></script>
+  <script src="JS/header-footer.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

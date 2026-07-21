@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinnamon Admin - Inventario</title>
-    <link rel="stylesheet" href="principal.css">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/admin.css">
     <link rel="icon" href="img/icono-pestana.png" type="image/png">
 </head>
 
@@ -90,7 +90,7 @@
 
         <details>
             <summary>+ Agregar nuevo insumo</summary>
-            <form action="admin_inventario.html" method="post">
+            <form action="admin_inventario.php" method="post">
                 <label for="nuevo-insumo-nombre">Nombre del insumo</label>
                 <input type="text" id="nuevo-insumo-nombre" name="nombre_insumo">
 
@@ -159,8 +159,8 @@
     </section>
 
     <div id="footer-placeholder"></div>
-    <script src="header-footer.js"></script>
-    <script src="admin.js"></script>
+    <script src="JS/header-footer.js"></script>
+    <script src="JS/admin.js"></script>
 </body>
 
 </html>

@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú Postres - Cafetería Cinnamon</title>
-  <link rel="stylesheet" href="menu_postres.css">
+  <link rel="stylesheet" href="css/menu_postres.css">
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
 </head>
 
 <body>
-
   <div id="header-placeholder"></div>
-
   <section class="menu">
     <h2 class="seccion-titulo">Nuestros Postres</h2>
     <p class="seccion-subtitulo">Repostería artesanal horneada diariamente en casa</p>
@@ -24,7 +22,7 @@
           <h3>Roles de Canela</h3>
           <p class="bebida-desc">Rol horneado con canela auténtica y glaseado cremoso.</p>
           <span class="bebida-precio">$48.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -34,7 +32,7 @@
           <h3>Brownie de Chocolate</h3>
           <p class="bebida-desc">Brownie húmedo con chocolate belga y nuez.</p>
           <span class="bebida-precio">$52.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -44,7 +42,7 @@
           <h3>Cheesecake Vainilla</h3>
           <p class="bebida-desc">Cheesecake cremoso con vainilla de Madagascar.</p>
           <span class="bebida-precio">$58.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
     </div>
@@ -56,7 +54,7 @@
           <h3>Tarta de Fresas</h3>
           <p class="bebida-desc">Base de galleta con crema pastelera y fresas frescas.</p>
           <span class="bebida-precio">$55.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -66,7 +64,7 @@
           <h3>Muffin de Arándanos</h3>
           <p class="bebida-desc">Muffin esponjoso con arándanos naturales.</p>
           <span class="bebida-precio">$40.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -76,7 +74,7 @@
           <h3>Cookies de Chocolate</h3>
           <p class="bebida-desc">Galletas horneadas con chispas de chocolate belga.</p>
           <span class="bebida-precio">$35.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
     </div>
@@ -88,7 +86,7 @@
           <h3>Flan Napolitano</h3>
           <p class="bebida-desc">Flan tradicional bañado en caramelo.</p>
           <span class="bebida-precio">$45.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -98,7 +96,7 @@
           <h3>Croissant Almendra</h3>
           <p class="bebida-desc">Croissant relleno de crema de almendra.</p>
           <span class="bebida-precio">$50.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
 
@@ -108,7 +106,7 @@
           <h3>Pay de Queso</h3>
           <p class="bebida-desc">Pay cremoso bañado con cajeta artesanal.</p>
           <span class="bebida-precio">$58.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
     </div>
@@ -120,18 +118,16 @@
           <h3>Panqué Vainilla</h3>
           <p class="bebida-desc">Panqué casero con vainilla de Madagascar y canela.</p>
           <span class="bebida-precio">$42.00</span>
-          <a href="carrito.html" class="btn-pedir">Pedir</a>
+          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
         </div>
       </article>
-
       <div style="display: table-cell; visibility: hidden;"></div>
       <div style="display: table-cell; visibility: hidden;"></div>
     </div>
   </section>
 
   <div id="footer-placeholder"></div>
-  <script src="header-footer.js"></script>
+  <script src="JS/header-footer.js"></script>
 
 </body>
-
 </html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Cafetería Cinnamon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="principal.css">
+  <link rel="stylesheet" href="css/principal.css">
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
 </head>
 
@@ -25,27 +25,26 @@
     <h2 class="seccion-titulo">Conoce nuestro menú</h2>
     <div class="menu-categoria">
 
-      <a href="menu_comida.html" class="categoria-carta">
+      <a href="php/menu_comida.php" class="categoria-carta">
         <img class="categoria-foto" src="img/comida.webp" alt="Comida">
         <span class="categoria-label">Comida</span></a>
 
-      <a href="menu_postres.html" class="categoria-carta">
+      <a href="php/menu_postres.php" class="categoria-carta">
         <img class="categoria-foto" src="img/postres.jpg" alt="Postres">
         <span class="categoria-label">Postres</span></a>
 
-      <a href="menu_bebidas.html" class="categoria-carta">
+      <a href="php/menu_bebidas.php" class="categoria-carta">
         <img class="categoria-foto" src="img/bebidas.webp" alt="Bebidas">
         <span class="categoria-label">Bebidas</span></a>
 
     </div>
   </section>
-
   <section class="ingredientes">
     <h2 class="seccion-titulo">Nuestros ingredientes estrella</h2>
     <p class="seccion-subtitulo">Ingredientes importados y de calidad que nos distinguen de otras cafeterías.</p>
 
     <div class="carousel-ingredientes">
-      <button type="button" class="carousel-btn" id="carousel-prev" aria-label="Ingrediente anterior">&#10094;</button>
+      <button type="button" class="carousel-btn" id="carousel-prev" aria-label="Ingrediente anterior"></button>
 
       <div class="carousel-viewport">
         <ul class="ingredientes-lista" id="lista-ingredientes">
@@ -72,7 +71,7 @@
         </ul>
       </div>
 
-      <button type="button" class="carousel-btn" id="carousel-next" aria-label="Siguiente ingrediente">&#10095;</button>
+      <button type="button" class="carousel-btn" id="carousel-next" aria-label="Siguiente ingrediente"></button>
     </div>
 
     <div class="carousel-dots" id="carousel-dots"></div>
@@ -122,9 +121,9 @@
     </div>
   </section>
   <div id="footer-placeholder"></div>
-  <script src="header-footer.js"></script>
-  <script src="principal.js"></script>
-  <script src="horario.js"></script>
+  <script src="JS/header-footer.js"></script>
+  <script src="JS/principal.js"></script>
+  <script src="JS/horario.js"></script>
 </body>
 
 </html>

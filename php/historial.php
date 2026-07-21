@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/icono-pestana.png" type="image/png">
   <title>Cafetería Cinnamon - Mis pedidos</title>
-  <link rel="stylesheet" href="historial.css">
+  <link rel="stylesheet" href="css/historial.css">
 </head>
 <body>
   <div id="header-placeholder"></div>
-
   <section class="historial">    
     <h2 class="seccion-titulo">Mis pedidos</h2>    
     
@@ -50,6 +50,6 @@
     </div>
   </section>
   <div id="footer-placeholder"></div>
-  <script src="header-footer.js"></script>
+  <script src="JS/header-footer.js"></script>
 </body>
 </html>

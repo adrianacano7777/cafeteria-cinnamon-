@@ -6,22 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafetería Cinnamon - Mi Perfil</title>
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="perfil.css">
+  <link rel="stylesheet" href="css/perfil.css">
 </head>
-
 <body>
-
-
   <div id="header-placeholder"></div>
-
-
   <section class="perfil-seccion">
     <h2 class="seccion-titulo">Mi Perfil</h2>
 
     <div class="perfil-tarjeta">
       <div class="perfil-avatar">
-
-        <span>👤</span>
+       <span>👤</span>
       </div>
 
       <h3>Bienvenido de vuelta</h3>
@@ -53,8 +47,7 @@
   </section>
 
   <div id="footer-placeholder"></div>
-  <script src="header-footer.js"></script>
+  <script src="JS/header-footer.js"></script>
 
 </body>
-
 </html>
