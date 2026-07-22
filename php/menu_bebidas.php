@@ -6,11 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú Bebidas - Cafetería Cinnamon</title>
-<<<<<<< HEAD
   <link rel="stylesheet" href="css/menu_postres.css">
-=======
-  <link rel="stylesheet" href="../css/menu_bebidas.css">
->>>>>>> edff46cbb11f9e3668d73b7a66e6b642b4ee8b72
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 

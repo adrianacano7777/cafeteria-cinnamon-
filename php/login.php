@@ -5,13 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafetería Cinnamon - Iniciar sesión</title>
-<<<<<<< HEAD
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
   <link rel="stylesheet" href="/css/login.css">
-=======
-  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="../css/login.css">
->>>>>>> edff46cbb11f9e3668d73b7a66e6b642b4ee8b72
 </head>
 
 <body>
