@@ -11,10 +11,6 @@
 
 <body>
   <div id="header-placeholder"></div>
-<<<<<<< HEAD:php/menu_comida.php
-=======
-
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
   <div id="carruselPromosComida" class="carousel slide mb-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carruselPromosComida" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -57,11 +53,7 @@
           <h3>Sándwich Club</h3>
           <p class="bebida-desc">Pan artesanal con pollo, tocino, lechuga y aguacate.</p>
           <span class="bebida-precio">$85.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
 
@@ -71,11 +63,7 @@
           <h3>Bagel Salmón</h3>
           <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
           <span class="bebida-precio">$95.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
 
@@ -85,11 +73,7 @@
           <h3>Croissant J&Q</h3>
           <p class="bebida-desc">Croissant horneado relleno de jamón y queso gouda.</p>
           <span class="bebida-precio">$65.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
     </div>
@@ -101,11 +85,7 @@
           <h3>Ensalada César</h3>
           <p class="bebida-desc">Lechuga romana, pollo a la parrilla y aderezo césar.</p>
           <span class="bebida-precio">$90.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
 
@@ -115,11 +95,7 @@
           <h3>Quesadilla</h3>
           <p class="bebida-desc">Tortilla de harina con flor de calabaza y queso oaxaca.</p>
           <span class="bebida-precio">$70.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
 
@@ -129,11 +105,7 @@
           <h3>Panini Caprese</h3>
           <p class="bebida-desc">Pan ciabatta con tomate, mozzarella y pesto.</p>
           <span class="bebida-precio">$80.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
     </div>
@@ -145,11 +117,7 @@
           <h3>Omelette</h3>
           <p class="bebida-desc">Omelette esponjoso con espinaca fresca y champiñones.</p>
           <span class="bebida-precio">$75.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
 
@@ -159,11 +127,7 @@
           <h3>Wrap de Atún</h3>
           <p class="bebida-desc">Tortilla integral con atún, apio y mayonesa ligera.</p>
           <span class="bebida-precio">$78.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
 
@@ -173,11 +137,7 @@
           <h3>Torta de Tamal</h3>
           <p class="bebida-desc">Tamal oaxaqueño servido en bolillo con crema.</p>
           <span class="bebida-precio">$60.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
     </div>
@@ -189,11 +149,7 @@
           <h3>Molletes</h3>
           <p class="bebida-desc">Bolillo horneado con frijoles, queso gratinado y pico de gallo.</p>
           <span class="bebida-precio">$65.00</span>
-<<<<<<< HEAD:php/menu_comida.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_comida.php
         </div>
       </article>
 

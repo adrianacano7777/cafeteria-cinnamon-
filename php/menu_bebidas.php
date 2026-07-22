@@ -6,11 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú Bebidas - Cafetería Cinnamon</title>
-<<<<<<< HEAD:php/menu_bebidas.php
-  <link rel="stylesheet" href="css/menu_bebidas.css">
-=======
-  <link rel="stylesheet" href="menu_postres.css">
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
+  <link rel="stylesheet" href="css/menu_postres.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -58,11 +54,7 @@
           <h3>Café Americano</h3>
           <p class="bebida-desc">Café de grano etíope preparado en filtro tradicional.</p>
           <span class="bebida-precio">$35.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
 
@@ -71,11 +63,7 @@
           <h3>Latte Vainilla</h3>
           <p class="bebida-desc">Espresso con leche vaporizada y vainilla auténtica.</p>
           <span class="bebida-precio">$55.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
 
@@ -84,11 +72,7 @@
           <h3>Capuchino Clásico</h3>
           <p class="bebida-desc">Espresso con espuma cremosa y un toque de canela de Ceylán.</p>
           <span class="bebida-precio">$50.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
     </div>
@@ -101,11 +85,7 @@
           <h3>Mocha Belga</h3>
           <p class="bebida-desc">Espresso, chocolate belga fundido y leche vaporizada.</p>
           <span class="bebida-precio">$60.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
 
@@ -114,11 +94,7 @@
           <h3>Chai Latte</h3>
           <p class="bebida-desc">Té chai especiado con leche vaporizada.</p>
           <span class="bebida-precio">$58.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
 
@@ -127,11 +103,7 @@
           <h3>Cold Brew</h3>
           <p class="bebida-desc">Café de extracción en frío, suave y servido con hielo.</p>
           <span class="bebida-precio">$52.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
     </div>
@@ -143,11 +115,7 @@
           <h3>Matcha Latte</h3>
           <p class="bebida-desc">Té matcha ceremonial batido con leche.</p>
           <span class="bebida-precio">$62.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
 
@@ -156,11 +124,7 @@
           <h3>Frappé Caramelo</h3>
           <p class="bebida-desc">Café frío licuado con caramelo y crema batida.</p>
           <span class="bebida-precio">$65.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
 
@@ -169,11 +133,7 @@
           <h3>Té Helado Durazno</h3>
           <p class="bebida-desc">Té negro infusionado con durazno natural.</p>
           <span class="bebida-precio">$45.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
     </div>
@@ -184,11 +144,7 @@
           <h3>Chocolate Belga</h3>
           <p class="bebida-desc">Chocolate belga fundido con leche entera y malvaviscos.</p>
           <span class="bebida-precio">$58.00</span>
-<<<<<<< HEAD:php/menu_bebidas.php
-          <a href="php/carrito.php" class="btn-pedir">Pedir</a>
-=======
           <a href="carrito.php" class="btn-pedir">Pedir</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:menu_bebidas.php
         </div>
       </article>
       

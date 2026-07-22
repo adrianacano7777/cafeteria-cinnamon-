@@ -25,17 +25,6 @@
     <h2 class="seccion-titulo">Conoce nuestro menú</h2>
     <div class="menu-categoria">
 
-<<<<<<< HEAD:php/index.php
-      <a href="php/menu_comida.php" class="categoria-carta">
-        <img class="categoria-foto" src="img/comida.webp" alt="Comida">
-        <span class="categoria-label">Comida</span></a>
-
-      <a href="php/menu_postres.php" class="categoria-carta">
-        <img class="categoria-foto" src="img/postres.jpg" alt="Postres">
-        <span class="categoria-label">Postres</span></a>
-
-      <a href="php/menu_bebidas.php" class="categoria-carta">
-=======
       <a href="menu_comida.php" class="categoria-carta">
         <img class="categoria-foto" src="img/comida.webp" alt="Comida">
         <span class="categoria-label">Comida</span></a>
@@ -45,7 +34,6 @@
         <span class="categoria-label">Postres</span></a>
 
       <a href="menu_bebidas.php" class="categoria-carta">
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:index.php
         <img class="categoria-foto" src="img/bebidas.webp" alt="Bebidas">
         <span class="categoria-label">Bebidas</span></a>
 

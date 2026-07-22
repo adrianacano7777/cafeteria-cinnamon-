@@ -17,11 +17,7 @@
     <div class="checkout-bloque">
       <h3>Dirección de entrega</h3>
       <p class="direccion-guardada">Calle Reforma 123, Puente de Ixtla, Morelos</p>
-<<<<<<< HEAD:php/checkout.php
-      <a href="php/perfil.php" class="btn-secundario">Editar mi dirección</a>
-=======
       <a href="perfil.php" class="btn-secundario">Editar mi dirección</a>
->>>>>>> 0494299581c4a4534b61991028ae1da1e4271be5:checkout.php
       <details>
         <summary>Agregar una dirección nueva</summary>
         <form class="form-direccion" action="checkout.php" method="post">
