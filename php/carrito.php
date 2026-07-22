@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Cafetería Cinnamon - Carrito</title>
-  <link rel="stylesheet" href="css/principal.css">
-  <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="stylesheet" href="../css/principal.css">
+  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
+  <link rel="stylesheet" href="../css/carrito.css">
 </head>
 
 <body>
@@ -63,7 +63,7 @@
   </section>
 
   <div id="footer-placeholder"></div>
-  <script src="JS/header-footer.js"></script>
+  <script src="../JS/header-footer.js"></script>
 </body>
 
 </html>

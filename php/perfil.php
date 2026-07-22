@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafetería Cinnamon - Mi Perfil</title>
-  <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="css/perfil.css">
+  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
+  <link rel="stylesheet" href="../css/perfil.css">
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -47,7 +47,7 @@
   </section>
 
   <div id="footer-placeholder"></div>
-  <script src="JS/header-footer.js"></script>
+  <script src="../JS/header-footer.js"></script>
 
 </body>
 </html>

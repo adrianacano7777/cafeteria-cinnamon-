@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <title>Cafetería Cinnamon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/principal.css">
-  <link rel="icon" href="img/icono-pestana.png" type="image/png">
+  <link rel="stylesheet" href="../css/principal.css">
+  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
 </head>
 
 <body>
   <div id="header-placeholder"></div>
   <section class="hero">
-    <img class="hero-bg" src="img/foto-fondo.jpg" alt="Foto de fondo de la cafetería">
+    <img class="hero-bg" src="../img/foto-fondo.jpg" alt="Foto de fondo de la cafetería">
     <div class="hero-contenido">
       <p class="hero-desde">Desde 2026</p>
       <h1 class="hero-frase">Tu pausa favorita del día empieza con un buen café.</h1>
@@ -24,6 +24,7 @@
   <section class="menu">
     <h2 class="seccion-titulo">Conoce nuestro menú</h2>
     <div class="menu-categoria">
+<<<<<<< HEAD
 
       <a href="menu_comida.php" class="categoria-carta">
         <img class="categoria-foto" src="img/comida.webp" alt="Comida">
@@ -35,6 +36,18 @@
 
       <a href="menu_bebidas.php" class="categoria-carta">
         <img class="categoria-foto" src="img/bebidas.webp" alt="Bebidas">
+=======
+      <a href="php/menu_comida.php" class="categoria-carta">
+        <img class="categoria-foto" src="../img/comida.webp" alt="Comida">
+        <span class="categoria-label">Comida</span></a>
+
+      <a href="php/menu_postres.php" class="categoria-carta">
+        <img class="categoria-foto" src="../img/postres.jpg" alt="Postres">
+        <span class="categoria-label">Postres</span></a>
+
+      <a href="php/menu_bebidas.php" class="categoria-carta">
+        <img class="categoria-foto" src="../img/bebidas.webp" alt="Bebidas">
+>>>>>>> edff46cbb11f9e3668d73b7a66e6b642b4ee8b72
         <span class="categoria-label">Bebidas</span></a>
 
     </div>
@@ -49,22 +62,22 @@
       <div class="carousel-viewport">
         <ul class="ingredientes-lista" id="lista-ingredientes">
           <li class="ingrediente-item">
-            <img src="img/ingrediente1.jpg" alt="Canela de Ceylán">
+            <img src="../img/ingrediente1.jpg" alt="Canela de Ceylán">
             <h3>Canela de Ceylán</h3>
             <p>A diferencia de la canela común, esta es conocida como la "canela auténtica". Es sumamente aromática, con un sabor más dulce, suave y complejo.</p>
           </li>
           <li class="ingrediente-item">
-            <img src="img/ingrediente2.webp" alt="Extracto puro de Vainilla de Madagascar">
+            <img src="../img/ingrediente2.webp" alt="Extracto puro de Vainilla de Madagascar">
             <h3>Extracto puro de Vainilla de Madagascar</h3>
             <p>Considerada la mejor vainilla del mundo por su proceso de curado artesanal. Aporta un perfil de sabor profundo, dulce y con notas cremosas que eleva por completo el sabor de los lattes, galletas y brownies.</p>
           </li>
           <li class="ingrediente-item">
-            <img src="img/ingrediente3.jpg" alt="Chocolate belga">
+            <img src="../img/ingrediente3.jpg" alt="Chocolate belga">
             <h3>Chocolate belga</h3>
             <p>Reconocido mundialmente por su finura y su alto porcentaje de manteca de cacao pura. Utilizarlo en tus coberturas, mochas o troceado en la repostería asegura una textura que se derrite perfectamente y un sabor de especialidad.</p>
           </li>
           <li class="ingrediente-item">
-            <img src="img/ingrediente4.webp" alt="Café de Especialidad de Etiopía">
+            <img src="../img/ingrediente4.webp" alt="Café de Especialidad de Etiopía">
             <h3>Café de Especialidad de Etiopía</h3>
             <p>Es un café sumamente elegante, famoso por sus notas florales y cítricas, con un cuerpo ligero que recuerda al té.</p>
           </li>
@@ -110,7 +123,7 @@
   </section>
 
   <section class="nosotros" id="sobre-nosotros">
-    <img class="sobre-foto" src="img/sobre_nosotros.webp" alt="Nosotros">
+    <img class="sobre-foto" src="../img/sobre_nosotros.webp" alt="Nosotros">
     <div class="sobre-texto">
       <h2 class="seccion-titulo">Sobre nosotros</h2>
       <p>En Cinnamon, creemos que los mejores días comienzan con un buen café y una gran conversación. Somos un espacio
@@ -121,9 +134,9 @@
     </div>
   </section>
   <div id="footer-placeholder"></div>
-  <script src="JS/header-footer.js"></script>
-  <script src="JS/principal.js"></script>
-  <script src="JS/horario.js"></script>
+  <script src="../JS/header-footer.js"></script>
+  <script src="../JS/principal.js"></script>
+  <script src="../JS/horario.js"></script>
 </body>
 
 </html>

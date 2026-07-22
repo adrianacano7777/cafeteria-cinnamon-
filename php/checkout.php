@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Confirmar pedido</title>
-  <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="css/principal.css">
-  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
+  <link rel="stylesheet" href="../css/principal.css">
+  <link rel="stylesheet" href="../css/checkout.css">
 </head>
 
 <body>
@@ -73,8 +73,8 @@
 
   </section>
   <div id="footer-placeholder"></div>
-  <script src="JS/header-footer.js"></script>
-  <script src="JS/checkout.js"></script>
+  <script src="../JS/header-footer.js"></script>
+  <script src="../JS/checkout.js"></script>
 </body>
 
 </html>

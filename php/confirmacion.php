@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Cafetería Cinnamon - Pedido confirmado</title>
-  <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="css/principal.css">
-  <link rel="stylesheet" href="css/confirmacion.css">
+  <link rel="icon" href="../img/icono-pestana.png" type="image/png">
+  <link rel="stylesheet" href="../css/principal.css">
+  <link rel="stylesheet" href="../css/confirmacion.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
     <a href="menu_comida.php" class="btn-secundario">Volver al menú</a>
   </section>
   <div id="footer-placeholder"></div>
-  <script src="JS/header-footer.js"></script>
+  <script src="../JS/header-footer.js"></script>
 </body>
 
 </html>
