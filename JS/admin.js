@@ -1,5 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".btn-eliminar").forEach(function (boton) {
+  
+  document.querySelectorAll(".btn-eliminar-protegido").forEach(function (boton) {
+    boton.addEventListener("click", function (evento) {
+      var nombre = boton.getAttribute("data-nombre") || "este usuario";
+      var respuesta = prompt("¡ATENCIÓN DE SEGURIDAD!\n\nPara confirmar la eliminación de " + nombre + ", escribe exactamente la palabra: ELIMINAR");
+      
+      if (respuesta !== "ELIMINAR") {
+        alert("Acción cancelada. La palabra clave no coincidió.");
+        evento.preventDefault();
+      }
+    });
+  });
+
+  document.querySelectorAll(".btn-eliminar:not(.btn-eliminar-protegido)").forEach(function (boton) {
     boton.addEventListener("click", function (evento) {
       var confirmado = confirm("¿Seguro que quieres eliminar esto? Esta acción no se puede deshacer.");
       if (!confirmado) {
@@ -61,19 +74,65 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.querySelectorAll(".admin-tabla select[name='estado']").forEach(function (select) {
-    function actualizarColorEstado() {
-      select.classList.remove(
-        "estado-select-recibido",
-        "estado-select-preparando",
-        "estado-select-listo",
-        "estado-select-entregado"
-      );
-      select.classList.add("estado-select-" + select.value);
-    }
+  function pintarSelectEstado(select) {
+    select.classList.remove(
+      "estado-select-recibido",
+      "estado-select-preparando",
+      "estado-select-listo",
+      "estado-select-entregado"
+    );
+    select.classList.add("estado-select-" + select.value);
+  }
 
-    select.addEventListener("change", actualizarColorEstado);
-    actualizarColorEstado();
+  document.querySelectorAll(".admin-tabla select[name='estado']").forEach(function (select) {
+    pintarSelectEstado(select);
+    select.addEventListener("change", function () {
+      pintarSelectEstado(select);
+    });
+  });
+
+  document.querySelectorAll("#tabla-productos .form-actualizar-producto-todo").forEach(function (form) {
+    form.addEventListener("submit", function (evento) {
+      var fila = form.closest("tr");
+      var nombreActual = fila.querySelector(".prod-nombre").textContent.trim();
+      var catActual = fila.querySelector(".prod-categoria").textContent.trim();
+      var precioActual = parseFloat(fila.querySelector(".prod-precio").textContent);
+      var dispoActual = fila.querySelector(".prod-estado").getAttribute("data-dispo");
+
+      var nuevoNombre = prompt("1/4. Nombre del producto:", nombreActual);
+      if (nuevoNombre === null || nuevoNombre.trim() === "") { evento.preventDefault(); return; }
+
+      var nuevaCat = prompt("2/4. Categoría (Comida, Bebidas, Postres):", catActual);
+      if (nuevaCat === null || nuevaCat.trim() === "") { evento.preventDefault(); return; }
+
+      var nuevoPrecio = prompt("3/4. Precio ($):", precioActual);
+      if (nuevoPrecio === null || isNaN(parseFloat(nuevoPrecio)) || parseFloat(nuevoPrecio) <= 0) { evento.preventDefault(); return; }
+
+      var nuevaDispo = prompt("4/4. Disponibilidad (1 = Disponible, 0 = Agotado):", dispoActual);
+      if (nuevaDispo === null || (nuevaDispo !== "0" && nuevaDispo !== "1")) { evento.preventDefault(); return; }
+
+      form.querySelector(".input-edit-nombre").value = nuevoNombre.trim();
+      form.querySelector(".input-edit-categoria").value = nuevaCat.trim();
+      form.querySelector(".input-edit-precio").value = parseFloat(nuevoPrecio);
+      form.querySelector(".input-edit-dispo").value = parseInt(nuevaDispo);
+    });
+  });
+
+  document.querySelectorAll("#tabla-insumos .form-actualizar-modal").forEach(function (form) {
+    form.addEventListener("submit", function (evento) {
+      var fila = form.closest("tr");
+      var nombreInsumo = fila.cells[0].textContent.trim();
+      var spanCantidad = fila.querySelector(".cantidad-val");
+      var cantidadActual = parseFloat(spanCantidad.textContent);
+
+      var nuevaCantidad = prompt("Introduce la nueva cantidad disponible para " + nombreInsumo + ":", cantidadActual);
+
+      if (nuevaCantidad !== null && !isNaN(parseFloat(nuevaCantidad)) && parseFloat(nuevaCantidad) >= 0) {
+        form.querySelector(".input-hidden-cantidad").value = parseFloat(nuevaCantidad);
+      } else {
+        evento.preventDefault();
+      }
+    });
   });
 
   var botonArriba = document.createElement("button");
@@ -90,24 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  document.querySelectorAll("#tabla-insumos .btn-editar").forEach(function (boton) {
-    boton.addEventListener("click", function (evento) {
-      evento.preventDefault();
-      var fila = boton.closest("tr");
-      var nombreInsumo = fila.cells[0].textContent;
-      var cantidadActual = parseFloat(fila.cells[1].textContent);
-
-      var nuevaCantidad = prompt("Actualizar cantidad para " + nombreInsumo + ":", cantidadActual);
-
-      if (nuevaCantidad !== null && !isNaN(parseFloat(nuevaCantidad))) {
-        var unidad = fila.cells[1].textContent.replace(/[0-9./\s]/g, "");
-        fila.cells[1].textContent = parseFloat(nuevaCantidad) + " " + unidad;
-        alert("¡Cantidad actualizada localmente!");
-      }
-    });
-  });
-
-  document.querySelectorAll(".admin-main form").forEach(function (formulario) {
+  document.querySelectorAll(".admin-main form:not(.form-actualizar-producto-todo):not(.form-actualizar-modal)").forEach(function (formulario) {
     formulario.addEventListener("submit", function (evento) {
       var inputPrecio = formulario.querySelector("input[type='number']");
       if (inputPrecio && parseFloat(inputPrecio.value) <= 0) {

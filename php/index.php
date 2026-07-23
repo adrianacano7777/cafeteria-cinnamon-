@@ -1,3 +1,12 @@
+<?php
+require "conexion.php";
+
+$sql = "SELECT r.comentario, r.calificacion, u.nombre
+        FROM resenas r
+        JOIN usuarios u ON r.id_usuario = u.id_usuario
+        ORDER BY r.fecha DESC";
+$resenas = $conexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -24,15 +33,16 @@
   <section class="menu">
     <h2 class="seccion-titulo">Conoce nuestro menú</h2>
     <div class="menu-categoria">
-      <a href="php/menu_comida.php" class="categoria-carta">
+
+      <a href="menu_comida.php" class="categoria-carta">
         <img class="categoria-foto" src="../img/comida.webp" alt="Comida">
         <span class="categoria-label">Comida</span></a>
 
-      <a href="php/menu_postres.php" class="categoria-carta">
+      <a href="menu_postres.php" class="categoria-carta">
         <img class="categoria-foto" src="../img/postres.jpg" alt="Postres">
         <span class="categoria-label">Postres</span></a>
 
-      <a href="php/menu_bebidas.php" class="categoria-carta">
+      <a href="menu_bebidas.php" class="categoria-carta">
         <img class="categoria-foto" src="../img/bebidas.webp" alt="Bebidas">
         <span class="categoria-label">Bebidas</span></a>
 
@@ -43,7 +53,7 @@
     <p class="seccion-subtitulo">Ingredientes importados y de calidad que nos distinguen de otras cafeterías.</p>
 
     <div class="carousel-ingredientes">
-      <button type="button" class="carousel-btn" id="carousel-prev" aria-label="Ingrediente anterior"></button>
+      <button type="button" class="carousel-btn" id="carousel-prev" aria-label="Ingrediente anterior">&#10094;</button>
 
       <div class="carousel-viewport">
         <ul class="ingredientes-lista" id="lista-ingredientes">
@@ -70,7 +80,7 @@
         </ul>
       </div>
 
-      <button type="button" class="carousel-btn" id="carousel-next" aria-label="Siguiente ingrediente"></button>
+      <button type="button" class="carousel-btn" id="carousel-next" aria-label="Siguiente ingrediente">&#10095;</button>
     </div>
 
     <div class="carousel-dots" id="carousel-dots"></div>
@@ -82,25 +92,13 @@
     <div class="carousel-resenas">
       <div class="carousel-viewport">
         <ul class="reseña-lista" id="lista-resenas">
+          <?php foreach ($resenas as $r): ?>
           <li class="reseña-carta">
-            <p class="reseña-texto">¡Los mejores roles de canela y brownies que he probado! Se nota muchísimo la calidad del
-              chocolate belga en su repostería. El lugar es súper acogedor, ideal para venir a estudiar o platicar con
-              amigos.</p>
-            <p class="reseña-autor">Angelica Rosas</p>
-            <p class="reseña-rating">Calificación: 5/5</p>
+            <p class="reseña-texto"><?php echo htmlspecialchars($r['comentario']); ?></p>
+            <p class="reseña-autor"><?php echo htmlspecialchars($r['nombre']); ?></p>
+            <p class="reseña-rating">Calificación: <?php echo $r['calificacion']; ?>/5</p>
           </li>
-          <li class="reseña-carta">
-            <p class="reseña-texto">Soy súper exigente con el café y el latte de aquí con granos de Etiopía es una joya, el
-              balance de notas a caramelo es perfecto.</p>
-            <p class="reseña-autor">Manuel Tapia</p>
-            <p class="reseña-rating">Calificación: 5/5</p>
-          </li>
-          <li class="reseña-carta">
-            <p class="reseña-texto">Cinnamon se convirtió en mi parada obligatoria de todas las tardes. El aroma a café y
-              vainilla de Madagascar desde que entras te atrapa.</p>
-            <p class="reseña-autor">Denisse Nava</p>
-            <p class="reseña-rating">Calificación: 5/5</p>
-          </li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>

@@ -1,3 +1,9 @@
+<?php
+require "verificar_admin.php";
+require "conexion.php";
+
+$usuarios = $conexion->query("SELECT * FROM usuarios ORDER BY id_usuario")->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,6 +21,10 @@
   <section class="admin-main">
     <h2 class="seccion-titulo">Usuarios registrados</h2>
 
+    <?php if (isset($_GET['info']) && $_GET['info'] === 'inactivado'): ?>
+    <p class="alerta-error" style="background-color: #fff3cd; color: #856404; border-color: #ffeeba;">El usuario tiene historial activo en el sistema. Se ha marcado como 'Inactivo' para proteger los registros de ventas y reseñas.</p>
+    <?php endif; ?>
+
     <div class="buscador">
       <input type="text" data-buscar-tabla="tabla-usuarios" placeholder="Buscar usuario por nombre o correo...">
     </div>
@@ -29,30 +39,28 @@
         </tr>
       </thead>
       <tbody>
+        <?php foreach ($usuarios as $u): ?>
         <tr>
-          <td>Angelica Rosas</td>
-          <td>angelica@gmail.com</td>
-          <td>Cliente</td>
-          <td><a href="#" class="btn-eliminar">Eliminar</a></td>
+          <td><?php echo htmlspecialchars($u['nombre']); ?></td>
+          <td><?php echo htmlspecialchars($u['correo']); ?></td>
+          <td>
+            <?php 
+              if ($u['rol'] === 'admin') echo 'Administrador';
+              elseif ($u['rol'] === 'inactivo') echo 'Inactivo';
+              else echo 'Cliente';
+            ?>
+          </td>
+          <td>
+            <a href="eliminar_usuario.php?id=<?php echo $u['id_usuario']; ?>" class="btn-eliminar btn-eliminar-protegido" data-nombre="<?php echo htmlspecialchars($u['nombre']); ?>">Eliminar</a>
+          </td>
         </tr>
-        <tr>
-          <td>Manuel Tapia</td>
-          <td>manuel@gmail.com</td>
-          <td>Cliente</td>
-          <td><a href="#" class="btn-eliminar">Eliminar</a></td>
-        </tr>
-        <tr>
-          <td>Denisse Nava</td>
-          <td>denisse@gmail.com</td>
-          <td>Cliente</td>
-          <td><a href="#" class="btn-eliminar">Eliminar</a></td>
-        </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </section>
 
   <div id="footer-placeholder"></div>
   <script src="../JS/header-footer.js"></script>
-  <script src="../JS/admin.js"></script>
+  <script src="../JS/admin.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>
