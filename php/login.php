@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafetería Cinnamon - Iniciar sesión</title>
   <link rel="icon" href="img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
