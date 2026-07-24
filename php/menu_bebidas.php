@@ -1,3 +1,13 @@
+<?php
+  $titulo_pagina = "Menú Bebidas - Cafetería Cinnamon";
+  $categoria_actual = "Nuestras Bebidas";
+  $subtitulo = "Preparadas con el mejor café artesanal e ingredientes selectos";
+
+  $conexion = mysqli_connect("localhost", "root", "", "cafeteria_cinnamon");
+
+  $query = "SELECT * FROM productos WHERE categoria = 'bebidas'";
+  $resultado = mysqli_query($conexion, $query);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,13 +15,16 @@
   <link rel="icon" href="../img/icono-pestana.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú Bebidas - Cafetería Cinnamon</title>
+  
+  <title><?php echo $titulo_pagina; ?></title>
+
   <link rel="stylesheet" href="../css/menu_postres.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <div id="header-placeholder"></div>
+  
   <div id="carruselPromosBebidas" class="carousel slide mb-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carruselPromosBebidas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -44,116 +57,64 @@
   </div>
 
   <section class="menu">
-    <h2 class="seccion-titulo">Nuestras Bebidas</h2>
-    <p class="seccion-subtitulo">Preparadas con el mejor café artesanal e ingredientes selectos</p>
+    <h2 class="seccion-titulo"><?php echo $categoria_actual; ?></h2>
+    <p class="seccion-subtitulo"><?php echo $subtitulo; ?></p>
 
     <div class="menu-categoria" style="margin-bottom: 30px;">
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/americano.webp" alt="Café americano">
-        <div class="categoria-label">
-          <h3>Café Americano</h3>
-          <p class="bebida-desc">Café de grano etíope preparado en filtro tradicional.</p>
-          <span class="bebida-precio">$35.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
+      <?php 
+      if ($resultado && mysqli_num_rows($resultado) > 0) {
+        while ($producto = mysqli_fetch_assoc($resultado)) { 
+      ?>
+        <article class="categoria-carta">
+          <img class="categoria-foto" src="<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>">
+          <div class="categoria-label">
+            <h3><?php echo $producto['nombre']; ?></h3>
+            <p class="bebida-desc"><?php echo $producto['descripcion']; ?></p>
+            <span class="bebida-precio">$<?php echo $producto['precio']; ?></span>
+            <a href="carrito.php?id=<?php echo $producto['id']; ?>" class="btn-pedir">Pedir</a>
+          </div>
+        </article>
+      <?php 
+        }
+      } else { 
+      ?>
+        <article class="categoria-carta">
+          <img class="categoria-foto" src="../img/americano.webp" alt="Café americano">
+          <div class="categoria-label">
+            <h3>Café Americano</h3>
+            <p class="bebida-desc">Café de grano etíope preparado en filtro tradicional.</p>
+            <span class="bebida-precio">$35.00</span>
+            <a href="carrito.php" class="btn-pedir">Pedir</a>
+          </div>
+        </article>
 
-      <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/latte-vainilla.webp'), url('imagen/latte-vainilla.webp'); background-size: cover; background-position: center;">
-        <div class="categoria-label">
-          <h3>Latte Vainilla</h3>
-          <p class="bebida-desc">Espresso con leche vaporizada y vainilla auténtica.</p>
-          <span class="bebida-precio">$55.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
+        <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/latte-vainilla.webp'); background-size: cover; background-position: center;">
+          <div class="categoria-label">
+            <h3>Latte Vainilla</h3>
+            <p class="bebida-desc">Espresso con leche vaporizada y vainilla auténtica.</p>
+            <span class="bebida-precio">$55.00</span>
+            <a href="carrito.php" class="btn-pedir">Pedir</a>
+          </div>
+        </article>
 
-      <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/capuchino.webp'), url('imagen/capuchino.webp'); background-size: cover; background-position: center;">
-        <div class="categoria-label">
-          <h3>Capuchino Clásico</h3>
-          <p class="bebida-desc">Espresso con espuma cremosa y un toque de canela de Ceylán.</p>
-          <span class="bebida-precio">$50.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-    </div>
-
-
-    <div class="menu-categoria" style="margin-bottom: 30px;">
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/mocha.webp" alt="Mocha de chocolate belga">
-        <div class="categoria-label">
-          <h3>Mocha Belga</h3>
-          <p class="bebida-desc">Espresso, chocolate belga fundido y leche vaporizada.</p>
-          <span class="bebida-precio">$60.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/chai-latte.webp'), url('imagen/chai-latte.webp'); background-size: cover; background-position: center;">
-        <div class="categoria-label">
-          <h3>Chai Latte</h3>
-          <p class="bebida-desc">Té chai especiado con leche vaporizada.</p>
-          <span class="bebida-precio">$58.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/cold-brew.webp'), url('imagen/cold-brew.webp'); background-size: cover; background-position: center;">
-        <div class="categoria-label">
-          <h3>Cold Brew</h3>
-          <p class="bebida-desc">Café de extracción en frío, suave y servido con hielo.</p>
-          <span class="bebida-precio">$52.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="menu-categoria" style="margin-bottom: 30px;">
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/matcha.webp" alt="Matcha latte">
-        <div class="categoria-label">
-          <h3>Matcha Latte</h3>
-          <p class="bebida-desc">Té matcha ceremonial batido con leche.</p>
-          <span class="bebida-precio">$62.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/frappe-caramelo.webp'), url('imagen/frappe-caramelo.webp'); background-size: cover; background-position: center;">
-        <div class="categoria-label">
-          <h3>Frappé Caramelo</h3>
-          <p class="bebida-desc">Café frío licuado con caramelo y crema batida.</p>
-          <span class="bebida-precio">$65.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/bebidas.webp'), url('imagen/bebidas.webp'); background-size: cover; background-position: center;">
-        <div class="categoria-label">
-          <h3>Té Helado Durazno</h3>
-          <p class="bebida-desc">Té negro infusionado con durazno natural.</p>
-          <span class="bebida-precio">$45.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="menu-categoria">
-      <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/chocolate-caliente.webp'), url('imagen/chocolate-caliente.webp'); background-size: cover; background-position: center;">
-        <div class="categoria-label">
-          <h3>Chocolate Belga</h3>
-          <p class="bebida-desc">Chocolate belga fundido con leche entera y malvaviscos.</p>
-          <span class="bebida-precio">$58.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-      
-      <div style="display: table-cell; visibility: hidden;"></div>
-      <div style="display: table-cell; visibility: hidden;"></div>
+        <article class="categoria-carta" style="background: linear-gradient(rgba(121, 102, 82, 0.65), rgba(121, 102, 82, 0.65)), url('../img/capuchino.webp'); background-size: cover; background-position: center;">
+          <div class="categoria-label">
+            <h3>Capuchino Clásico</h3>
+            <p class="bebida-desc">Espresso con espuma cremosa y un toque de canela de Ceylán.</p>
+            <span class="bebida-precio">$50.00</span>
+            <a href="carrito.php" class="btn-pedir">Pedir</a>
+          </div>
+        </article>
+      <?php } ?>
     </div>
   </section>
 
   <div id="footer-placeholder"></div>
+
+  <footer class="text-center py-3 bg-dark text-white">
+    <p class="mb-0">&copy; <?php echo date('Y'); ?> Cafetería Cinnamon. Todos los derechos reservados.</p>
+  </footer>
+
   <script src="../JS/header-footer.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

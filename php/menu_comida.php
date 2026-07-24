@@ -1,9 +1,20 @@
+<?php
+  $titulo_pagina = "Menú Comida - Cafetería Cinnamon";
+  $categoria_actual = "Nuestra Comida";
+  $subtitulo = "Opciones deliciosas preparadas al momento";
+
+  $conexion = mysqli_connect("localhost", "root", "", "cafeteria_cinnamon");
+
+  $query = "SELECT * FROM productos WHERE categoria = 'comida'";
+  $resultado = mysqli_query($conexion, $query);
+?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú Comida - Cafetería Cinnamon</title>
+  <title><?php echo $titulo_pagina; ?></title>
   <link rel="stylesheet" href="../css/menu_postres.css">
   <link rel="icon" href="../img/icono-pestana.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,6 +22,7 @@
 
 <body>
   <div id="header-placeholder"></div>
+
   <div id="carruselPromosComida" class="carousel slide mb-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carruselPromosComida" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -43,125 +55,69 @@
   </div>
 
   <section class="menu">
-    <h2 class="seccion-titulo">Nuestra Comida</h2>
-    <p class="seccion-subtitulo">Opciones deliciosas preparadas al momento</p>
+    <h2 class="seccion-titulo"><?php echo $categoria_actual; ?></h2>
+    <p class="seccion-subtitulo"><?php echo $subtitulo; ?></p>
 
     <div class="menu-categoria" style="margin-bottom: 40px;">
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/sandwich-club.webp" alt="Sandwich club de pollo">
-        <div class="categoria-label">
-          <h3>Sándwich Club</h3>
-          <p class="bebida-desc">Pan artesanal con pollo, tocino, lechuga y aguacate.</p>
-          <span class="bebida-precio">$85.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
+      <?php 
+      if ($resultado && mysqli_num_rows($resultado) > 0) {
+        while ($producto = mysqli_fetch_assoc($resultado)) { 
+      ?>
+        <article class="categoria-carta">
+          <img class="categoria-foto" src="<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>">
+          <div class="categoria-label">
+            <h3><?php echo $producto['nombre']; ?></h3>
+            <p class="bebida-desc"><?php echo $producto['descripcion']; ?></p>
+            <span class="bebida-precio">$<?php echo $producto['precio']; ?></span>
+            <a href="carrito.php?id=<?php echo $producto['id']; ?>" class="btn-pedir">Pedir</a>
+          </div>
+        </article>
+      <?php 
+        }
+      } else { 
+      ?>
+        <article class="categoria-carta">
+          <img class="categoria-foto" src="../img/sandwich-club.webp" alt="Sandwich club de pollo">
+          <div class="categoria-label">
+            <h3>Sándwich Club</h3>
+            <p class="bebida-desc">Pan artesanal con pollo, tocino, lechuga y aguacate.</p>
+            <span class="bebida-precio">$85.00</span>
+            <a href="carrito.php" class="btn-pedir">Pedir</a>
+          </div>
+        </article>
 
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/bagel-salmon.webp" alt="Bagel con salmón ahumado">
-        <div class="categoria-label">
-          <h3>Bagel Salmón</h3>
-          <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
-          <span class="bebida-precio">$95.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
+        <article class="categoria-carta">
+          <img class="categoria-foto" src="../img/bagel-salmon.webp" alt="Bagel con salmón ahumado">
+          <div class="categoria-label">
+            <h3>Bagel Salmón</h3>
+            <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
+            <span class="bebida-precio">$95.00</span>
+            <a href="carrito.php" class="btn-pedir">Pedir</a>
+          </div>
+        </article>
 
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/croissant-jamon.webp" alt="Croissant jamón y queso">
-        <div class="categoria-label">
-          <h3>Croissant J&Q</h3>
-          <p class="bebida-desc">Croissant horneado relleno de jamón y queso gouda.</p>
-          <span class="bebida-precio">$65.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="menu-categoria" style="margin-bottom: 20px;">
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/ensalada-cesar.webp" alt="Ensalada césar con pollo">
-        <div class="categoria-label">
-          <h3>Ensalada César</h3>
-          <p class="bebida-desc">Lechuga romana, pollo a la parrilla y aderezo césar.</p>
-          <span class="bebida-precio">$90.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/quesadilla-calabaza.webp" alt="Quesadilla de flor de calabaza">
-        <div class="categoria-label">
-          <h3>Quesadilla</h3>
-          <p class="bebida-desc">Tortilla de harina con flor de calabaza y queso oaxaca.</p>
-          <span class="bebida-precio">$70.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/panini-caprese.webp" alt="Panini caprese">
-        <div class="categoria-label">
-          <h3>Panini Caprese</h3>
-          <p class="bebida-desc">Pan ciabatta con tomate, mozzarella y pesto.</p>
-          <span class="bebida-precio">$80.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="menu-categoria" style="margin-bottom: 20px;">
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/omelette-espianca.webp" alt="Omelette de espinaca y champiñones">
-        <div class="categoria-label">
-          <h3>Omelette</h3>
-          <p class="bebida-desc">Omelette esponjoso con espinaca fresca y champiñones.</p>
-          <span class="bebida-precio">$75.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/wrap-atun.webp" alt="Wrap de atún">
-        <div class="categoria-label">
-          <h3>Wrap de Atún</h3>
-          <p class="bebida-desc">Tortilla integral con atún, apio y mayonesa ligera.</p>
-          <span class="bebida-precio">$78.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/torta-tamal.webp" alt="Torta de tamal">
-        <div class="categoria-label">
-          <h3>Torta de Tamal</h3>
-          <p class="bebida-desc">Tamal oaxaqueño servido en bolillo con crema.</p>
-          <span class="bebida-precio">$60.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="menu-categoria">
-      <article class="categoria-carta">
-        <img class="categoria-foto" src="../img/molletes.webp" alt="Molletes con pico de gallo">
-        <div class="categoria-label">
-          <h3>Molletes</h3>
-          <p class="bebida-desc">Bolillo horneado con frijoles, queso gratinado y pico de gallo.</p>
-          <span class="bebida-precio">$65.00</span>
-          <a href="carrito.php" class="btn-pedir">Pedir</a>
-        </div>
-      </article>
-
-      <div style="display: table-cell; visibility: hidden;"></div>
-      <div style="display: table-cell; visibility: hidden;"></div>
+        <article class="categoria-carta">
+          <img class="categoria-foto" src="../img/croissant-jamon.webp" alt="Croissant jamón y queso">
+          <div class="categoria-label">
+            <h3>Croissant J&Q</h3>
+            <p class="bebida-desc">Croissant horneado relleno de jamón y queso gouda.</p>
+            <span class="bebida-precio">$65.00</span>
+            <a href="carrito.php" class="btn-pedir">Pedir</a>
+          </div>
+        </article>
+      <?php } ?>
     </div>
   </section>
 
   <div id="footer-placeholder"></div>
+
+  <footer class="text-center py-3 bg-dark text-white">
+    <p class="mb-0">&copy; <?php echo date('Y'); ?> Cafetería Cinnamon. Todos los derechos reservados.</p>
+  </footer>
+
   <script src="../JS/header-footer.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
-</html>       
+</html>
