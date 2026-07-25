@@ -3,7 +3,7 @@
   $categoria_actual = "Nuestra Comida";
   $subtitulo = "Opciones deliciosas preparadas al momento";
 
-  $conexion = mysqli_connect("localhost", "root", "", "cafeteria_cinnamon");
+  $conexion = mysqli_connect("localhost:2207", "root", "", "cinnamon");
 
   $query = "SELECT * FROM productos WHERE categoria = 'Comida'";
   $resultado = mysqli_query($conexion, $query);

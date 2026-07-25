@@ -3,7 +3,7 @@
   $categoria_actual = "Nuestros Postres";
   $subtitulo = "Repostería artesanal horneada diariamente en casa";
 
-  $conexion = mysqli_connect("localhost", "root", "", "cafeteria_cinnamon");
+  $conexion = mysqli_connect("localhost:2207", "root", "", "cinnamon");
 
   $query = "SELECT * FROM productos WHERE categoria = 'Postres'";
   $resultado = mysqli_query($conexion, $query);

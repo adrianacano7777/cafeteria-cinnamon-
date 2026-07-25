@@ -3,7 +3,7 @@
   $categoria_actual = "Nuestras Bebidas";
   $subtitulo = "Preparadas con el mejor café artesanal e ingredientes selectos";
 
-  $conexion = mysqli_connect("localhost", "root", "", "cafeteria_cinnamon");
+  $conexion = mysqli_connect("localhost:2207", "root", "", "cinnamon");
 
   $query = "SELECT * FROM productos WHERE categoria = 'bebidas'";
   $resultado = mysqli_query($conexion, $query);
