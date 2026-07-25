@@ -1,4 +1,3 @@
-
 <?php
 $host = "localhost";
 $puerto = "2207";
