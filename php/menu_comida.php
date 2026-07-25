@@ -3,9 +3,9 @@
   $categoria_actual = "Nuestra Comida";
   $subtitulo = "Opciones deliciosas preparadas al momento";
 
-  $conexion = mysqli_connect("localhost", "root", "", "cafeteria_cinnamon");
+  $conexion = mysqli_connect("localhost", "root", "", "cinnamon");
 
-  $query = "SELECT * FROM productos WHERE categoria = 'comida'";
+  $query = "SELECT * FROM productos WHERE categoria = 'Comida'";
   $resultado = mysqli_query($conexion, $query);
 ?>
 <!DOCTYPE html>
@@ -15,9 +15,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $titulo_pagina; ?></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/menu_postres.css">
   <link rel="icon" href="../img/icono-pestana.png" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -64,12 +64,12 @@
         while ($producto = mysqli_fetch_assoc($resultado)) { 
       ?>
         <article class="categoria-carta">
-          <img class="categoria-foto" src="<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>">
+          <img class="categoria-foto" src="<?php echo isset($producto['imagen']) ? $producto['imagen'] : '../img/sandwich-club.webp'; ?>" alt="<?php echo $producto['nombre']; ?>">
           <div class="categoria-label">
             <h3><?php echo $producto['nombre']; ?></h3>
-            <p class="bebida-desc"><?php echo $producto['descripcion']; ?></p>
+            <p class="bebida-desc"><?php echo isset($producto['descripcion']) ? $producto['descripcion'] : ''; ?></p>
             <span class="bebida-precio">$<?php echo $producto['precio']; ?></span>
-            <a href="carrito.php?id=<?php echo $producto['id']; ?>" class="btn-pedir">Pedir</a>
+            <a href="carrito.php?id=<?php echo $producto['id_producto']; ?>" class="btn-pedir">Pedir</a>
           </div>
         </article>
       <?php 

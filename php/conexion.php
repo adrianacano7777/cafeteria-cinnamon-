@@ -1,6 +1,7 @@
+
 <?php
 $host = "localhost";
-$puerto = "2207";
+$puerto = "3306";
 $basedatos = "cinnamon";
 $usuario = "root";
 $contrasena = "";
@@ -11,4 +12,3 @@ try {
 } catch (PDOException $error) {
     die("Error de conexión: " . $error->getMessage());
 }
- 
