@@ -1,3 +1,5 @@
+CREATE DATABASE cinnamon;
+USE DATABASE cinnamon;
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -11,7 +13,7 @@ CREATE TABLE productos (
     nombre VARCHAR(100) NOT NULL,
     categoria ENUM('Comida', 'Bebidas', 'Postres') NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
-    disponibilidad BOOLEAN NOT NULL DEFAULT TRUE
+    disponibilidad BOOLEAN NOT NULL DEFAULT TRUE,
 );
 
 CREATE TABLE insumos (
@@ -65,10 +67,10 @@ INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES
 ('Denisse Nava', 'denisse@gmail.com', 'clave123', 'cliente'),
 ('Grecia Tapia', 'grecia@gmail.com', 'clave123', 'cliente');
 
-INSERT INTO productos (nombre, categoria, precio, disponibilidad) VALUES
-('Latte de vainilla de Madagascar', 'Bebidas', 55.00, TRUE),
-('Croissant de almendra', 'Postres', 50.00, FALSE),
-('Sandwich club de pollo', 'Comida', 85.00, TRUE);
+INSERT INTO productos (nombre, categoria, precio, disponibilidad, imagen) VALUES
+('Latte de vainilla de Madagascar', 'Bebidas', 55.00, TRUE, 'latte_vainilla.jpg'),
+('Croissant de almendra', 'Postres', 50.00, FALSE, 'croissant_almendra.jpg'),
+('Sandwich club de pollo', 'Comida', 85.00, TRUE, 'sandwich_club.jpg');
 
 INSERT INTO insumos (nombre, cantidad_disponible, cantidad_minima, unidad_medida) VALUES
 ('Café en grano (Etiopía)', 8.5, 5, 'kg'),
