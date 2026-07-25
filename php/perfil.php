@@ -61,10 +61,6 @@
 
   <div id="footer-placeholder"></div>
 
-  <footer class="text-center py-3 bg-dark text-white mt-5">
-    <p class="mb-0">&copy; <?php echo date('Y'); ?> Cafetería Cinnamon. Todos los derechos reservados.</p>
-  </footer>
-
   <script src="../JS/header-footer.js"></script>
 
 </body>

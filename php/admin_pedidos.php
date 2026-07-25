@@ -13,7 +13,6 @@ if (isset($_POST['actualizar_estado'])) {
     exit;
 }
 
-// 1. Consulta de Pedidos reales
 $sql_pedidos = "SELECT p.id_pedido, u.nombre AS cliente, p.fecha, p.total, p.tipo_entrega, p.estado, m.nombre AS metodo_pago
         FROM pedidos p
         JOIN usuarios u ON p.id_usuario = u.id_usuario
@@ -21,7 +20,6 @@ $sql_pedidos = "SELECT p.id_pedido, u.nombre AS cliente, p.fecha, p.total, p.tip
         ORDER BY p.id_pedido DESC";
 $pedidos = $conexion->query($sql_pedidos)->fetchAll(PDO::FETCH_ASSOC);
 
-// 2. Consulta real de Ventas por Semana (últimas 4 semanas)
 $sql_semanas = "SELECT 
                     WEEK(fecha, 1) AS numero_semana, 
                     SUM(total) AS total_semana 
@@ -31,7 +29,7 @@ $sql_semanas = "SELECT
                 LIMIT 4";
 $ventas_semanas = $conexion->query($sql_semanas)->fetchAll(PDO::FETCH_ASSOC);
 
-// 3. Consulta real de Productos más vendidos
+
 $sql_top_productos = "SELECT 
                         pr.nombre AS producto, 
                         SUM(dp.cantidad) AS total_unidades 
@@ -43,7 +41,7 @@ $sql_top_productos = "SELECT
 try {
     $top_productos = $conexion->query($sql_top_productos)->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    // En caso de que no exista la tabla detalle_pedidos aún
+
     $top_productos = [];
 }
 ?>

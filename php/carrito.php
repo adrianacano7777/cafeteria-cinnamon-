@@ -23,40 +23,10 @@
           <th>Quitar</th>
         </tr>
       </thead>
-      <tbody>
-        <tr class="carrito-item">
-          <td>Latte de vainilla de Madagascar</td>
-          <td>$55.00</td>
-          <td>
-            <form class="cantidad-form" action="carrito.php" method="post">
-              <input type="number" name="cantidad" value="1" min="1">
-              <button type="submit" class="btn-actualizar">Actualizar</button>
-            </form>
-          </td>
-          <td>$55.00</td>
-          <td>
-            <form action="carrito.php" method="post"><button type="submit" class="btn-quitar">Quitar</button></form>
-          </td>
-        </tr>
-        <tr class="carrito-item">
-          <td>Roles de canela de Ceylán</td>
-          <td>$48.00</td>
-          <td>
-            <form class="cantidad-form" action="carrito.php" method="post">
-              <input type="number" name="cantidad" value="2" min="1">
-              <button type="submit" class="btn-actualizar">Actualizar</button>
-            </form>
-          </td>
-          <td>$96.00</td>
-          <td>
-            <form action="carrito.php" method="post"><button type="submit" class="btn-quitar">Quitar</button></form>
-          </td>
-        </tr>
-      </tbody>
     </table>
 
     <div class="carrito-resumen">
-      <p class="carrito-total">Total: $151.00 MXN</p>
+      <p class="carrito-total">Total:</p>
       <a href="menu_comida.php" class="btn-secundario">Seguir viendo el menú</a>
       <a href="checkout.php" class="btn-primario">Continuar con mi pedido</a>
     </div>

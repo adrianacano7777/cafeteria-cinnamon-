@@ -113,9 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <div id="footer-placeholder"></div>
 
-  <footer class="text-center py-3 bg-dark text-white">
-    <p class="mb-0">&copy; <?php echo date('Y'); ?> Cafetería Cinnamon. Todos los derechos reservados.</p>
-  </footer>
+ 
 
   <script src="../JS/header-footer.js"></script>
 
