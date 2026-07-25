@@ -1,5 +1,35 @@
 <?php
 session_start();
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $nombre = $_POST['nombre'] ?? '';
+    $precio = (float)($_POST['precio'] ?? 0);
+    $cantidad = (int)($_POST['cantidad'] ?? 1);
+
+    if (!isset($_SESSION['carrito'])) {
+        $_SESSION['carrito'] = [];
+    }
+
+    
+    if (isset($_SESSION['carrito'][$id])) {
+        $_SESSION['carrito'][$id]['cantidad'] += $cantidad;
+    } else {
+       
+        $_SESSION['carrito'][$id] = [
+            'nombre' => $nombre,
+            'precio' => $precio,
+            'cantidad' => $cantidad
+        ];
+    }
+
+   
+    header('Location: carrito.php');
+    exit();
+}
+
+
 if (isset($_GET['eliminar'])) {
     $id_eliminar = $_GET['eliminar'];
     unset($_SESSION['carrito'][$id_eliminar]);

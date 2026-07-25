@@ -3,7 +3,7 @@
   $categoria_actual = "Nuestra Comida";
   $subtitulo = "Opciones deliciosas preparadas al momento";
 
-  $conexion = mysqli_connect("localhost", "root", "", "cinnamon");
+  $conexion = mysqli_connect("localhost", "root", "", "cafeteria_cinnamon");
 
   $query = "SELECT * FROM productos WHERE categoria = 'Comida'";
   $resultado = mysqli_query($conexion, $query);
@@ -63,25 +63,40 @@
         while ($producto = mysqli_fetch_assoc($resultado)) { 
       ?>
         <article class="categoria-carta">
-          <img class="categoria-foto" src="<?php echo isset($producto['imagen']) ? $producto['imagen'] : '../img/sandwich-club.webp'; ?>" alt="<?php echo $producto['nombre']; ?>">
+          <img class="categoria-foto" src="<?php echo isset($producto['imagen']) ? $producto['imagen'] : '../img/sandwich-club.webp'; ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
           <div class="categoria-label">
-            <h3><?php echo $producto['nombre']; ?></h3>
-            <p class="bebida-desc"><?php echo isset($producto['descripcion']) ? $producto['descripcion'] : ''; ?></p>
-            <span class="bebida-precio">$<?php echo $producto['precio']; ?></span>
-            <a href="carrito.php?id=<?php echo $producto['id_producto']; ?>" class="btn-pedir">Pedir</a>
+            <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
+            <p class="bebida-desc"><?php echo isset($producto['descripcion']) ? htmlspecialchars($producto['descripcion']) : ''; ?></p>
+            <span class="bebida-precio">$<?php echo number_format($producto['precio'], 2); ?></span>
+            
+            <!-- Formulario dinámico para la base de datos -->
+            <form action="carrito.php" method="POST">
+              <input type="hidden" name="id" value="<?php echo $producto['id_producto']; ?>">
+              <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
+              <input type="hidden" name="precio" value="<?php echo $producto['precio']; ?>">
+              <input type="hidden" name="cantidad" value="1">
+              <button type="submit" class="btn-pedir">Pedir</button>
+            </form>
           </div>
         </article>
       <?php 
         }
       } else { 
       ?>
+        
         <article class="categoria-carta">
           <img class="categoria-foto" src="../img/sandwich-club.webp" alt="Sandwich club de pollo">
           <div class="categoria-label">
             <h3>Sándwich Club</h3>
             <p class="bebida-desc">Pan artesanal con pollo, tocino, lechuga y aguacate.</p>
             <span class="bebida-precio">$85.00</span>
-            <a href="carrito.php" class="btn-pedir">Pedir</a>
+            <form action="agregar_al_carrito.php" method="POST">
+              <input type="hidden" name="id" value="sandwich-club">
+              <input type="hidden" name="nombre" value="Sándwich Club">
+              <input type="hidden" name="precio" value="85.00">
+              <input type="hidden" name="cantidad" value="1">
+              <button type="submit" class="btn-pedir">Pedir</button>
+            </form>
           </div>
         </article>
 
@@ -91,13 +106,13 @@
             <h3>Bagel Salmón</h3>
             <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
             <span class="bebida-precio">$95.00</span>
-              <form action="agregar_al_carrito.php" method="POST">
-                <input type="hidden" name="id" value="bagel-salmon">
-                <input type="hidden" name="nombre" value="Bagel Salmón">
-                <input type="hidden" name="precio" value="95.00">
-                <input type="hidden" name="cantidad" value="1">
-                <button type="submit" class="btn-pedir">Pedir</button>
-              </form>
+            <form action="agregar_al_carrito.php" method="POST">
+              <input type="hidden" name="id" value="bagel-salmon">
+              <input type="hidden" name="nombre" value="Bagel Salmón">
+              <input type="hidden" name="precio" value="95.00">
+              <input type="hidden" name="cantidad" value="1">
+              <button type="submit" class="btn-pedir">Pedir</button>
+            </form>
           </div>
         </article>
 
@@ -107,7 +122,13 @@
             <h3>Croissant J&Q</h3>
             <p class="bebida-desc">Croissant horneado relleno de jamón y queso gouda.</p>
             <span class="bebida-precio">$65.00</span>
-            <a href="carrito.php" class="btn-pedir">Pedir</a>
+            <form action="agregar_al_carrito.php" method="POST">
+              <input type="hidden" name="id" value="croissant-jamon">
+              <input type="hidden" name="nombre" value="Croissant J&Q">
+              <input type="hidden" name="precio" value="65.00">
+              <input type="hidden" name="cantidad" value="1">
+              <button type="submit" class="btn-pedir">Pedir</button>
+            </form>
           </div>
         </article>
       <?php } ?>
@@ -121,8 +142,6 @@
   </footer>
 
   <script src="../JS/header-footer.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
