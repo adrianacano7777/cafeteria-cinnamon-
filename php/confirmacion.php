@@ -17,11 +17,9 @@
     <p>Tu pedido fue recibido y está siendo preparado.</p>
 
     <div class="confirmacion-resumen">
-      <p1>Latte de vainilla de Madagascar x1 — $55.00</p1><br>
-      <p1>Roles de canela de Ceylán x2 — $96.00</p1><br>
-      <p1>Entrega: A domicilio</p1><br>
-      <p1>Pago: Tarjeta de crédito/débito</p1><br>
-      <p1 class="total-final">Total pagado: $176.00 MXN</p1>
+      <p1>Entrega: </p1><br>
+      <p1>Pago: </p1><br>
+      <p1 class="total-final">Total pagado:</p1>
     </div>
 
     <a href="historial.php" class="btn-primario">Ver mis pedidos</a>
