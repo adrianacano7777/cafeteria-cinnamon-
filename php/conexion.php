@@ -2,7 +2,7 @@
 <?php
 $host = "localhost";
 $puerto = "3306";
-$basedatos = "cinnamon";
+$basedatos = "cafeteria_cinnamon";
 $usuario = "root";
 $contrasena = "";
  
