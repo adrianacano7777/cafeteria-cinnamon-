@@ -1,7 +1,7 @@
 
 <?php
 $host = "localhost";
-$puerto = "3306";
+$puerto = "2207";
 $basedatos = "cinnamon";
 $usuario = "root";
 $contrasena = "";
