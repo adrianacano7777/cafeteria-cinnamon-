@@ -3,9 +3,9 @@
   $categoria_actual = "Nuestras Bebidas";
   $subtitulo = "Preparadas con el mejor café artesanal e ingredientes selectos";
 
-  $conexion = mysqli_connect("localhost", "root", "", "cinnamon");
+  $conexion = mysqli_connect("localhost", "root", "", "cafeteria_cinnamon");
 
-  $query = "SELECT * FROM productos WHERE categoria = 'Bebidas'";
+  $query = "SELECT * FROM productos WHERE categoria = 'bebidas'";
   $resultado = mysqli_query($conexion, $query);
 ?>
 <!DOCTYPE html>
@@ -18,8 +18,8 @@
   
   <title><?php echo $titulo_pagina; ?></title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/menu_postres.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,25 +66,39 @@
         while ($producto = mysqli_fetch_assoc($resultado)) { 
       ?>
         <article class="categoria-carta">
-          <img class="categoria-foto" src="<?php echo isset($producto['imagen']) ? $producto['imagen'] : '../img/americano.webp'; ?>" alt="<?php echo $producto['nombre']; ?>">
+          <img class="categoria-foto" src="<?php echo isset($producto['imagen']) ? $producto['imagen'] : '../img/americano.webp'; ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
           <div class="categoria-label">
-            <h3><?php echo $producto['nombre']; ?></h3>
-            <p class="bebida-desc"><?php echo isset($producto['descripcion']) ? $producto['descripcion'] : ''; ?></p>
-            <span class="bebida-precio">$<?php echo $producto['precio']; ?></span>
-            <a href="carrito.php?id=<?php echo $producto['id_producto']; ?>" class="btn-pedir">Pedir</a>
+            <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
+            <p class="bebida-desc"><?php echo isset($producto['descripcion']) ? htmlspecialchars($producto['descripcion']) : ''; ?></p>
+            <span class="bebida-precio">$<?php echo number_format($producto['precio'], 2); ?></span>
+            
+            <form action="carrito.php" method="POST">
+              <input type="hidden" name="id" value="<?php echo $producto['id_producto']; ?>">
+              <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
+              <input type="hidden" name="precio" value="<?php echo $producto['precio']; ?>">
+              <input type="hidden" name="cantidad" value="1">
+              <button type="submit" class="btn-pedir">Pedir</button>
+            </form>
           </div>
         </article>
       <?php 
         }
       } else { 
       ?>
+       
         <article class="categoria-carta">
           <img class="categoria-foto" src="../img/americano.webp" alt="Café americano">
           <div class="categoria-label">
             <h3>Café Americano</h3>
             <p class="bebida-desc">Café de grano etíope preparado en filtro tradicional.</p>
             <span class="bebida-precio">$35.00</span>
-            <a href="carrito.php" class="btn-pedir">Pedir</a>
+            <form action="agregar_al_carrito.php" method="POST">
+              <input type="hidden" name="id" value="cafe-americano">
+              <input type="hidden" name="nombre" value="Café Americano">
+              <input type="hidden" name="precio" value="35.00">
+              <input type="hidden" name="cantidad" value="1">
+              <button type="submit" class="btn-pedir">Pedir</button>
+            </form>
           </div>
         </article>
 
@@ -93,7 +107,13 @@
             <h3>Latte Vainilla</h3>
             <p class="bebida-desc">Espresso con leche vaporizada y vainilla auténtica.</p>
             <span class="bebida-precio">$55.00</span>
-            <a href="carrito.php" class="btn-pedir">Pedir</a>
+            <form action="agregar_al_carrito.php" method="POST">
+              <input type="hidden" name="id" value="latte-vainilla">
+              <input type="hidden" name="nombre" value="Latte Vainilla">
+              <input type="hidden" name="precio" value="55.00">
+              <input type="hidden" name="cantidad" value="1">
+              <button type="submit" class="btn-pedir">Pedir</button>
+            </form>
           </div>
         </article>
 
@@ -102,7 +122,13 @@
             <h3>Capuchino Clásico</h3>
             <p class="bebida-desc">Espresso con espuma cremosa y un toque de canela de Ceylán.</p>
             <span class="bebida-precio">$50.00</span>
-            <a href="carrito.php" class="btn-pedir">Pedir</a>
+            <form action="agregar_al_carrito.php" method="POST">
+              <input type="hidden" name="id" value="capuchino-clasico">
+              <input type="hidden" name="nombre" value="Capuchino Clásico">
+              <input type="hidden" name="precio" value="50.00">
+              <input type="hidden" name="cantidad" value="1">
+              <button type="submit" class="btn-pedir">Pedir</button>
+            </form>
           </div>
         </article>
       <?php } ?>
