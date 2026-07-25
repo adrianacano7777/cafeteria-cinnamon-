@@ -1,39 +1,46 @@
 <?php
 session_start();
+require_once 'conexion.php';
 
 $titulo_pagina = "Cafetería Cinnamon - Iniciar sesión";
 $mensaje_bienvenida = "Entrar a mi cuenta";
 $error_login = "";
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['correo']) && !isset($_POST['nombre'])) {
     
 
-    $correo = isset($_POST['correo']) ? trim($_POST['correo']) : '';
-    $contrasena = isset($_POST['contrasena']) ? trim($_POST['contrasena']) : '';
+    $correo = trim($_POST['correo']);
+    $contrasena = trim($_POST['contrasena']);
 
-    if (!empty($correo)) {
-        
-        
-        if (strpos(strtolower($correo), 'admin') !== false) {
-            $_SESSION['id_usuario'] = 1;               
-            $_SESSION['usuario']    = $correo;         
-            $_SESSION['rol']        = 'admin';           
-         
-            header("Location: admin_inventario.php");
-            exit();
+    if (!empty($correo) && !empty($contrasena)) {
+
+        $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE correo = :correo");
+        $consulta->bindParam(':correo', $correo);
+        $consulta->execute();
+        $usuario_bd = $consulta->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuario_bd && $contrasena === $usuario_bd['contrasena']) {
+
+            $_SESSION['id_usuario'] = $usuario_bd['id_usuario'];
+            $_SESSION['nombre']     = $usuario_bd['nombre'];
+            $_SESSION['usuario']    = $usuario_bd['correo'];
+            $_SESSION['rol']        = $usuario_bd['rol'];
+
+            if ($usuario_bd['rol'] === 'admin') {
+                header("Location: admin_inventario.php");
+                exit();
+            } else {
+                header("Location: perfil.php");
+                exit();
+            }
+
         } else {
-            $_SESSION['id_usuario'] = rand(2, 100);     
-            $_SESSION['usuario']    = $correo;         
-            $_SESSION['rol']        = 'cliente';         
-            
-           
-            header("Location: perfil.php");
-            exit();
+            $error_login = "Correo o contraseña incorrectos.";
         }
 
-        
+    } else {
+        $error_login = "Escribe tu correo y contraseña.";
     }
 }
 ?>
@@ -44,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $titulo_pagina; ?></title>
-  
+
   <link rel="icon" href="../img/icono-pestana.png" type="image/png">
-  <link rel="stylesheet" href="../css/login.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -71,15 +78,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="acceso-contenedor-paneles">
       <div class="acceso-panel" id="iniciar-sesion">
         <h3>Ya tengo cuenta: Iniciar sesión</h3>
-        
+
         <form class="form-acceso" action="login.php" method="post">
           <label for="login-correo">Correo electrónico <span class="campo-obligatorio">*</span></label>
           <input type="email" id="login-correo" name="correo" placeholder="Ejemplo: admin@cinnamon.com o usuario@gmail.com" required>
           <p class="texto-ayuda">Escribe tu correo de usuario o administrador.</p>
-          
+
           <label for="login-contrasena">Contraseña <span class="campo-obligatorio">*</span></label>
           <input type="password" id="login-contrasena" name="contrasena" placeholder="Escribe tu contraseña" required>
-          
+
           <button type="submit" class="btn-primario">Entrar</button>
         </form>
       </div>
@@ -112,8 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </section>
 
   <div id="footer-placeholder"></div>
-
- 
 
   <script src="../JS/header-footer.js"></script>
 
