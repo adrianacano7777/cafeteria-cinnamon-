@@ -10,7 +10,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,7 +91,13 @@
             <h3>Bagel Salmón</h3>
             <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
             <span class="bebida-precio">$95.00</span>
-            <a href="carrito.php" class="btn-pedir">Pedir</a>
+              <form action="agregar_al_carrito.php" method="POST">
+                <input type="hidden" name="id" value="bagel-salmon">
+                <input type="hidden" name="nombre" value="Bagel Salmón">
+                <input type="hidden" name="precio" value="95.00">
+                <input type="hidden" name="cantidad" value="1">
+                <button type="submit" class="btn-pedir">Pedir</button>
+              </form>
           </div>
         </article>
 
