@@ -28,7 +28,10 @@
   color: #f2f2f3;
   margin: 5px 0;
 }
-
+.confirmacion h3 {
+  color: #f2f2f3;
+  margin: 5px 0;
+}
 .confirmacion-resumen {
   background-color: #faf7f2;
   border: 1px solid #f0e6f0;
@@ -38,7 +41,7 @@
   text-align: left; 
 }
 
-.confirmacion-resumen p {
+.confirmacion-resume p {
   border-bottom: 1px dashed #e6dad2;
   padding-bottom: 8px;
   margin-bottom: 8px;
