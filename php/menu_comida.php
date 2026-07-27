@@ -137,9 +137,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <footer class="text-center py-3 bg-dark text-white">
-    <p class="mb-0">&copy; <?php echo date('Y'); ?> Cafetería Cinnamon. Todos los derechos reservados.</p>
-  </footer>
+
 
   <script src="../JS/header-footer.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.bundle.min.js"></script>
