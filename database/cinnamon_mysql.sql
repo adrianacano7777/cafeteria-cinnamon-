@@ -67,9 +67,23 @@ INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES
 ('Denisse Nava', 'denisse@gmail.com', 'clave123', 'cliente'),
 ('Grecia Tapia', 'grecia@gmail.com', 'clave123', 'cliente');
 
-INSERT INTO productos (nombre, categoria, precio, disponibilidad) VALUES
+INSERT INTO productos (nombre, categoria, precio, disponibilidad, descripcion) VALUES
 ('Latte de vainilla de Madagascar', 'Bebidas', 55.00, TRUE),
-('Croissant de almendra', 'Postres', 50.00, FALSE),
+
+
+('Roles de canela de Ceylán', 'Postres', 48.00, TRUE),
+('Brownie de chocolate belga', 'Postres', 52.00, TRUE),
+('Cheesecake de vainilla', 'Postres', 58.00, TRUE),
+('Tarta de fresa', 'Postres', 55.00, TRUE),
+('Muffin de arandanos', 'Postres', 40.00, TRUE),
+('Cookies de chocolate belga', 'Postres', 35.00, TURE),
+('Flan napolitano', 'Postres', 45.00, TRUE),
+('Croissant de almendra', 'Postres', 58.00, FALSE),
+('Pay de queso con cajeta', 'Postres', 50.00, TRUE),
+('Panque de vainilla y canela', 'Postres', 42.00, TRUE),
+
+
+
 ('Sandwich club de pollo', 'Comida', 85.00, TRUE);
 
 INSERT INTO insumos (nombre, cantidad_disponible, cantidad_minima, unidad_medida) VALUES
@@ -78,7 +92,7 @@ INSERT INTO insumos (nombre, cantidad_disponible, cantidad_minima, unidad_medida
 ('Canela de Ceylán', 1.2, 1, 'kg'),
 ('Vasos desechables (grandes)', 60, 100, 'piezas');
 
-INSERT INTO metodo_pago (nombre) VALUES
+INSERT INTO metodo_pago (nombre) VALUESs
 ('Tarjeta'),
 ('Efectivo'),
 ('Transferencia');
