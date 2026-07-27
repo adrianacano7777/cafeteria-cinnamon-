@@ -71,17 +71,15 @@ INSERT INTO productos (nombre, categoria, precio, disponibilidad, descripcion) V
 ('Latte de vainilla de Madagascar', 'Bebidas', 55.00, TRUE),
 
 
-('Roles de canela de Ceylán', 'Postres', 48.00, TRUE),
-('Brownie de chocolate belga', 'Postres', 52.00, TRUE),
-('Cheesecake de vainilla', 'Postres', 58.00, TRUE),
-('Tarta de fresa', 'Postres', 55.00, TRUE),
-('Muffin de arandanos', 'Postres', 40.00, TRUE),
-('Cookies de chocolate belga', 'Postres', 35.00, TURE),
-('Flan napolitano', 'Postres', 45.00, TRUE),
-('Croissant de almendra', 'Postres', 58.00, FALSE),
-('Pay de queso con cajeta', 'Postres', 50.00, TRUE),
-('Panque de vainilla y canela', 'Postres', 42.00, TRUE),
-
+('Roles de canela de Ceylán', 'Postres', 48.00, TRUE, 'Rol horneado con canela auténtica y glaseado cremoso.'),
+('Brownie de chocolate belga', 'Postres', 52.00, TRUE, 'Brownie húmedo con chocolate belga y nuez.'),
+('Cheesecake de vainilla', 'Postres', 58.00, TRUE, 'Cheesecake cremoso con vainilla de Madagascar.'),
+('Tarta de fresa', 'Postres', 55.00, TRUE, 'Base de galleta con crema pastelera y fresas frescas.'),
+('Muffin de arandanos', 'Postres', 40.00, TRUE, 'Muffin esponjoso con arándanos naturales.'),
+('Cookies de chocolate belga', 'Postres', 35.00, TRUE, 'Galletas horneadas con chispas de chocolate belga.'),
+('Flan napolitano', 'Postres', 45.00, TRUE, 'Flan tradicional bañado en caramelo.'),
+('Pay de queso con cajeta', 'Postres', 50.00, TRUE, 'Pay cremoso bañado con cajeta artesanal.'),
+('Panque de vainilla y canela', 'Postres', 42.00, TRUE, 'Panqué casero con vainilla de Madagascar y canela..'),
 
 
 ('Sandwich club de pollo', 'Comida', 85.00, TRUE);
