@@ -82,19 +82,14 @@ INSERT INTO productos (nombre, categoria, precio, disponibilidad, descripcion, i
 
 ('Roles de canela de Ceylán', 'Postres', 48.00, TRUE, 'Rol horneado con canela auténtica y glaseado cremoso.', 'rolcanela.jpg'),
 ('Brownie de chocolate belga', 'Postres', 52.00, TRUE, 'Brownie húmedo con chocolate belga y nuez.', 'brownie.jpg'),
-('Cheesecake de vainilla', 'Postres', 58.00, TRUE, 'Cheesecake cremoso con vainilla de Madagascar.', 'quesocake.webp‎
-'),
-('Tarta de fresa', 'Postres', 55.00, TRUE, 'Base de galleta con crema pastelera y fresas frescas.', 'tartafresa.webp‎
-'),
+('Cheesecake de vainilla', 'Postres', 58.00, TRUE, 'Cheesecake cremoso con vainilla de Madagascar.', 'quesocake.webp'),
+('Tarta de fresa', 'Postres', 55.00, TRUE, 'Base de galleta con crema pastelera y fresas frescas.', 'tartafresa.webp'),
 ('Muffin de arandanos', 'Postres', 40.00, TRUE, 'Muffin esponjoso con arándanos naturales.', 'muffin.jpg'),
 ('Cookies de chocolate belga', 'Postres', 35.00, TRUE, 'Galletas horneadas con chispas de chocolate belga.', 'galleta.jpg'),
-('Flan napolitano', 'Postres', 45.00, TRUE, 'Flan tradicional bañado en caramelo.', 'flan.jpg‎
-'),
-('Crossiant de almendra', 'Postres', 50.00, TRUE, 'Croissant relleno de crema de almendra.', 'croasant.webp‎
-'),
+('Flan napolitano', 'Postres', 45.00, TRUE, 'Flan tradicional bañado en caramelo.', 'flan.jpg'),
+('Crossiant de almendra', 'Postres', 50.00, TRUE, 'Croissant relleno de crema de almendra.', 'croasant.webp'),
 ('Pay de queso con cajeta', 'Postres', 50.00, TRUE, 'Pay cremoso bañado con cajeta artesanal.', 'pay.webp'),
-('Panque de vainilla y canela', 'Postres', 42.00, TRUE, 'Panqué casero con vainilla de Madagascar y canela.', 'panque.jpeg‎
-'),
+('Panque de vainilla y canela', 'Postres', 42.00, TRUE, 'Panqué casero con vainilla de Madagascar y canela.', 'panque.jpeg'),
 
 ('Sandwich club de pollo', 'Comida', 85.00, TRUE, 'Pan artesanal con pollo, tocino, lechuga y aguacate.', 'sandwich-club.webp'),
 ('Bagel con salmón ahumado', 'Comida', 95.00, TRUE, 'Bagel tostado con queso crema, salmón y alcaparras.', 'bagel-salmon.webp'),
@@ -113,7 +108,7 @@ INSERT INTO insumos (nombre, cantidad_disponible, cantidad_minima, unidad_medida
 ('Canela de Ceylán', 1.2, 1, 'kg'),
 ('Vasos desechables (grandes)', 60, 100, 'piezas');
 
-INSERT INTO metodo_pago (nombre) VALUESs
+INSERT INTO metodo_pago (nombre) VALUES
 ('Tarjeta'),
 ('Efectivo'),
 ('Transferencia');
