@@ -53,93 +53,102 @@
     </button>
   </div>
 
-  <section class="menu">
-    <h2 class="seccion-titulo"><?php echo $categoria_actual; ?></h2>
-    <p class="seccion-subtitulo"><?php echo $subtitulo; ?></p>
+  <section class="menu container my-5">
+    <div class="text-center mb-4">
+      <h2 class="seccion-titulo fw-bold"><?php echo $categoria_actual; ?></h2>
+      <p class="seccion-subtitulo text-muted fst-italic"><?php echo $subtitulo; ?></p>
+    </div>
 
-    <div class="menu-categoria" style="margin-bottom: 40px;">
+   
+    <div class="row g-4">
       <?php 
       if ($resultado && mysqli_num_rows($resultado) > 0) {
         while ($producto = mysqli_fetch_assoc($resultado)) { 
       ?>
-        <article class="categoria-carta">
-          <img class="categoria-foto" src="<?php echo isset($producto['imagen']) ? $producto['imagen'] : '../img/sandwich-club.webp'; ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
-          <div class="categoria-label">
-            <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
-            <p class="bebida-desc"><?php echo isset($producto['descripcion']) ? htmlspecialchars($producto['descripcion']) : ''; ?></p>
-            <span class="bebida-precio">$<?php echo number_format($producto['precio'], 2); ?></span>
-            
-            <!-- Formulario dinámico para la base de datos -->
-            <form action="carrito.php" method="POST">
-              <input type="hidden" name="id" value="<?php echo $producto['id_producto']; ?>">
-              <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
-              <input type="hidden" name="precio" value="<?php echo $producto['precio']; ?>">
-              <input type="hidden" name="cantidad" value="1">
-              <button type="submit" class="btn-pedir">Pedir</button>
-            </form>
-          </div>
-        </article>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <article class="categoria-carta h-100">
+            <img class="categoria-foto" src="<?php echo isset($producto['imagen']) && !empty($producto['imagen']) ? $producto['imagen'] : '../img/sandwich-club.webp'; ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+            <div class="categoria-label">
+              <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
+              <p class="bebida-desc"><?php echo isset($producto['descripcion']) ? htmlspecialchars($producto['descripcion']) : ''; ?></p>
+              <span class="bebida-precio">$<?php echo number_format($producto['precio'], 2); ?></span>
+              
+         
+              <form action="carrito.php" method="POST" class="mt-auto">
+                <input type="hidden" name="id" value="<?php echo $producto['id_producto']; ?>">
+                <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                <input type="hidden" name="precio" value="<?php echo $producto['precio']; ?>">
+                <input type="hidden" name="cantidad" value="1">
+                <button type="submit" class="btn-pedir">Pedir</button>
+              </form>
+            </div>
+          </article>
+        </div>
       <?php 
         }
       } else { 
       ?>
-        
-        <article class="categoria-carta">
-          <img class="categoria-foto" src="../img/sandwich-club.webp" alt="Sandwich club de pollo">
-          <div class="categoria-label">
-            <h3>Sándwich Club</h3>
-            <p class="bebida-desc">Pan artesanal con pollo, tocino, lechuga y aguacate.</p>
-            <span class="bebida-precio">$85.00</span>
-            <form action="carrito.php" method="POST">
-              <input type="hidden" name="id" value="sandwich-club">
-              <input type="hidden" name="nombre" value="Sándwich Club">
-              <input type="hidden" name="precio" value="85.00">
-              <input type="hidden" name="cantidad" value="1">
-              <button type="submit" class="btn-pedir">Pedir</button>
-            </form>
-          </div>
-        </article>
+     
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <article class="categoria-carta h-100">
+            <img class="categoria-foto" src="../img/sandwich-club.webp" alt="Sandwich club de pollo">
+            <div class="categoria-label">
+              <h3>Sándwich Club</h3>
+              <p class="bebida-desc">Pan artesanal con pollo, tocino, lechuga y aguacate.</p>
+              <span class="bebida-precio">$85.00</span>
+              <form action="carrito.php" method="POST" class="mt-auto">
+                <input type="hidden" name="id" value="sandwich-club">
+                <input type="hidden" name="nombre" value="Sándwich Club">
+                <input type="hidden" name="precio" value="85.00">
+                <input type="hidden" name="cantidad" value="1">
+                <button type="submit" class="btn-pedir">Pedir</button>
+              </form>
+            </div>
+          </article>
+        </div>
 
-        <article class="categoria-carta">
-          <img class="categoria-foto" src="../img/bagel-salmon.webp" alt="Bagel con salmón ahumado">
-          <div class="categoria-label">
-            <h3>Bagel Salmón</h3>
-            <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
-            <span class="bebida-precio">$95.00</span>
-            <form action="carrito.php" method="POST">
-              <input type="hidden" name="id" value="bagel-salmon">
-              <input type="hidden" name="nombre" value="Bagel Salmón">
-              <input type="hidden" name="precio" value="95.00">
-              <input type="hidden" name="cantidad" value="1">
-              <button type="submit" class="btn-pedir">Pedir</button>
-            </form>
-          </div>
-        </article>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <article class="categoria-carta h-100">
+            <img class="categoria-foto" src="../img/bagel-salmon.webp" alt="Bagel con salmón ahumado">
+            <div class="categoria-label">
+              <h3>Bagel Salmón</h3>
+              <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
+              <span class="bebida-precio">$95.00</span>
+              <form action="carrito.php" method="POST" class="mt-auto">
+                <input type="hidden" name="id" value="bagel-salmon">
+                <input type="hidden" name="nombre" value="Bagel Salmón">
+                <input type="hidden" name="precio" value="95.00">
+                <input type="hidden" name="cantidad" value="1">
+                <button type="submit" class="btn-pedir">Pedir</button>
+              </form>
+            </div>
+          </article>
+        </div>
 
-        <article class="categoria-carta">
-          <img class="categoria-foto" src="../img/croissant-jamon.webp" alt="Croissant jamón y queso">
-          <div class="categoria-label">
-            <h3>Croissant J&Q</h3>
-            <p class="bebida-desc">Croissant horneado relleno de jamón y queso gouda.</p>
-            <span class="bebida-precio">$65.00</span>
-            <form action="carrito.php" method="POST">
-              <input type="hidden" name="id" value="croissant-jamon">
-              <input type="hidden" name="nombre" value="Croissant J&Q">
-              <input type="hidden" name="precio" value="65.00">
-              <input type="hidden" name="cantidad" value="1">
-              <button type="submit" class="btn-pedir">Pedir</button>
-            </form>
-          </div>
-        </article>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <article class="categoria-carta h-100">
+            <img class="categoria-foto" src="../img/croissant-jamon.webp" alt="Croissant jamón y queso">
+            <div class="categoria-label">
+              <h3>Croissant J&Q</h3>
+              <p class="bebida-desc">Croissant horneado relleno de jamón y queso gouda.</p>
+              <span class="bebida-precio">$65.00</span>
+              <form action="carrito.php" method="POST" class="mt-auto">
+                <input type="hidden" name="id" value="croissant-jamon">
+                <input type="hidden" name="nombre" value="Croissant J&Q">
+                <input type="hidden" name="precio" value="65.00">
+                <input type="hidden" name="cantidad" value="1">
+                <button type="submit" class="btn-pedir">Pedir</button>
+              </form>
+            </div>
+          </article>
+        </div>
       <?php } ?>
     </div>
   </section>
 
   <div id="footer-placeholder"></div>
 
-
-
   <script src="../JS/header-footer.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
