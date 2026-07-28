@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $titulo_pagina; ?></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/menu_postres.css">
+  <link rel="stylesheet" href="../css/menu_postres.css?v=<?php echo filemtime('../css/menu_postres.css'); ?>">
   <link rel="icon" href="../img/icono-pestana.png" type="image/png">
 </head>
 
@@ -90,7 +90,7 @@
             <h3>Sándwich Club</h3>
             <p class="bebida-desc">Pan artesanal con pollo, tocino, lechuga y aguacate.</p>
             <span class="bebida-precio">$85.00</span>
-            <form action="agregar_al_carrito.php" method="POST">
+            <form action="carrito.php" method="POST">
               <input type="hidden" name="id" value="sandwich-club">
               <input type="hidden" name="nombre" value="Sándwich Club">
               <input type="hidden" name="precio" value="85.00">
@@ -106,7 +106,7 @@
             <h3>Bagel Salmón</h3>
             <p class="bebida-desc">Bagel tostado con queso crema, salmón y alcaparras.</p>
             <span class="bebida-precio">$95.00</span>
-            <form action="agregar_al_carrito.php" method="POST">
+            <form action="carrito.php" method="POST">
               <input type="hidden" name="id" value="bagel-salmon">
               <input type="hidden" name="nombre" value="Bagel Salmón">
               <input type="hidden" name="precio" value="95.00">
@@ -122,7 +122,7 @@
             <h3>Croissant J&Q</h3>
             <p class="bebida-desc">Croissant horneado relleno de jamón y queso gouda.</p>
             <span class="bebida-precio">$65.00</span>
-            <form action="agregar_al_carrito.php" method="POST">
+            <form action="carrito.php" method="POST">
               <input type="hidden" name="id" value="croissant-jamon">
               <input type="hidden" name="nombre" value="Croissant J&Q">
               <input type="hidden" name="precio" value="65.00">

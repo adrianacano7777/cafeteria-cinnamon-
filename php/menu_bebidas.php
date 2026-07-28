@@ -18,8 +18,8 @@
   
   <title><?php echo $titulo_pagina; ?></title>
 
-  <link rel="stylesheet" href="../css/menu_postres.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/menu_postres.css?v=<?php echo filemtime('../css/menu_postres.css'); ?>">
 </head>
 
 <body>
@@ -59,6 +59,8 @@
   <section class="menu">
     <h2 class="seccion-titulo"><?php echo $categoria_actual; ?></h2>
     <p class="seccion-subtitulo"><?php echo $subtitulo; ?></p>
+
+    
 
     <div class="menu-categoria" style="margin-bottom: 30px;">
       <?php 
