@@ -14,6 +14,8 @@ CREATE TABLE productos (
     categoria ENUM('Comida', 'Bebidas', 'Postres') NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
     disponibilidad BOOLEAN NOT NULL DEFAULT TRUE
+    descripcion TEXT,
+    imagen VARCHAR(255) DEFAULT 'default.jpg'
 );
 
 CREATE TABLE insumos (
@@ -67,22 +69,43 @@ INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES
 ('Denisse Nava', 'denisse@gmail.com', 'clave123', 'cliente'),
 ('Grecia Tapia', 'grecia@gmail.com', 'clave123', 'cliente');
 
-INSERT INTO productos (nombre, categoria, precio, disponibilidad, descripcion) VALUES
-('Latte de vainilla de Madagascar', 'Bebidas', 55.00, TRUE),
+INSERT INTO productos (nombre, categoria, precio, disponibilidad, descripcion, imagen) VALUES
+('Cafe americano', 'Bebidas', 35.00, TRUE, 'Café de grano etíope preparado en filtro tradicional.', 'americano.webp'),
+('Latte de vainilla de Madagascar', 'Bebidas', 55.00, TRUE, 'Espresso con leche vaporizada y vainilla auténtica.', 'latte-vainilla.webp'),
+('Capuchino clásico', 'Bebidas', 50.00, TRUE, 'Espresso con espuma cremosa y un toque de canela de Ceylán.', 'capuchino.webp'),
+('Mocha de chocolate belga', 'Bebidas', 60.00, TRUE, 'Espresso chocolate belga fundido y leche vaporizada.', 'mocha.webp'),
+('Chai latte', 'Bebidas', 58.00, TRUE, 'Té chai especiado con leche vaporizada.', 'chai-latte.webp'),
+('Matcha latte', 'Bebidas', 62.00, TRUE, 'Té matcha ceremonial batido con leche.', 'matcha.webp'),
+('Frappé de caramelo', 'Bebidas', 65.00, TRUE, 'Café frío licuado con caramelo y crema batida.', 'frappe-caramelo.webp'),
+('Té helado de durazno', 'Bebidas', 45.00, TRUE, 'Té negro infusionado con durazno natural.', 'cold-brew.webp'),
+('Chocolate caliente belga', 'Bebidas', 58.00, TRUE, 'Chocolate beiga fundido con leche entera y malvaviscos.', 'chocolate-caliente.webp'),
 
+('Roles de canela de Ceylán', 'Postres', 48.00, TRUE, 'Rol horneado con canela auténtica y glaseado cremoso.', 'rolcanela.jpg'),
+('Brownie de chocolate belga', 'Postres', 52.00, TRUE, 'Brownie húmedo con chocolate belga y nuez.', 'brownie.jpg'),
+('Cheesecake de vainilla', 'Postres', 58.00, TRUE, 'Cheesecake cremoso con vainilla de Madagascar.', 'quesocake.webp‎
+'),
+('Tarta de fresa', 'Postres', 55.00, TRUE, 'Base de galleta con crema pastelera y fresas frescas.', 'tartafresa.webp‎
+'),
+('Muffin de arandanos', 'Postres', 40.00, TRUE, 'Muffin esponjoso con arándanos naturales.', 'muffin.jpg'),
+('Cookies de chocolate belga', 'Postres', 35.00, TRUE, 'Galletas horneadas con chispas de chocolate belga.', 'galleta.jpg'),
+('Flan napolitano', 'Postres', 45.00, TRUE, 'Flan tradicional bañado en caramelo.', 'flan.jpg‎
+'),
+('Crossiant de almendra', 'Postres', 50.00, TRUE, 'Croissant relleno de crema de almendra.', 'croasant.webp‎
+'),
+('Pay de queso con cajeta', 'Postres', 50.00, TRUE, 'Pay cremoso bañado con cajeta artesanal.', 'pay.webp'),
+('Panque de vainilla y canela', 'Postres', 42.00, TRUE, 'Panqué casero con vainilla de Madagascar y canela.', 'panque.jpeg‎
+'),
 
-('Roles de canela de Ceylán', 'Postres', 48.00, TRUE, 'Rol horneado con canela auténtica y glaseado cremoso.'),
-('Brownie de chocolate belga', 'Postres', 52.00, TRUE, 'Brownie húmedo con chocolate belga y nuez.'),
-('Cheesecake de vainilla', 'Postres', 58.00, TRUE, 'Cheesecake cremoso con vainilla de Madagascar.'),
-('Tarta de fresa', 'Postres', 55.00, TRUE, 'Base de galleta con crema pastelera y fresas frescas.'),
-('Muffin de arandanos', 'Postres', 40.00, TRUE, 'Muffin esponjoso con arándanos naturales.'),
-('Cookies de chocolate belga', 'Postres', 35.00, TRUE, 'Galletas horneadas con chispas de chocolate belga.'),
-('Flan napolitano', 'Postres', 45.00, TRUE, 'Flan tradicional bañado en caramelo.'),
-('Pay de queso con cajeta', 'Postres', 50.00, TRUE, 'Pay cremoso bañado con cajeta artesanal.'),
-('Panque de vainilla y canela', 'Postres', 42.00, TRUE, 'Panqué casero con vainilla de Madagascar y canela..'),
-
-
-('Sandwich club de pollo', 'Comida', 85.00, TRUE);
+('Sandwich club de pollo', 'Comida', 85.00, TRUE, 'Pan artesanal con pollo, tocino, lechuga y aguacate.', 'sandwich-club.webp'),
+('Bagel con salmón ahumado', 'Comida', 95.00, TRUE, 'Bagel tostado con queso crema, salmón y alcaparras.', 'bagel-salmon.webp'),
+('Croissant jamón y queso', 'Comida', 65.00, TRUE, 'Croissant horneado relleno de jamón y queso gouda.', 'croissant-jamon.webp'),
+('Ensalada césar con pollo', 'Comida', 90.00, TRUE, 'Lechuga romana, pollo a la parrilla y aderezo césar.', 'ensalada-cesar.webp'),
+('Quesadilla de flor de calabaza', 'Comida', 70.00, TRUE, 'Tortilla de harina con flor de calabaza y queso oaxaca.', 'quesadilla-calabaza.webp'),
+('Panini caprese', 'Comida', 80.00, TRUE, 'Pan ciabatta con tomate, mozzarella y pesto.', 'panini-caprese.webp'),
+('Omelette de espinaca y champiñones', 'Comida', 75.00, TRUE, 'Omelette esponjoso con espinaca fresca y champiñones.', 'omelette-espianca.webp'),
+('Wrap de atún', 'Comida', 78.00, TRUE, 'Tortilla integral con atún, apio y mayonesa ligera.', 'wrap-atun.webp'),
+('Torta de tamal', 'Comida', 80.00, TRUE, 'Tamal oaxaqueño servido en bolillo con crema.', 'torta-tamal.webp'),
+('Molletes con pico de gallo', 'Comida', 65.00, TRUE, 'Bolillo horneado con frijoles, queso grantinado y pico de gallo.', 'molletes.webp');
 
 INSERT INTO insumos (nombre, cantidad_disponible, cantidad_minima, unidad_medida) VALUES
 ('Café en grano (Etiopía)', 8.5, 5, 'kg'),
