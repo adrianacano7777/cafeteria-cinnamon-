@@ -24,24 +24,25 @@ $sql_semanas = "SELECT
                     WEEK(fecha, 1) AS numero_semana, 
                     SUM(total) AS total_semana 
                 FROM pedidos 
+                WHERE estado = 'entregado'
                 GROUP BY WEEK(fecha, 1) 
                 ORDER BY numero_semana DESC 
                 LIMIT 4";
 $ventas_semanas = $conexion->query($sql_semanas)->fetchAll(PDO::FETCH_ASSOC);
-
 
 $sql_top_productos = "SELECT 
                         pr.nombre AS producto, 
                         SUM(dp.cantidad) AS total_unidades 
                       FROM detalle_pedidos dp 
                       JOIN productos pr ON dp.id_producto = pr.id_producto 
+                      JOIN pedidos p ON dp.id_pedido = p.id_pedido
+                      WHERE p.estado = 'entregado'
                       GROUP BY dp.id_producto 
                       ORDER BY total_unidades DESC 
                       LIMIT 5";
 try {
     $top_productos = $conexion->query($sql_top_productos)->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-
     $top_productos = [];
 }
 ?>
@@ -106,7 +107,7 @@ try {
   </section>
 
   <section class="admin-main">
-    <h2 class="seccion-titulo">Resumen de ventas</h2>
+    <h2 class="seccion-titulo">Resumen de ventas (Pedidos Entregados)</h2>
 
     <div class="reporte-bloque">
       <h3>Ventas por semana</h3>
@@ -127,7 +128,7 @@ try {
             <?php endforeach; ?>
           <?php else: ?>
             <tr>
-              <td colspan="2">No hay ventas registradas aún.</td>
+              <td colspan="2">No hay ventas entregadas registradas aún.</td>
             </tr>
           <?php endif; ?>
         </tbody>
@@ -153,7 +154,7 @@ try {
             <?php endforeach; ?>
           <?php else: ?>
             <tr>
-              <td colspan="2">No hay registro de productos vendidos en el historial.</td>
+              <td colspan="2">No hay registro de productos entregados en el historial.</td>
             </tr>
           <?php endif; ?>
         </tbody>
