@@ -21,10 +21,6 @@ $usuarios = $conexion->query("SELECT * FROM usuarios ORDER BY id_usuario")->fetc
   <section class="admin-main">
     <h2 class="seccion-titulo">Usuarios registrados</h2>
 
-    <?php if (isset($_GET['info']) && $_GET['info'] === 'inactivado'): ?>
-    <p class="alerta-error" style="background-color: #fff3cd; color: #856404; border-color: #ffeeba;">El usuario tiene historial activo en el sistema. Se ha marcado como 'Inactivo' para proteger los registros de ventas y reseñas.</p>
-    <?php endif; ?>
-
     <div class="buscador">
       <input type="text" data-buscar-tabla="tabla-usuarios" placeholder="Buscar usuario por nombre o correo...">
     </div>
@@ -35,23 +31,33 @@ $usuarios = $conexion->query("SELECT * FROM usuarios ORDER BY id_usuario")->fetc
           <th>Nombre</th>
           <th>Correo</th>
           <th>Rol</th>
+          <th>Estado</th>
           <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
         <?php foreach ($usuarios as $u): ?>
-        <tr>
+        <?php $estatus_activo = isset($u['activo']) ? (int)$u['activo'] : ($u['rol'] === 'inactivo' ? 0 : 1); ?>
+        <tr class="<?php echo $estatus_activo ? '' : 'fila-inactiva'; ?>">
           <td><?php echo htmlspecialchars($u['nombre']); ?></td>
           <td><?php echo htmlspecialchars($u['correo']); ?></td>
           <td>
             <?php 
               if ($u['rol'] === 'admin') echo 'Administrador';
-              elseif ($u['rol'] === 'inactivo') echo 'Inactivo';
               else echo 'Cliente';
             ?>
           </td>
           <td>
-            <a href="eliminar_usuario.php?id=<?php echo $u['id_usuario']; ?>" class="btn-eliminar btn-eliminar-protegido" data-nombre="<?php echo htmlspecialchars($u['nombre']); ?>">Eliminar</a>
+            <span class="<?php echo $estatus_activo ? 'stock-suficiente' : 'stock-bajo'; ?>">
+              <?php echo $estatus_activo ? 'Activo' : 'Inactivo'; ?>
+            </span>
+          </td>
+          <td>
+            <?php if ($estatus_activo): ?>
+              <a href="cambiar_estado_usuario.php?id=<?php echo $u['id_usuario']; ?>&estado=0" class="btn-eliminar">Desactivar</a>
+            <?php else: ?>
+              <a href="cambiar_estado_usuario.php?id=<?php echo $u['id_usuario']; ?>&estado=1" class="btn-editar" style="background-color: #28a745; color: white;">Reactivar</a>
+            <?php endif; ?>
           </td>
         </tr>
         <?php endforeach; ?>

@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <li><a href="admin_inventario.php" data-pagina="admin_inventario.php">Inventario</a></li>
           <li><a href="admin_pedidos.php" data-pagina="admin_pedidos.php">Pedidos</a></li>
           <li><a href="admin_usuarios.php" data-pagina="admin_usuarios.php">Usuarios</a></li>
-          <li><a href="index.php" data-pagina="salir">Salir</a></li>
+          <li><a href="logout.php" data-pagina="logout.php">Cerrar Sesión</a></li>
         </ul>
       </nav>
     </header>

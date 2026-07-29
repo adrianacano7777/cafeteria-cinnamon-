@@ -5,7 +5,8 @@ CREATE TABLE usuarios (
     nombre VARCHAR(100) NOT NULL,
     correo VARCHAR(100) UNIQUE NOT NULL,
     contrasena VARCHAR(255) NOT NULL,
-    rol ENUM('cliente', 'admin') NOT NULL DEFAULT 'cliente'
+    rol ENUM('cliente', 'admin') NOT NULL DEFAULT 'cliente',
+    activo TINYINT(1) NOT NULL DEFAULT 1
 );
 
 CREATE TABLE productos (
@@ -62,12 +63,12 @@ CREATE TABLE resenas (
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
-INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES
-('Adriana', 'adriana@cinnamon.com', 'admin2026', 'admin'),
-('Angelica Rosas', 'angelica@gmail.com', 'clave123', 'cliente'),
-('Manuel Tapia', 'manuel@gmail.com', 'clave123', 'cliente'),
-('Denisse Nava', 'denisse@gmail.com', 'clave123', 'cliente'),
-('Grecia Tapia', 'grecia@gmail.com', 'clave123', 'cliente');
+INSERT INTO usuarios (nombre, correo, contrasena, rol, activo) VALUES
+('Adriana', 'adriana@cinnamon.com', 'admin2026', 'admin', 1),
+('Angelica Rosas', 'angelica@gmail.com', 'clave123', 'cliente', 1),
+('Manuel Tapia', 'manuel@gmail.com', 'clave123', 'cliente', 1),
+('Denisse Nava', 'denisse@gmail.com', 'clave123', 'cliente', 1),
+('Grecia Tapia', 'grecia@gmail.com', 'clave123', 'cliente', 1);
 
 INSERT INTO productos (nombre, categoria, precio, disponibilidad, descripcion, imagen) VALUES
 ('Cafe americano', 'Bebidas', 35.00, TRUE, 'Café de grano etíope preparado en filtro tradicional.', 'americano.webp'),
