@@ -118,6 +118,14 @@ INSERT INTO pedidos (id_usuario, id_metodo_pago, total, tipo_entrega, estado) VA
 ((SELECT id_usuario FROM usuarios WHERE correo = 'manuel@gmail.com'), (SELECT id_metodo_pago FROM metodo_pago WHERE nombre = 'Efectivo'), 63.00, 'tienda', 'recibido'),
 ((SELECT id_usuario FROM usuarios WHERE correo = 'grecia@gmail.com'), (SELECT id_metodo_pago FROM metodo_pago WHERE nombre = 'Transferencia'), 92.00, 'tienda', 'entregado');
 
+INSERT INTO detalles_pedido (id_detalle, id_pedido, id_producto, cantidad, precio_unitario) VALUES
+(1, 1, 1, 3, 45.00), 
+(2, 1, 2, 1, 50.00), 
+(3, 2, 2, 2, 50.00), 
+(4, 2, 3, 2, 55.00), 
+(5, 3, 1, 1, 45.00), 
+(6, 3, 3, 1, 55.00);
+
 INSERT INTO resenas (id_usuario, calificacion, comentario) VALUES
 ((SELECT id_usuario FROM usuarios WHERE correo = 'angelica@gmail.com'), 5, '¡Los mejores roles de canela y brownies que he probado! Se nota muchísimo la calidad del chocolate belga en su repostería.'),
 ((SELECT id_usuario FROM usuarios WHERE correo = 'manuel@gmail.com'), 5, 'Soy súper exigente con el café y el latte de aquí con granos de Etiopía es una joya.'),
