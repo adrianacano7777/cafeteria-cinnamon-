@@ -13,7 +13,7 @@ CREATE TABLE productos (
     nombre VARCHAR(100) NOT NULL,
     categoria ENUM('Comida', 'Bebidas', 'Postres') NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
-    disponibilidad BOOLEAN NOT NULL DEFAULT TRUE
+    disponibilidad BOOLEAN NOT NULL DEFAULT TRUE,
     descripcion TEXT,
     imagen VARCHAR(255) DEFAULT 'default.jpg'
 );

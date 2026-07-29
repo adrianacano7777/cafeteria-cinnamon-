@@ -69,7 +69,8 @@
 
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <article class="categoria-carta h-100">
-            <img class="categoria-foto" src="<?php echo isset($producto['imagen']) && !empty($producto['imagen']) ? $producto['imagen'] : '../img/rolcanela.JPG'; ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+          <img class="categoria-foto" src="<?php echo isset($producto['imagen']) && !empty($producto['imagen']) ? '../img/' . $producto['imagen'] : '../img/rolcanela.JPG'; ?>" 
+            alt="<?php echo htmlspecialchars($producto['nombre']); ?>">              
             <div class="categoria-label">
               <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
               <p class="bebida-desc"><?php echo isset($producto['descripcion']) ? htmlspecialchars($producto['descripcion']) : ''; ?></p>
