@@ -146,6 +146,7 @@
     </div>
   </section>
 
+
   <div id="footer-placeholder"></div>
 
   <script src="../JS/header-footer.js"></script>
