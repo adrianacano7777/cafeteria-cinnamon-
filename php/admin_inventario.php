@@ -152,48 +152,49 @@ $insumos = $conexion->query("SELECT * FROM insumos ORDER BY id_insumo")->fetchAl
         </div>
 
         <table class="admin-tabla" id="tabla-insumos">
-            <thead>
-                <tr>
-                    <th>Insumo</th>
-                    <th>Cantidad disponible</th>
-                    <th>Cantidad mínima</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($insumos as $ins): ?>
-                <?php
-                    if ($ins['cantidad_disponible'] < $ins['cantidad_minima']) {
-                        $nivel = 'bajo';
-                        $etiqueta = 'Bajo stock';
-                    } elseif ($ins['cantidad_disponible'] < $ins['cantidad_minima'] * 1.5) {
-                        $nivel = 'medio';
-                        $etiqueta = 'Nivel medio';
-                    } else {
-                        $nivel = 'suficiente';
-                        $etiqueta = 'Suficiente';
-                    }
-                ?>
-                <tr class="fila-<?php echo $nivel; ?>">
-                    <td><?php echo htmlspecialchars($ins['nombre']); ?></td>
-                    <td>
-                        <form action="actualizar_insumo.php" method="post" class="form-actualizar-cantidad">
-                            <input type="hidden" name="id_insumo" value="<?php echo $ins['id_insumo']; ?>">
-                            <input type="number" step="0.01" name="cantidad_disponible" value="<?php echo $ins['cantidad_disponible']; ?>">
-                            <span class="unidad"><?php echo htmlspecialchars($ins['unidad_medida']); ?></span>
-                            <button type="submit" class="btn-editar">Actualizar</button>
-                        </form>
-                    </td>
-                    <td><?php echo $ins['cantidad_minima']; ?> <?php echo htmlspecialchars($ins['unidad_medida']); ?></td>
-                    <td class="stock-<?php echo $nivel; ?>"><?php echo $etiqueta; ?></td>
-                    <td>
-                        <a href="eliminar_insumo.php?id=<?php echo $ins['id_insumo']; ?>" class="btn-eliminar">Eliminar</a>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+        <thead>
+            <tr>
+                <th>Insumo</th>
+                <th>Cantidad disponible</th>
+                <th>Cantidad mínima</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($insumos as $ins): ?>
+        <?php
+            if ($ins['cantidad_disponible'] < $ins['cantidad_minima']) {
+                $nivel = 'bajo';
+                $etiqueta = 'Bajo stock';
+            } elseif ($ins['cantidad_disponible'] < $ins['cantidad_minima'] * 1.5) {
+                $nivel = 'medio';
+                $etiqueta = 'Nivel medio';
+            } else {
+                $nivel = 'suficiente';
+                $etiqueta = 'Suficiente';
+            }
+        ?>
+        <tr class="fila-<?php echo $nivel; ?>">
+            <td><?php echo htmlspecialchars($ins['nombre']); ?></td>
+            <td>
+                <span class="cantidad-val"><?php echo $ins['cantidad_disponible']; ?></span> 
+                <?php echo htmlspecialchars($ins['unidad_medida']); ?>
+            </td>
+            <td><?php echo $ins['cantidad_minima']; ?> <?php echo htmlspecialchars($ins['unidad_medida']); ?></td>
+            <td class="stock-<?php echo $nivel; ?>"><?php echo $etiqueta; ?></td>
+            <td style="white-space: nowrap;">
+                <form action="actualizar_insumo.php" method="post" class="form-actualizar-modal" style="display:inline-block; margin:0;">
+                    <input type="hidden" name="id_insumo" value="<?php echo $ins['id_insumo']; ?>">
+                    <input type="hidden" name="cantidad_disponible" class="input-hidden-cantidad" value="<?php echo $ins['cantidad_disponible']; ?>">
+                    <button type="submit" class="btn-editar">Actualizar</button>
+                </form>
+                 <a href="eliminar_insumo.php?id=<?php echo $ins['id_insumo']; ?>" class="btn-eliminar">Eliminar</a>
+             </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
     </section>
 
     <div id="footer-placeholder"></div>

@@ -160,3 +160,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+document.querySelectorAll("#tabla-insumos .form-actualizar-modal").forEach(function (form) {
+  form.addEventListener("submit", function (evento) {
+    var fila = form.closest("tr");
+    var nombreInsumo = fila.cells[0].textContent.trim();
+    var spanCantidad = fila.querySelector(".cantidad-val");
+    var cantidadActual = parseFloat(spanCantidad.textContent);
+
+    var nuevaCantidad = prompt("Introduce la nueva cantidad disponible para " + nombreInsumo + ":", cantidadActual);
+
+    if (nuevaCantidad !== null && !isNaN(parseFloat(nuevaCantidad)) && parseFloat(nuevaCantidad) >= 0) {
+      form.querySelector(".input-hidden-cantidad").value = parseFloat(nuevaCantidad);
+    } else {
+      evento.preventDefault();
+    }
+  });
+});
