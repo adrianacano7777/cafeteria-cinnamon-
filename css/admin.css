@@ -152,6 +152,10 @@
   width: 100%;
   box-sizing: border-box;
   padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #5d4d3e;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .btn-primario {
@@ -204,7 +208,7 @@
 @media (max-width: 600px) {
   .admin-main {
     margin: 10px auto;
-    padding: 20px 12px;
+    padding: 20px 8px;
   }
 
   .admin-tabla {
@@ -221,6 +225,28 @@
 
   .admin-main details {
     padding: 12px;
+  }
+
+  .reporte-bloque {
+    padding: 12px 8px;
+  }
+
+  .reporte-bloque .admin-tabla {
+    display: table !important;
+    width: 100% !important;
+    table-layout: auto !important;
+  }
+
+  .reporte-bloque .admin-tabla th {
+    white-space: nowrap !important;
+    padding: 8px 4px;
+    font-size: 0.72rem;
+  }
+
+  .reporte-bloque .admin-tabla td {
+    white-space: nowrap !important;
+    padding: 8px 4px;
+    font-size: 0.8rem;
   }
 }
 
@@ -242,9 +268,4 @@
 .btn-filtrar-fecha:hover {
   background-color: #3e2723;
   color: #ffffff;
-}
-
-.reporte-bloque .admin-tabla th,
-.reporte-bloque .admin-tabla td {
-  width: auto;
 }
