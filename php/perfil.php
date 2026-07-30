@@ -1,4 +1,4 @@
-<?php
+ <?php
   session_start();
 
   $titulo_pagina = "Cafetería Cinnamon - Mi Perfil";
@@ -18,6 +18,7 @@
   <link rel="icon" href="../img/icono-pestana.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/perfil.css">
+ 
 </head>
 
 <body>

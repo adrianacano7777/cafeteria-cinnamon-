@@ -8,7 +8,7 @@ $error_login = "";
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['correo']) && !isset($_POST['nombre'])) {
-    
+   
 
     $correo = trim($_POST['correo']);
     $contrasena = trim($_POST['contrasena']);
@@ -41,6 +41,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['correo']) && !isset($
 
     } else {
         $error_login = "Escribe tu correo y contraseña.";
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nombre'])) {
+   
+
+    $nombre_nuevo = trim($_POST['nombre']);
+    $correo_nuevo = trim($_POST['correo']);
+    $contrasena_nueva = trim($_POST['contrasena']);
+
+    if (!empty($nombre_nuevo) && !empty($correo_nuevo) && !empty($contrasena_nueva)) {
+
+        
+        $consulta_existe = $conexion->prepare("SELECT id_usuario FROM usuarios WHERE correo = :correo");
+        $consulta_existe->bindParam(':correo', $correo_nuevo);
+        $consulta_existe->execute();
+
+        if ($consulta_existe->fetch()) {
+            $error_login = "Ya existe una cuenta registrada con ese correo.";
+        } else {
+            $insertar = $conexion->prepare("INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES (:nombre, :correo, :contrasena, 'cliente')");
+            $insertar->bindParam(':nombre', $nombre_nuevo);
+            $insertar->bindParam(':correo', $correo_nuevo);
+            $insertar->bindParam(':contrasena', $contrasena_nueva);
+            $insertar->execute();
+
+            // Iniciamos sesión automáticamente con la cuenta recién creada
+            $_SESSION['id_usuario'] = $conexion->lastInsertId();
+            $_SESSION['nombre']     = $nombre_nuevo;
+            $_SESSION['usuario']    = $correo_nuevo;
+            $_SESSION['rol']        = 'cliente';
+
+            header("Location: perfil.php");
+            exit();
+        }
+
+    } else {
+        $error_login = "Llena al menos tu nombre, correo y contraseña para crear tu cuenta.";
     }
 }
 ?>
