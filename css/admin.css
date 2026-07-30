@@ -211,6 +211,7 @@
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+    table-layout: auto !important;
   }
 
   .btn-editar, .btn-eliminar {
@@ -241,4 +242,9 @@
 .btn-filtrar-fecha:hover {
   background-color: #3e2723;
   color: #ffffff;
+}
+
+.reporte-bloque .admin-tabla th,
+.reporte-bloque .admin-tabla td {
+  width: auto;
 }

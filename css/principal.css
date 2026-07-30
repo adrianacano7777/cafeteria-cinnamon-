@@ -35,17 +35,15 @@ header {
   background-color: #796652;
   border-bottom: 2px solid #5d4d3e;
   padding: 15px 30px;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-header::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.logo {
-  float: left;
+.logo, .main-nav {
+  float: none;
 }
 
 .logo img {
@@ -64,8 +62,7 @@ header::after {
 }
 
 .main-nav {
-  float: right;
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .nav-list {
@@ -149,23 +146,24 @@ header::after {
 }
 
 .menu-categoria {
-  display: table;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   width: 100%;
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 15px 0;
   margin-top: 20px;
 }
 
 .categoria-carta {
-  display: table-cell;
+  flex: 1 1 250px;
+  height: 200px;
   background-color: #796652;
   text-align: center;
   text-decoration: none;
-  vertical-align: middle;
-  height: 200px;
   position: relative;
   border: 1px solid #5d4d3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s, background-color 0.3s;
 }
 
@@ -384,13 +382,10 @@ header::after {
 }
 
 @keyframes flotar {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
   }
-
   50% {
     transform: translateY(-8px);
     box-shadow: 0 20px 18px rgba(0, 0, 0, 0.15);
@@ -419,24 +414,23 @@ header::after {
   max-width: 1170px;
   margin: 30px auto;
   padding: 40px 30px;
-  display: table;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
 }
 
 .sobre-foto {
-  display: table-cell;
-  width: 320px;
+  flex: 0 0 320px;
+  max-width: 100%;
   height: 250px;
   object-fit: cover;
-  vertical-align: middle;
 }
 
 .sobre-texto {
-  display: table-cell;
-  width: 65%;
-  padding-left: 30px;
+  flex: 1;
+  min-width: 280px;
   color: #ffffff;
-  vertical-align: middle;
   text-align: justify;
 }
 
@@ -469,10 +463,6 @@ footer p {
     font-size: 2rem;
   }
 
-  .menu-categoria {
-    border-spacing: 10px 0;
-  }
-
   .ingrediente-item img {
     height: 170px;
   }
@@ -487,34 +477,21 @@ footer p {
   }
 
   .sobre-foto {
-    width: 220px;
-  }
-
-  .sobre-texto {
-    width: auto;
+    flex: 0 0 220px;
   }
 }
 
 @media (max-width: 600px) {
-
   header {
+    flex-direction: column;
     text-align: center;
-  }
-
-  .logo {
-    float: none;
-    margin-bottom: 10px;
+    justify-content: center;
   }
 
   .logo img {
     margin: 0 auto;
     width: 150px;
     height: 42px;
-  }
-
-  .main-nav {
-    float: none;
-    margin-top: 0;
   }
 
   .nav-list li {
@@ -527,39 +504,71 @@ footer p {
   }
 
   .hero-frase {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
-  .menu-categoria {
-    display: block;
+  .seccion-titulo {
+    font-size: 1.4rem;
+    word-break: break-word;
+  }
+
+  /* --- AJUSTES DEL CARRUSEL Y SECCIONES --- */
+  .ingredientes,
+  .reseñas {
+    padding: 25px 12px;
+    margin: 15px auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .carousel-ingredientes,
+  .carousel-resenas {
+    max-width: 100%;
+    gap: 6px;
+  }
+
+  .carousel-viewport {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ingredientes-lista,
+  .reseña-lista {
+    width: 100%;
+  }
+
+  .ingrediente-item,
+  .reseña-carta {
+    padding: 15px 10px;
+    box-sizing: border-box;
+  }
+
+  .ingrediente-item img {
+    height: 150px;
   }
 
   .categoria-carta {
-    display: block;
-    width: 100%;
     height: 150px;
-    margin-bottom: 15px;
   }
 
   .carousel-btn {
-    width: 34px;
-    height: 34px;
-    font-size: 0.95rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
   }
 
   .nosotros {
-    display: block;
+    flex-direction: column;
+    padding: 25px 15px;
   }
 
   .sobre-foto {
-    display: block;
+    flex: 1 1 100%;
     width: 100%;
     height: 200px;
-    margin-bottom: 15px;
   }
 
   .sobre-texto {
-    display: block;
     width: 100%;
     padding-left: 0;
   }

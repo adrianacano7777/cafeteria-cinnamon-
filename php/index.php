@@ -13,8 +13,8 @@ $resenas = $conexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 <head>
   <meta charset="UTF-8">
   <title>Cafetería Cinnamon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/principal.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../css/principal.css?v=<?php echo time(); ?>">
   <link rel="icon" href="../img/icono-pestana.png" type="image/png">
 </head>
 

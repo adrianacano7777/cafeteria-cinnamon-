@@ -101,50 +101,52 @@ try {
       <input type="text" data-buscar-tabla="tabla-pedidos" placeholder="Buscar pedido por cliente, no. de orden o estado...">
     </div>
 
-    <table class="admin-tabla" id="tabla-pedidos">
-      <thead>
-        <tr>
-          <th>No. de orden</th>
-          <th>Cliente</th>
-          <th>Fecha / Hora</th>
-          <th>Total</th>
-          <th>Entrega</th>
-          <th>Pago</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php if (!empty($pedidos)): ?>
-          <?php foreach ($pedidos as $ped): ?>
+    <div class="tabla-contenedor">
+      <table class="admin-tabla" id="tabla-pedidos">
+        <thead>
           <tr>
-            <td>#<?php echo str_pad($ped['id_pedido'], 5, '0', STR_PAD_LEFT); ?></td>
-            <td><?php echo htmlspecialchars($ped['cliente']); ?></td>
-            <td><?php echo date('d/m/Y H:i', strtotime($ped['fecha'])); ?></td>
-            <td>$<?php echo number_format($ped['total'], 2); ?></td>
-            <td><?php echo $ped['tipo_entrega'] === 'domicilio' ? 'A domicilio' : 'Recoger en tienda'; ?></td>
-            <td><?php echo htmlspecialchars($ped['metodo_pago']); ?></td>
-            <td>
-                <form action="admin_pedidos.php" method="post">
-                  <input type="hidden" name="id_pedido" value="<?php echo $ped['id_pedido']; ?>">
-                  <input type="hidden" name="fecha" value="<?php echo htmlspecialchars($fecha_filtro); ?>">
-                  <select name="estado" onchange="this.form.submit()" class="select-estado-tabla">
-                  <option value="recibido" <?php echo $ped['estado'] === 'recibido' ? 'selected' : ''; ?>>Recibido</option>
-                  <option value="preparando" <?php echo $ped['estado'] === 'preparando' ? 'selected' : ''; ?>>Preparando</option>
-                  <option value="listo" <?php echo $ped['estado'] === 'listo' ? 'selected' : ''; ?>>Listo</option>
-                  <option value="entregado" <?php echo $ped['estado'] === 'entregado' ? 'selected' : ''; ?>>Entregado</option>
-                 </select>
-                  <input type="hidden" name="actualizar_estado" value="1">
-                </form>
-            </td>
+            <th>No. de orden</th>
+            <th>Cliente</th>
+            <th>Fecha / Hora</th>
+            <th>Total</th>
+            <th>Entrega</th>
+            <th>Pago</th>
+            <th>Estado</th>
           </tr>
-          <?php endforeach; ?>
-        <?php else: ?>
-          <tr>
-            <td colspan="7" style="text-align: center;">No hay pedidos registrados para el día <?php echo date('d/m/Y', strtotime($fecha_filtro)); ?>.</td>
-          </tr>
-        <?php endif; ?>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <?php if (!empty($pedidos)): ?>
+            <?php foreach ($pedidos as $ped): ?>
+            <tr>
+              <td>#<?php echo str_pad($ped['id_pedido'], 5, '0', STR_PAD_LEFT); ?></td>
+              <td><?php echo htmlspecialchars($ped['cliente']); ?></td>
+              <td><?php echo date('d/m/Y H:i', strtotime($ped['fecha'])); ?></td>
+              <td>$<?php echo number_format($ped['total'], 2); ?></td>
+              <td><?php echo $ped['tipo_entrega'] === 'domicilio' ? 'A domicilio' : 'Recoger en tienda'; ?></td>
+              <td><?php echo htmlspecialchars($ped['metodo_pago']); ?></td>
+              <td>
+                  <form action="admin_pedidos.php" method="post">
+                    <input type="hidden" name="id_pedido" value="<?php echo $ped['id_pedido']; ?>">
+                    <input type="hidden" name="fecha" value="<?php echo htmlspecialchars($fecha_filtro); ?>">
+                    <select name="estado" onchange="this.form.submit()" class="select-estado-tabla">
+                    <option value="recibido" <?php echo $ped['estado'] === 'recibido' ? 'selected' : ''; ?>>Recibido</option>
+                    <option value="preparando" <?php echo $ped['estado'] === 'preparando' ? 'selected' : ''; ?>>Preparando</option>
+                    <option value="listo" <?php echo $ped['estado'] === 'listo' ? 'selected' : ''; ?>>Listo</option>
+                    <option value="entregado" <?php echo $ped['estado'] === 'entregado' ? 'selected' : ''; ?>>Entregado</option>
+                   </select>
+                    <input type="hidden" name="actualizar_estado" value="1">
+                  </form>
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <tr>
+              <td colspan="7" style="text-align: center;">No hay pedidos registrados para el día <?php echo date('d/m/Y', strtotime($fecha_filtro)); ?>.</td>
+            </tr>
+          <?php endif; ?>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section class="admin-main">
@@ -158,84 +160,90 @@ try {
 
     <div class="reporte-bloque">
       <h3>Ventas por Semana</h3>
-      <table class="admin-tabla">
-        <thead>
-          <tr>
-            <th>Año</th>
-            <th>Semana No.</th>
-            <th>Monto Total Reagrupado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php if (!empty($ventas_semanas)): ?>
-            <?php foreach ($ventas_semanas as $vs): ?>
+      <div class="tabla-contenedor">
+        <table class="admin-tabla">
+          <thead>
             <tr>
-              <td><?php echo $vs['anio']; ?></td>
-              <td>Semana <?php echo $vs['numero_semana']; ?></td>
-              <td>$<?php echo number_format($vs['total_semana'], 2); ?></td>
+              <th>Año</th>
+              <th>Semana No.</th>
+              <th>Monto Total Reagrupado</th>
             </tr>
-            <?php endforeach; ?>
-          <?php else: ?>
-            <tr>
-              <td colspan="3">No hay ventas entregadas registradas aún por semana.</td>
-            </tr>
-          <?php endif; ?>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <?php if (!empty($ventas_semanas)): ?>
+              <?php foreach ($ventas_semanas as $vs): ?>
+              <tr>
+                <td><?php echo $vs['anio']; ?></td>
+                <td>Semana <?php echo $vs['numero_semana']; ?></td>
+                <td>$<?php echo number_format($vs['total_semana'], 2); ?></td>
+              </tr>
+              <?php endforeach; ?>
+            <?php else: ?>
+              <tr>
+                <td colspan="3">No hay ventas entregadas registradas aún por semana.</td>
+              </tr>
+            <?php endif; ?>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="reporte-bloque" style="margin-top: 25px;">
       <h3>Ventas por Mes</h3>
-      <table class="admin-tabla">
-        <thead>
-          <tr>
-            <th>Año</th>
-            <th>Mes</th>
-            <th>Monto Total Reagrupado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php if (!empty($ventas_meses)): ?>
-            <?php foreach ($ventas_meses as $vm): ?>
+      <div class="tabla-contenedor">
+        <table class="admin-tabla">
+          <thead>
             <tr>
-              <td><?php echo $vm['anio']; ?></td>
-              <td>Mes <?php echo $vm['numero_mes']; ?></td>
-              <td>$<?php echo number_format($vm['total_mes'], 2); ?></td>
+              <th>Año</th>
+              <th>Mes</th>
+              <th>Monto Total Reagrupado</th>
             </tr>
-            <?php endforeach; ?>
-          <?php else: ?>
-            <tr>
-              <td colspan="3">No hay ventas entregadas registradas aún por mes.</td>
-            </tr>
-          <?php endif; ?>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <?php if (!empty($ventas_meses)): ?>
+              <?php foreach ($ventas_meses as $vm): ?>
+              <tr>
+                <td><?php echo $vm['anio']; ?></td>
+                <td>Mes <?php echo $vm['numero_mes']; ?></td>
+                <td>$<?php echo number_format($vm['total_mes'], 2); ?></td>
+              </tr>
+              <?php endforeach; ?>
+            <?php else: ?>
+              <tr>
+                <td colspan="3">No hay ventas entregadas registradas aún por mes.</td>
+              </tr>
+            <?php endif; ?>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="reporte-bloque" style="margin-top: 25px;">
       <h3>Productos más Vendidos</h3>
-      <table class="admin-tabla">
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Unidades Vendidas</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php if (!empty($top_productos)): ?>
-            <?php foreach ($top_productos as $tp): ?>
+      <div class="tabla-contenedor">
+        <table class="admin-tabla">
+          <thead>
             <tr>
-              <td><?php echo htmlspecialchars($tp['producto']); ?></td>
-              <td><?php echo $tp['total_unidades']; ?> unidades</td>
+              <th>Producto</th>
+              <th>Unidades Vendidas</th>
             </tr>
-            <?php endforeach; ?>
-          <?php else: ?>
-            <tr>
-              <td colspan="2">No hay registro de productos entregados en el historial.</td>
-            </tr>
-          <?php endif; ?>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <?php if (!empty($top_productos)): ?>
+              <?php foreach ($top_productos as $tp): ?>
+              <tr>
+                <td><?php echo htmlspecialchars($tp['producto']); ?></td>
+                <td><?php echo $tp['total_unidades']; ?> unidades</td>
+              </tr>
+              <?php endforeach; ?>
+            <?php else: ?>
+              <tr>
+                <td colspan="2">No hay registro de productos entregados en el historial.</td>
+              </tr>
+            <?php endif; ?>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
