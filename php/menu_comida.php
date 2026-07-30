@@ -1,9 +1,10 @@
 <?php
+  require_once 'conexion.php';
+  $conexion = mysqli_connect($host, $usuario, $contrasena, $basedatos, $puerto);
+
   $titulo_pagina = "Menú Comida - Cafetería Cinnamon";
   $categoria_actual = "Nuestra Comida";
   $subtitulo = "Opciones deliciosas preparadas al momento";
-
-  $conexion = mysqli_connect("localhost:2207", "root", "", "cinnamon");
 
   $query = "SELECT * FROM productos WHERE categoria = 'Comida'";
   $resultado = mysqli_query($conexion, $query);

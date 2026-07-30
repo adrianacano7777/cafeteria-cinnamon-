@@ -1,11 +1,12 @@
 <?php
+  require_once 'conexion.php';
+  $conexion = mysqli_connect($host, $usuario, $contrasena, $basedatos, $puerto);
+
   $titulo_pagina = "Menú Bebidas - Cafetería Cinnamon";
   $categoria_actual = "Nuestras Bebidas";
   $subtitulo = "Preparadas con el mejor café artesanal e ingredientes selectos";
 
-  $conexion = mysqli_connect("localhost:2207", "root", "", "cinnamon");
-
-  $query = "SELECT * FROM productos WHERE categoria = 'bebidas'";
+  $query = "SELECT * FROM productos WHERE categoria = 'Bebidas'";
   $resultado = mysqli_query($conexion, $query);
 ?>
 <!DOCTYPE html>
@@ -150,4 +151,4 @@
   <script src="../JS/header-footer.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html>ml>
