@@ -103,14 +103,21 @@ $insumos = $conexion->query("SELECT * FROM insumos ORDER BY id_insumo")->fetchAl
                 <?php foreach ($productos as $prod): ?>
                 <tr>
                     <td><img src="../img/<?php echo htmlspecialchars($prod['imagen'] ?? 'default.jpg'); ?>" alt="<?php echo htmlspecialchars($prod['nombre']); ?>" style="width:50px; height:50px; object-fit:cover; border-radius:6px;"></td>
-                    <td><?php echo htmlspecialchars($prod['nombre']); ?></td>
-                    <td><?php echo htmlspecialchars($prod['categoria']); ?></td>
-                    <td>$<?php echo number_format($prod['precio'], 2); ?></td>
-                    <td class="<?php echo $prod['disponibilidad'] ? '' : 'stock-bajo'; ?>">
+                    <td class="prod-nombre"><?php echo htmlspecialchars($prod['nombre']); ?></td>
+                    <td class="prod-categoria"><?php echo htmlspecialchars($prod['categoria']); ?></td>
+                    <td class="prod-precio">$<?php echo number_format($prod['precio'], 2); ?></td>
+                    <td class="prod-estado <?php echo $prod['disponibilidad'] ? '' : 'stock-bajo'; ?>" data-dispo="<?php echo $prod['disponibilidad']; ?>">
                         <?php echo $prod['disponibilidad'] ? 'Disponible' : 'Agotado'; ?>
                     </td>
-                    <td>
-                        <a href="#" class="btn-editar">Editar</a>
+                    <td style="white-space: nowrap;">
+                        <form action="actualizar_producto.php" method="post" class="form-actualizar-producto-todo" style="display:inline-block; margin:0;">
+                            <input type="hidden" name="id_producto" value="<?php echo $prod['id_producto']; ?>">
+                            <input type="hidden" name="nombre" class="input-edit-nombre">
+                            <input type="hidden" name="categoria" class="input-edit-categoria">
+                            <input type="hidden" name="precio" class="input-edit-precio">
+                            <input type="hidden" name="disponibilidad" class="input-edit-dispo">
+                            <button type="submit" class="btn-editar">Editar</button>
+                        </form>
                         <a href="eliminar_producto.php?id=<?php echo $prod['id_producto']; ?>" class="btn-eliminar">Eliminar</a>
                     </td>
                 </tr>
