@@ -1,4 +1,4 @@
- * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -190,5 +190,24 @@ footer {
 @media (max-width: 600px) {
   .categoria-carta {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    text-align: center;
+  }
+  .logo {
+    float: none;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .main-nav {
+    float: none;
+    margin-top: 0;
+  }
+  .nav-list li {
+    display: block;
+    margin: 8px 0;
   }
 }

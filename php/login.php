@@ -6,9 +6,7 @@ $titulo_pagina = "Cafetería Cinnamon - Iniciar sesión";
 $mensaje_bienvenida = "Entrar a mi cuenta";
 $error_login = "";
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['correo']) && !isset($_POST['nombre'])) {
-   
 
     $correo = trim($_POST['correo']);
     $contrasena = trim($_POST['contrasena']);
@@ -20,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['correo']) && !isset($
         $consulta->execute();
         $usuario_bd = $consulta->fetch(PDO::FETCH_ASSOC);
 
-        if ($usuario_bd && $contrasena === $usuario_bd['contrasena']) {
+        if ($usuario_bd && (password_verify($contrasena, $usuario_bd['contrasena']) || $contrasena === $usuario_bd['contrasena'])) {
 
             $_SESSION['id_usuario'] = $usuario_bd['id_usuario'];
             $_SESSION['nombre']     = $usuario_bd['nombre'];
@@ -43,31 +41,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['correo']) && !isset($
         $error_login = "Escribe tu correo y contraseña.";
     }
 }
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nombre'])) {
-   
 
     $nombre_nuevo = trim($_POST['nombre']);
     $correo_nuevo = trim($_POST['correo']);
     $contrasena_nueva = trim($_POST['contrasena']);
 
-    if (!empty($nombre_nuevo) && !empty($correo_nuevo) && !empty($contrasena_nueva)) {
+    $direccion = isset($_POST['calle_numero']) ? trim($_POST['calle_numero']) : '';
+    $telefono  = isset($_POST['telefono_contacto']) ? trim($_POST['telefono_contacto']) : '';
 
-        
-        $consulta_existe = $conexion->prepare("SELECT id_usuario FROM usuarios WHERE correo = :correo");
+    if (!empty($nombre_nuevo) && !empty($correo_nuevo) && !empty($contrasena_nueva)) {
+      $consulta_existe = $conexion->prepare("SELECT id_usuario FROM usuarios WHERE correo = :correo");
         $consulta_existe->bindParam(':correo', $correo_nuevo);
         $consulta_existe->execute();
 
         if ($consulta_existe->fetch()) {
             $error_login = "Ya existe una cuenta registrada con ese correo.";
         } else {
-            $insertar = $conexion->prepare("INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES (:nombre, :correo, :contrasena, 'cliente')");
+          $contrasena_hash = password_hash($contrasena_nueva, PASSWORD_DEFAULT);
+          $insertar = $conexion->prepare("INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES (:nombre, :correo, :contrasena, 'cliente')");
             $insertar->bindParam(':nombre', $nombre_nuevo);
             $insertar->bindParam(':correo', $correo_nuevo);
-            $insertar->bindParam(':contrasena', $contrasena_nueva);
+            $insertar->bindParam(':contrasena', $contrasena_hash);
             $insertar->execute();
-
-            // Iniciamos sesión automáticamente con la cuenta recién creada
             $_SESSION['id_usuario'] = $conexion->lastInsertId();
             $_SESSION['nombre']     = $nombre_nuevo;
             $_SESSION['usuario']    = $correo_nuevo;
@@ -78,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nombre'])) {
         }
 
     } else {
-        $error_login = "Llena al menos tu nombre, correo y contraseña para crear tu cuenta.";
+        $error_login = "Llena los campos obligatorios para crear tu cuenta.";
     }
 }
 ?>
@@ -159,33 +155,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nombre'])) {
   <div id="footer-placeholder"></div>
 
   <script src="../JS/header-footer.js"></script>
-
-  <script>
-    const formularioLogin = document.querySelector("#iniciar-sesion form");
-    const botonEnviar = formularioLogin.querySelector("button[type='submit']");
-
-    botonEnviar.addEventListener("click", function(evento) {
-        formularioLogin.setAttribute("novalidate", "true");
-    });
-
-    formularioLogin.addEventListener("submit", function(evento) {
-        const elementos = formularioLogin.elements;
-        let formularioValido = true;
-
-        for (let i = 0; i < elementos.length; i++) {
-            if (elementos[i].hasAttribute("required") && elementos[i].value.trim() === "") {
-                formularioValido = false;
-                break;
-            }
-        }
-
-        if (!formularioValido) {
-            evento.preventDefault();
-            alert("¡Error! Por favor escribe tu correo electrónico.");
-            formularioLogin.removeAttribute("novalidate");
-        }
-    });
-  </script>
 
 </body>
 

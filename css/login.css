@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -170,4 +169,31 @@ footer {
   text-align: center;
   padding: 30px 20px;
   margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  header {
+    text-align: center;
+  }
+  .logo {
+    float: none;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .main-nav {
+    float: none;
+    margin-top: 0;
+  }
+  .nav-list li {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .acceso-contenedor-paneles {
+    display: block;
+  }
+  .acceso-panel {
+    display: block;
+    margin-bottom: 20px;
+  }
 }
