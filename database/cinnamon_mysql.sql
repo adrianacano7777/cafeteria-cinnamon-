@@ -131,3 +131,18 @@ INSERT INTO resenas (id_usuario, calificacion, comentario) VALUES
 ((SELECT id_usuario FROM usuarios WHERE correo = 'angelica@gmail.com'), 5, '¡Los mejores roles de canela y brownies que he probado! Se nota muchísimo la calidad del chocolate belga en su repostería.'),
 ((SELECT id_usuario FROM usuarios WHERE correo = 'manuel@gmail.com'), 5, 'Soy súper exigente con el café y el latte de aquí con granos de Etiopía es una joya.'),
 ((SELECT id_usuario FROM usuarios WHERE correo = 'denisse@gmail.com'), 5, 'Cinnamon se convirtió en mi parada obligatoria de todas las tardes.');
+
+
+//para ver en accion la de productos más vendidos
+INSERT INTO pedidos (id_usuario, id_metodo_pago, total, tipo_entrega, estado) VALUES
+(1, 1, 185.00, 'tienda', 'entregado'),
+(1, 1, 240.00, 'domicilio', 'entregado'),
+(1, 1, 150.00, 'tienda', 'entregado');
+
+INSERT INTO detalles_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES
+((SELECT MAX(id_pedido) - 2 FROM pedidos), 1, 5, 25.00),
+((SELECT MAX(id_pedido) - 2 FROM pedidos), 2, 2, 30.00),
+((SELECT MAX(id_pedido) - 1 FROM pedidos), 1, 3, 25.00),
+((SELECT MAX(id_pedido) - 1 FROM pedidos), 3, 4, 40.00),
+((SELECT MAX(id_pedido) FROM pedidos), 2, 3, 30.00),
+((SELECT MAX(id_pedido) FROM pedidos), 4, 1, 60.00);

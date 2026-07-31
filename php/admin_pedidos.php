@@ -59,7 +59,7 @@ $ventas_meses = $conexion->query($sql_meses)->fetchAll(PDO::FETCH_ASSOC);
 $sql_top_productos = "SELECT 
                         pr.nombre AS producto, 
                         SUM(dp.cantidad) AS total_unidades 
-                      FROM detalle_pedidos dp 
+                      FROM detalles_pedido dp 
                       JOIN productos pr ON dp.id_producto = pr.id_producto 
                       JOIN pedidos p ON dp.id_pedido = p.id_pedido
                       WHERE LOWER(p.estado) = 'entregado'
